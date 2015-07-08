@@ -43,6 +43,8 @@ import shippingMethodHelper = require('./helpers/ShippingMethod');
 import stateHelper = require('./helpers/State');
 import timezoneHelper = require('./helpers/Timezone');
 
+import client = require('./client/Client');
+
 import promise = require('es6-promise');
 import pubnub = require('pubnub');
 
@@ -170,6 +172,10 @@ class RCSDK {
     getRingoutHelper() { return ringoutHelper.$get(this.getContext()); }
 
     getServiceHelper() { return serviceHelper.$get(this.getContext()); }
+
+    // Client
+
+    getClient() { return client.$get(this.getContext()); }
 
 }
 

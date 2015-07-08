@@ -297,5 +297,5 @@ export class Utils {
 export function $get(context:context.Context):Utils {
     return context.createSingleton('Utils', ()=> {
         return new Utils();
-    })
+    });
 }

@@ -36,8 +36,6 @@ describe('RCSDK.core.Subscription', function() {
 
     });
 
-    describe.skip('destroy', function() {});
-
     describe('notify method', function() {
 
         it('fires a notification event when the notify method is called and passes the message object', function(done) {
