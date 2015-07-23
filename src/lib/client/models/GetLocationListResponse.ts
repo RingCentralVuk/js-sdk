@@ -5,6 +5,9 @@ import paginginfo = require('./PagingInfo');
 
 export class GetLocationListResponse extends model.Model {
 
+    /**
+     * List of locations
+     */
     public records:locationinfo.LocationInfo[];
 
     /**
@@ -16,7 +19,6 @@ export class GetLocationListResponse extends model.Model {
      * Information on paging
      */
     public paging:paginginfo.PagingInfo;
-
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
@@ -33,40 +35,3 @@ export class GetLocationListResponse extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetLocationListResponse",
- *     "imports": [
- *         "locationinfo.LocationInfo",
- *         "navigationinfo.NavigationInfo",
- *         "paginginfo.PagingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "locationinfo.LocationInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/LocationInfo"
- *             },
- *             "$name": "records",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": false,
- *             "type": "navigationinfo.NavigationInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": false,
- *             "type": "paginginfo.PagingInfo"
- *         }
- *     ]
- * }
- */

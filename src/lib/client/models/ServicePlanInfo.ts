@@ -17,7 +17,6 @@ export class ServicePlanInfo extends model.Model {
      */
     public edition:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -33,32 +32,3 @@ export class ServicePlanInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ServicePlanInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a service plan",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Name of a service plan",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Edition of a service plan",
- *             "$name": "edition",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

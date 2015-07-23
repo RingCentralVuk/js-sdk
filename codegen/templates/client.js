@@ -1,3 +1,5 @@
+var beautify_html = require('js-beautify').html;
+
 module.exports = function(tag, operations) {
 
     var res = [],
@@ -33,8 +35,14 @@ module.exports = function(tag, operations) {
             type = (operation.responseSchema == '.' ? 'null' : operation.responseSchema);
 
         res.push('');
+        res.push('    /**');
+        res.push('     * ' + operation.summary);
+        res.push('     *');
+        res.push('     * ' + beautify_html(operation.description).split('\n').join('\n     * '));
+        res.push('     */');
         res.push('    public ' + operation.operationId + '(options?:{');
-        operation.parameters.forEach(function(param) {
+
+        var params = operation.parameters.map(function(param) {
 
             if (param.enum) {
 
@@ -47,21 +55,19 @@ module.exports = function(tag, operations) {
 
             }
 
-            res.push('        \'' + param.name + '\'' + (param.required ? '' : '?') + ':' + param.type + '; // ' + param.description + (param.collectionFormat ? ', collection: ' + param.collectionFormat : ''));
+            res.push('        /** ' + param.description + (param.collectionFormat ? ', collection: ' + param.collectionFormat : '') + ' */');
+            res.push('        \'' + param.name + '\'' + (param.required ? '' : '?') + ':' + param.type + ';');
+
+            delete param.description;
+
+            return param;
 
         });
 
         res.push('    }):Promise<' + (type == 'null' ? 'any' : type) + '> {');
         res.push('');
-        res.push('        var apiOptions = {');
-        res.push('                \'url\': \'' + operation.path + '\',');
-        res.push('                \'method\': \'' + operation.method + '\'');
-        res.push('            },');
-        res.push('            ResponseClass = ' + type + ';');
-        res.push('');
-        res.push('        apiOptions = this.parseOptions(apiOptions, options, ' + JSON.stringify(operation.parameters, null, 4).split('\n').join('\n        ') + ');');
-        res.push('');
-        res.push('        return this.apiCall(apiOptions, ResponseClass);');
+        res.push('        return this.apiCall(this.parseOptions(\'' + operation.method + '\', \'' + operation.path + '\', options, ' + operation.operationId + 'Options),');
+        res.push('                            ' + type + ');');
         res.push('');
         res.push('    }');
 
@@ -69,6 +75,16 @@ module.exports = function(tag, operations) {
 
     res.push('');
     res.push('}');
+
+    operations.forEach(function(operation) {
+
+        res.push('');
+        res.push('/**');
+        res.push(' * Definition of options for ' + operation.operationId + ' operation');
+        res.push(' */');
+        res.push('export var ' + operation.operationId + 'Options:client.IOperationParameter[] = ' + JSON.stringify(operation.parameters, null, 4) + ';');
+
+    });
 
     enums.forEach(function(en) {
 
@@ -95,12 +111,12 @@ module.exports = function(tag, operations) {
     res.push('    });');
     res.push('}');
 
-    res.push('');
-    res.push('/**');
-    res.push(' * Swagger definition JSON used for CodeGen:');
-    res.push(' *');
-    res.push(' * ' + JSON.stringify(operations, null, 4).split('\n').join('\n * '));
-    res.push(' */');
+    //res.push('');
+    //res.push('/**');
+    //res.push(' * Swagger definition JSON used for CodeGen:');
+    //res.push(' *');
+    //res.push(' * ' + JSON.stringify(operations, null, 4).split('\n').join('\n * '));
+    //res.push(' */');
 
     return res.join('\n');
 

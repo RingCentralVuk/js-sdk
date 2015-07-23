@@ -5,13 +5,12 @@ export class ModifySubscriptionRequest extends model.Model {
     /**
      * Collection of URIs to API resources (see Event Types). Mandatory field
      */
-    public eventFilters:string;
-
+    public eventFilters:string[];
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
-            {property: 'eventFilters', Class: null /* string */, isArray: false,isRequired: false}
+            {property: 'eventFilters', Class: null /* string[] */, isArray: true,isRequired: false}
         ];
 
     }
@@ -21,20 +20,3 @@ export class ModifySubscriptionRequest extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ModifySubscriptionRequest",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Collection of URIs to API resources (see Event Types). Mandatory field",
- *             "$name": "eventFilters",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

@@ -12,7 +12,6 @@ export class ExtensionStatusInfo extends model.Model {
      */
     public reason:ExtensionStatusInfoReason;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -32,30 +31,3 @@ export enum ExtensionStatusInfoReason {
     Voluntarily = <any>'Voluntarily',
     Involuntarily = <any>'Involuntarily'
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ExtensionStatusInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "A free-form user comment, describing the status change reason",
- *             "$name": "comment",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "ExtensionStatusInfoReason",
- *             "enum": [
- *                 "Voluntarily",
- *                 "Involuntarily"
- *             ],
- *             "description": "Type of suspension",
- *             "$name": "reason",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

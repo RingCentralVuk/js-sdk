@@ -3,20 +3,19 @@ import model = require('../Model');
 export class AccountStatusInfo extends model.Model {
 
     /**
-     * Foo
+     * Reason
      */
     public reason:string;
 
     /**
-     * Foo
+     * Comment
      */
     public comment:string;
 
     /**
-     * Foo
+     * Lifetime
      */
     public lifetime:string;
-
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
@@ -33,32 +32,3 @@ export class AccountStatusInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "AccountStatusInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Foo",
- *             "$name": "reason",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Foo",
- *             "$name": "comment",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Foo",
- *             "$name": "lifetime",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

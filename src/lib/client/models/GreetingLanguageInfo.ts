@@ -17,7 +17,6 @@ export class GreetingLanguageInfo extends model.Model {
      */
     public name:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -33,32 +32,3 @@ export class GreetingLanguageInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GreetingLanguageInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a greeting language",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Localization code of a greeting language",
- *             "$name": "localeCode",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Official name of a greeting language",
- *             "$name": "name",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

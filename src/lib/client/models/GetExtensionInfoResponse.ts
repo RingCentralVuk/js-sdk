@@ -39,7 +39,7 @@ export class GetExtensionInfoResponse extends model.Model {
     public name:string;
 
     /**
-     * For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding accountId/extensionId for each partnerId of a client application. In request URIs partnerIds are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding accountIds and extensionIds. In all request and response bodies these values are reflected via  partnerId  attributes of account and extension
+     * For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding accountId/extensionId for each partnerId of a client application. In request URIs partnerIds are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account Ids and extension IDs. In all request and response bodies these values are reflected via  partnerId  attributes of account and extension
      */
     public partnerId:string;
 
@@ -53,6 +53,9 @@ export class GetExtensionInfoResponse extends model.Model {
      */
     public regionalSettings:regionalsettingsinfo.RegionalSettingsInfo;
 
+    /**
+     * Extension service features returned in response only when the logged-in user requests his/her own extension info, see also Extension Service Features
+     */
     public serviceFeatures:extensionservicefeatureinfo.ExtensionServiceFeatureInfo[];
 
     /**
@@ -74,7 +77,6 @@ export class GetExtensionInfoResponse extends model.Model {
      * Extension type
      */
     public type:GetExtensionInfoResponseType;
-
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
@@ -129,136 +131,3 @@ export enum GetExtensionInfoResponseType {
     IvrMenu = <any>'IvrMenu',
     ApplicationExtension = <any>'ApplicationExtension'
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetExtensionInfoResponse",
- *     "imports": [
- *         "contactinfo.ContactInfo",
- *         "departmentinfo.DepartmentInfo",
- *         "extensionpermissions.ExtensionPermissions",
- *         "regionalsettingsinfo.RegionalSettingsInfo",
- *         "extensionservicefeatureinfo.ExtensionServiceFeatureInfo",
- *         "extensionstatusinfo.ExtensionStatusInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of an extension",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of an extension",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/ContactInfo",
- *             "description": "Contact detailed information",
- *             "$name": "contact",
- *             "isRequired": false,
- *             "type": "contactinfo.ContactInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/DepartmentInfo",
- *             "description": "Information on department extension(s), to which the requested extension belongs. Returned only for user extensions, members of department, requested by single extensionId",
- *             "$name": "departments",
- *             "isRequired": false,
- *             "type": "departmentinfo.DepartmentInfo"
- *         },
- *         {
- *             "type": "string",
- *             "description": "Number of department extension",
- *             "$name": "extensionNumber",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Extension user name",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding accountId/extensionId for each partnerId of a client application. In request URIs partnerIds are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding accountIds and extensionIds. In all request and response bodies these values are reflected via  partnerId  attributes of account and extension",
- *             "$name": "partnerId",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/ExtensionPermissions",
- *             "description": "Extension permissions, corresponding to the Service Web permissions 'Admin' and 'InternationalCalling'",
- *             "$name": "permissions",
- *             "isRequired": false,
- *             "type": "extensionpermissions.ExtensionPermissions"
- *         },
- *         {
- *             "$ref": "#/definitions/RegionalSettingsInfo",
- *             "description": "Extension region data (timezone, home country, language)",
- *             "$name": "regionalSettings",
- *             "isRequired": false,
- *             "type": "regionalsettingsinfo.RegionalSettingsInfo"
- *         },
- *         {
- *             "type": "extensionservicefeatureinfo.ExtensionServiceFeatureInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/ExtensionServiceFeatureInfo"
- *             },
- *             "$name": "serviceFeatures",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionInfoResponseSetupWizardState",
- *             "enum": [
- *                 "NotStarted",
- *                 "Incomplete",
- *                 "Completed"
- *             ],
- *             "description": "Specifies extension configuration wizard state (web service setup). The default value is 'NotStarted'",
- *             "$name": "setupWizardState",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionInfoResponseStatus",
- *             "enum": [
- *                 "Enabled",
- *                 "Disabled",
- *                 "NotActivated",
- *                 "Unassigned"
- *             ],
- *             "description": "Extension current state",
- *             "$name": "status",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/ExtensionStatusInfo",
- *             "description": "Status information (reason, comment). Returned for 'Disabled' status only",
- *             "$name": "statusInfo",
- *             "isRequired": false,
- *             "type": "extensionstatusinfo.ExtensionStatusInfo"
- *         },
- *         {
- *             "type": "GetExtensionInfoResponseType",
- *             "enum": [
- *                 "User",
- *                 "Fax User",
- *                 "VirtualUser",
- *                 "DigitalUser",
- *                 "Department",
- *                 "Announcement",
- *                 "Voicemail",
- *                 "SharedLinesGroup",
- *                 "PagingOnly",
- *                 "IvrMenu",
- *                 "ApplicationExtension"
- *             ],
- *             "description": "Extension type",
- *             "$name": "type",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

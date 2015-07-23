@@ -17,7 +17,6 @@ export class FormattingLocaleInfo extends model.Model {
      */
     public name:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -33,32 +32,3 @@ export class FormattingLocaleInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "FormattingLocaleInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a formatting language",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Localization code of a formatting language",
- *             "$name": "localeCode",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Official name of a formatting language",
- *             "$name": "name",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

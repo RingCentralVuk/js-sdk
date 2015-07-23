@@ -1,4 +1,5 @@
 var fs = require('fs');
+var gutil = require('gulp-util');
 var swagger = require('./swagger-ring.json');
 var modelGenerator = require('./templates/model');
 var clientGenerator = require('./templates/client');
@@ -17,7 +18,7 @@ function ref2modelNS(ref) {
 
 function renameTypes(prop) {
 
-    if (prop.type == 'DateTime') {
+    if (prop.type == 'datetime') {
         prop.type = 'Date';
     }
 
@@ -37,12 +38,26 @@ function renameTypes(prop) {
 
 }
 
+function addToImports(imports, ref) {
+
+    if (!swagger.definitions[ref2model(ref)]) throw new Error('Definition ' + gutil.colors.magenta(ref) + ' not found');
+
+    var type = ref2modelNS(ref);
+
+    if (imports.indexOf(type) == -1) imports.push(type);
+
+    return imports;
+
+}
+
 var models = Object.keys(swagger.definitions)
     .map(function(key) {
         swagger.definitions[key].name = key;
         return swagger.definitions[key];
     })
     .map(function(def) {
+
+        console.log('Parsing model', gutil.colors.magenta(def.name));
 
         var properties = Object.keys(def.properties).map(function(key) {
             def.properties[key].$name = key;
@@ -63,13 +78,12 @@ var models = Object.keys(swagger.definitions)
                 if (prop.$ref) {
 
                     prop.type = ref2modelNS(prop.$ref);
-                    if (model.imports.indexOf(prop.type) == -1) model.imports.push(prop.type);
+                    model.imports = addToImports(model.imports, prop.$ref);
 
                 } else if (prop.type.indexOf('#/') != -1) {
 
                     prop.type = ref2modelNS(prop.type);
-                    if (model.imports.indexOf(prop.type) == -1) model.imports.push(prop.type);
-
+                    model.imports = addToImports(model.imports, prop.type);
                 }
 
                 if (prop.type == 'array') {
@@ -85,9 +99,8 @@ var models = Object.keys(swagger.definitions)
 
                     } else if (prop.items.$ref) {
 
-                        prop.type = (ref2modelNS(prop.items.$ref));
-                        if (model.imports.indexOf(prop.type) == -1) model.imports.push(prop.type);
-                        prop.type += '[]';
+                        prop.type = ref2modelNS(prop.items.$ref) + '[]';
+                        model.imports = addToImports(model.imports, prop.items.$ref);
 
                     }
 
@@ -114,6 +127,16 @@ var clients = Object.keys(swagger.paths).reduce(function(res, path) {
 
         var operation = operations[method];
 
+        console.log('Parsing operation', gutil.colors.magenta(method), gutil.colors.magenta(path));
+
+        if (path.indexOf('/oauth') > -1) {
+            return;
+        }
+
+        if (!operation.responses || !operation.responses['200']) {
+            throw new Error('Cannot find 200 response');
+        }
+
         operation.path = '/restapi' + path;
 
         operation.method = method;
@@ -127,7 +150,8 @@ var clients = Object.keys(swagger.paths).reduce(function(res, path) {
             if (param.schema) {
 
                 param.type = ref2modelNS(param.schema.$ref); // override type with schema
-                if (operation.imports.indexOf(param.type) == -1) operation.imports.push(param.type);
+                operation.imports = addToImports(operation.imports, param.schema.$ref);
+
                 delete param.schema;
 
             }

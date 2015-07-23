@@ -17,7 +17,6 @@ export class GetPresenceExtensionInfo extends model.Model {
      */
     public extensionNumber:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -33,32 +32,3 @@ export class GetPresenceExtensionInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetPresenceExtensionInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of an extension",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of an extension",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Extension number (usually 3 or 4 digits)",
- *             "$name": "extensionNumber",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

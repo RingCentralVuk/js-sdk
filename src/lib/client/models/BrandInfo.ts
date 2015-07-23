@@ -18,7 +18,6 @@ export class BrandInfo extends model.Model {
      */
     public homeCountry:countryinfo.CountryInfo;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -34,35 +33,3 @@ export class BrandInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "BrandInfo",
- *     "imports": [
- *         "countryinfo.CountryInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a brand",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Brand name, for example  RingCentral UK ,  ClearFax ",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/CountryInfo",
- *             "description": "Home country information",
- *             "$name": "homeCountry",
- *             "isRequired": false,
- *             "type": "countryinfo.CountryInfo"
- *         }
- *     ]
- * }
- */

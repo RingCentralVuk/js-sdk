@@ -32,7 +32,6 @@ export class RegionalSettingsInfo extends model.Model {
      */
     public formattingLocale:formattinglocaleinfo.FormattingLocaleInfo;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -50,55 +49,3 @@ export class RegionalSettingsInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "RegionalSettingsInfo",
- *     "imports": [
- *         "countryinfo.CountryInfo",
- *         "timezoneinfo.TimezoneInfo",
- *         "languageinfo.LanguageInfo",
- *         "greetinglanguageinfo.GreetingLanguageInfo",
- *         "formattinglocaleinfo.FormattingLocaleInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/CountryInfo",
- *             "description": "Extension country information",
- *             "$name": "homeCountry",
- *             "isRequired": false,
- *             "type": "countryinfo.CountryInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/TimezoneInfo",
- *             "description": "Extension timezone information",
- *             "$name": "timezone",
- *             "isRequired": false,
- *             "type": "timezoneinfo.TimezoneInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/LanguageInfo",
- *             "description": "User interface language data",
- *             "$name": "language",
- *             "isRequired": false,
- *             "type": "languageinfo.LanguageInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/GreetingLanguageInfo",
- *             "description": "Information on language used for telephony greetings",
- *             "$name": "greetingLanguage",
- *             "isRequired": false,
- *             "type": "greetinglanguageinfo.GreetingLanguageInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/FormattingLocaleInfo",
- *             "description": "Formatting language preferences for numbers, dates and currencies",
- *             "$name": "formattingLocale",
- *             "isRequired": false,
- *             "type": "formattinglocaleinfo.FormattingLocaleInfo"
- *         }
- *     ]
- * }
- */

@@ -27,7 +27,6 @@ export class ContactAddressInfo extends model.Model {
      */
     public zip:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -45,44 +44,3 @@ export class ContactAddressInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ContactAddressInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Country name of extension user company",
- *             "$name": "country",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "State/province name of extension user company",
- *             "$name": "state",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "City name of extension user company",
- *             "$name": "city",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Street address of extension user company",
- *             "$name": "street",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Zip code of extension user company",
- *             "$name": "zip",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

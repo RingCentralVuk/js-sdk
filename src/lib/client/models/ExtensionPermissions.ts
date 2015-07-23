@@ -13,7 +13,6 @@ export class ExtensionPermissions extends model.Model {
      */
     public internationalCalling:permissioninfo.PermissionInfo;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -28,30 +27,3 @@ export class ExtensionPermissions extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ExtensionPermissions",
- *     "imports": [
- *         "permissioninfo.PermissionInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/PermissionInfo",
- *             "description": "Admin permission",
- *             "$name": "admin",
- *             "isRequired": false,
- *             "type": "permissioninfo.PermissionInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/PermissionInfo",
- *             "description": "International Calling permission",
- *             "$name": "internationalCalling",
- *             "isRequired": false,
- *             "type": "permissioninfo.PermissionInfo"
- *         }
- *     ]
- * }
- */

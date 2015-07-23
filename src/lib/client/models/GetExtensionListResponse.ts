@@ -5,6 +5,9 @@ import paginginfo = require('./PagingInfo');
 
 export class GetExtensionListResponse extends model.Model {
 
+    /**
+     * List of extensions with extension information
+     */
     public records:getextensioninforesponse.GetExtensionInfoResponse[];
 
     /**
@@ -16,7 +19,6 @@ export class GetExtensionListResponse extends model.Model {
      * Information on paging
      */
     public paging:paginginfo.PagingInfo;
-
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
@@ -33,40 +35,3 @@ export class GetExtensionListResponse extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetExtensionListResponse",
- *     "imports": [
- *         "getextensioninforesponse.GetExtensionInfoResponse",
- *         "navigationinfo.NavigationInfo",
- *         "paginginfo.PagingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "getextensioninforesponse.GetExtensionInfoResponse[]",
- *             "items": {
- *                 "$ref": "#/definitions/GetExtensionInfoResponse"
- *             },
- *             "$name": "records",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": false,
- *             "type": "navigationinfo.NavigationInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": false,
- *             "type": "paginginfo.PagingInfo"
- *         }
- *     ]
- * }
- */

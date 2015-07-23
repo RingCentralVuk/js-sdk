@@ -17,7 +17,6 @@ export class DepartmentInfo extends model.Model {
      */
     public extensionNumber:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -33,32 +32,3 @@ export class DepartmentInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "DepartmentInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a department extension",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a department extension",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Number of a department extension",
- *             "$name": "extensionNumber",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

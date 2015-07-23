@@ -22,7 +22,6 @@ export class RecordingInfo extends model.Model {
      */
     public contentUri:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -44,42 +43,3 @@ export enum RecordingInfoType {
     Automatic = <any>'Automatic',
     OnDemand = <any>'OnDemand'
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "RecordingInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "number",
- *             "description": "Internal identifier of the call recording",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to the call recording metadata resource",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "RecordingInfoType",
- *             "enum": [
- *                 "Automatic",
- *                 "OnDemand"
- *             ],
- *             "description": "Indicates recording mode used",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to the call recording binary content",
- *             "$name": "contentUri",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

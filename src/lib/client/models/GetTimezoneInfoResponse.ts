@@ -1,6 +1,6 @@
 import model = require('../Model');
 
-export class TimezoneInfo extends model.Model {
+export class GetTimezoneInfoResponse extends model.Model {
 
     /**
      * Internal identifier of a timezone
@@ -8,17 +8,17 @@ export class TimezoneInfo extends model.Model {
     public id:string;
 
     /**
-     * Canonical URI of a timezone
+     * Canonical URI of the timezone
      */
     public uri:string;
 
     /**
-     * Short name of a timezone
+     * Short name of the timezone
      */
     public name:string;
 
     /**
-     * Meaningful description of the timezone
+     * Description of the timezone
      */
     public description:string;
 
@@ -34,7 +34,7 @@ export class TimezoneInfo extends model.Model {
     }
 
     public getClassName() {
-        return 'TimezoneInfo';
+        return 'GetTimezoneInfoResponse';
     }
 
 }

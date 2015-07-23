@@ -1,14 +1,14 @@
 import model = require('../Model');
-import getmessageinforesponse = require('./GetMessageInfoResponse');
+import gettimezoneinforesponse = require('./GetTimezoneInfoResponse');
 import navigationinfo = require('./NavigationInfo');
 import paginginfo = require('./PagingInfo');
 
-export class GetMessageList extends model.Model {
+export class GetTimezoneListResponse extends model.Model {
 
     /**
-     * List of records with message information
+     * List of timezones
      */
-    public records:getmessageinforesponse.GetMessageInfoResponse[];
+    public records:gettimezoneinforesponse.GetTimezoneInfoResponse[];
 
     /**
      * Information on navigation
@@ -23,7 +23,7 @@ export class GetMessageList extends model.Model {
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
-            {property: 'records', Class: getmessageinforesponse.GetMessageInfoResponse, isArray: true,isRequired: false},
+            {property: 'records', Class: gettimezoneinforesponse.GetTimezoneInfoResponse, isArray: true,isRequired: false},
             {property: 'navigation', Class: navigationinfo.NavigationInfo, isArray: false,isRequired: false},
             {property: 'paging', Class: paginginfo.PagingInfo, isArray: false,isRequired: false}
         ];
@@ -31,7 +31,7 @@ export class GetMessageList extends model.Model {
     }
 
     public getClassName() {
-        return 'GetMessageList';
+        return 'GetTimezoneListResponse';
     }
 
 }

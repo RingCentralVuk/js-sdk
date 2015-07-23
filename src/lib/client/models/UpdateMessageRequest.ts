@@ -7,7 +7,6 @@ export class UpdateMessageRequest extends model.Model {
      */
     public readStatus:UpdateMessageRequestReadStatus;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -26,24 +25,3 @@ export enum UpdateMessageRequestReadStatus {
     Read = <any>'Read',
     Unread = <any>'Unread'
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "UpdateMessageRequest",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "UpdateMessageRequestReadStatus",
- *             "enum": [
- *                 "Read",
- *                 "Unread"
- *             ],
- *             "description": "Read status of a message to be changed. Multiple values are accepted",
- *             "$name": "readStatus",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

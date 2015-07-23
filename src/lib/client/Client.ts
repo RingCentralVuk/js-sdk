@@ -17,12 +17,19 @@ export class Client {
 
     }
 
-    protected parseOptions(apiOptions:any, //request.IAjaxOptions,
+    protected parseOptions(method:string,
+                           url:string,
                            options:any,
                            operationParameters:IOperationParameter[]) { //:request.IAjaxOptions
 
         options = options || {};
-        apiOptions = apiOptions || {};
+
+        var apiOptions = {
+            url: url,
+            method: method,
+            query: {},
+            body: null
+        };
 
         operationParameters.forEach((param)=> {
 
@@ -46,7 +53,6 @@ export class Client {
 
             if (param.in == 'query' && options.hasOwnProperty(param.name)) {
 
-                apiOptions.query = apiOptions.query || {};
                 apiOptions.query[param.name] = options[param.name];
 
             }

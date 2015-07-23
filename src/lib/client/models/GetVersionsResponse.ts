@@ -8,6 +8,9 @@ export class GetVersionsResponse extends model.Model {
      */
     public uri:string;
 
+    /**
+     * Full API version information: uri, number, release date
+     */
     public apiVersions:versioninfo.VersionInfo[];
 
     /**
@@ -19,7 +22,6 @@ export class GetVersionsResponse extends model.Model {
      * Server revision
      */
     public serverRevision:string;
-
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
@@ -37,42 +39,3 @@ export class GetVersionsResponse extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetVersionsResponse",
- *     "imports": [
- *         "versioninfo.VersionInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Сanonical URI of the API version",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "versioninfo.VersionInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/VersionInfo"
- *             },
- *             "$name": "apiVersions",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Server version",
- *             "$name": "serverVersion",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Server revision",
- *             "$name": "serverRevision",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

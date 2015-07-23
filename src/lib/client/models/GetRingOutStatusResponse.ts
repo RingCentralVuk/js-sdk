@@ -13,7 +13,6 @@ export class GetRingOutStatusResponse extends model.Model {
      */
     public status:ringoutstatusinfo.RingOutStatusInfo;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -28,29 +27,3 @@ export class GetRingOutStatusResponse extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetRingOutStatusResponse",
- *     "imports": [
- *         "ringoutstatusinfo.RingOutStatusInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a RingOut call",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/RingOutStatusInfo",
- *             "description": "RingOut status information",
- *             "$name": "status",
- *             "isRequired": false,
- *             "type": "ringoutstatusinfo.RingOutStatusInfo"
- *         }
- *     ]
- * }
- */

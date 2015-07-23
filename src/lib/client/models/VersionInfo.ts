@@ -22,7 +22,6 @@ export class VersionInfo extends model.Model {
      */
     public uriString:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -39,38 +38,3 @@ export class VersionInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "VersionInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of API versions",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Version of the RingCentral REST API",
- *             "$name": "versionString",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Release date of this version",
- *             "$name": "releaseDate",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "URI part determining the current version",
- *             "$name": "uriString",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

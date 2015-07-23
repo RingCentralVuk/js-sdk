@@ -22,7 +22,6 @@ export class GetCallRecordingResponse extends model.Model {
      */
     public duration:number;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -39,38 +38,3 @@ export class GetCallRecordingResponse extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetCallRecordingResponse",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "number",
- *             "description": "Internal identifier of the call recording",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to the call recording binary content",
- *             "$name": "contentUri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Call recording file format. Supported format is audio/x-wav",
- *             "$name": "contentType",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Recorded call duration",
- *             "$name": "duration",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

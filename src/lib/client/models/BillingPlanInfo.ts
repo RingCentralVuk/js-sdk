@@ -27,7 +27,6 @@ export class BillingPlanInfo extends model.Model {
      */
     public type:BillingPlanInfoType;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -59,56 +58,3 @@ export enum BillingPlanInfoType {
     TrialNoCC = <any>'TrialNoCC',
     Free = <any>'Free'
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "BillingPlanInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a billing plan",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Billing plan name",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "BillingPlanInfoDurationUnit",
- *             "enum": [
- *                 "Month",
- *                 "Day"
- *             ],
- *             "description": "Duration period",
- *             "$name": "durationUnit",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Number of duration units",
- *             "$name": "duration",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "BillingPlanInfoType",
- *             "enum": [
- *                 "Initial",
- *                 "Regular",
- *                 "Suspended",
- *                 "Trial",
- *                 "TrialNoCC",
- *                 "Free"
- *             ],
- *             "description": "Billing plan type",
- *             "$name": "type",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

@@ -22,7 +22,6 @@ export class CountryInfo extends model.Model {
      */
     public isoCode:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -39,38 +38,3 @@ export class CountryInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "CountryInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a home country",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Home country URI",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Home country calling code defined by ITU-T recommendations E.123 and E.164, see Calling Codes",
- *             "$name": "callingCode",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Home country code according to the ISO standard, see ISO 3166",
- *             "$name": "isoCode",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

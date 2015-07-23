@@ -23,14 +23,13 @@ export class CreatePagerMessageRequest extends model.Model {
      */
     public to:messagestorecallerinfo.MessageStoreCallerInfo;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
             {property: 'from', Class: messagestorecallerinfo.MessageStoreCallerInfo, isArray: false,isRequired: false},
             {property: 'replyOn', Class: null /* number */, isArray: false,isRequired: false},
-            {property: 'text', Class: null /* string */, isArray: false,isRequired: false},
-            {property: 'to', Class: messagestorecallerinfo.MessageStoreCallerInfo, isArray: false,isRequired: false}
+            {property: 'text', Class: null /* string */, isArray: false,isRequired: true},
+            {property: 'to', Class: messagestorecallerinfo.MessageStoreCallerInfo, isArray: false,isRequired: true}
         ];
 
     }
@@ -40,42 +39,3 @@ export class CreatePagerMessageRequest extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "CreatePagerMessageRequest",
- *     "imports": [
- *         "messagestorecallerinfo.MessageStoreCallerInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/MessageStoreCallerInfo",
- *             "description": "Sender of pager message. The extensionNumber property must be filled",
- *             "$name": "from",
- *             "isRequired": false,
- *             "type": "messagestorecallerinfo.MessageStoreCallerInfo"
- *         },
- *         {
- *             "type": "number",
- *             "description": "Optional. ID of a message this message replies to",
- *             "$name": "replyOn",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Text of pager message",
- *             "$name": "text",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/MessageStoreCallerInfo",
- *             "description": "Receiver of pager message. The extensionNumber property must be filled",
- *             "$name": "to",
- *             "isRequired": false,
- *             "type": "messagestorecallerinfo.MessageStoreCallerInfo"
- *         }
- *     ]
- * }
- */

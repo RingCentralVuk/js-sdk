@@ -7,7 +7,7 @@
 		exports["RCSDK"] = factory(require("dom-storage"), (function webpackLoadOptionalExternalModule() { try { return require("xhr2"); } catch(e) {} }()));
 	else
 		root["RCSDK"] = factory(root["localStorage"], root["XMLHttpRequest"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_115__, __WEBPACK_EXTERNAL_MODULE_116__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_108__, __WEBPACK_EXTERNAL_MODULE_109__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -55,37 +55,37 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../typings/externals.d.ts" />
-var pubnubMock = __webpack_require__(5);
-var xhrMock = __webpack_require__(8);
-var xhrResponse = __webpack_require__(9);
-var ajaxObserver = __webpack_require__(10);
-var cache = __webpack_require__(11);
-var context = __webpack_require__(12);
-var helper = __webpack_require__(2);
-var list = __webpack_require__(4);
-var log = __webpack_require__(7);
-var observable = __webpack_require__(6);
-var pageVisibility = __webpack_require__(13);
-var platform = __webpack_require__(14);
-var subscription = __webpack_require__(18);
+var pubnubMock = __webpack_require__(1);
+var xhrMock = __webpack_require__(5);
+var xhrResponse = __webpack_require__(6);
+var ajaxObserver = __webpack_require__(7);
+var cache = __webpack_require__(8);
+var context = __webpack_require__(9);
+var helper = __webpack_require__(10);
+var list = __webpack_require__(11);
+var log = __webpack_require__(4);
+var observable = __webpack_require__(2);
+var pageVisibility = __webpack_require__(12);
+var platform = __webpack_require__(13);
+var subscription = __webpack_require__(17);
 var utils = __webpack_require__(3);
-var validator = __webpack_require__(19);
-var accountHelper = __webpack_require__(20);
-var blockedNumberHelper = __webpack_require__(21);
-var callHelper = __webpack_require__(22);
-var contactHelper = __webpack_require__(25);
-var contactGroupHelper = __webpack_require__(26);
-var conferencingHelper = __webpack_require__(27);
-var countryHelper = __webpack_require__(28);
-var deviceHelper = __webpack_require__(29);
-var deviceModelHelper = __webpack_require__(30);
-var extensionHelper = __webpack_require__(24);
-var forwardingNumberHelper = __webpack_require__(1);
+var validator = __webpack_require__(18);
+var accountHelper = __webpack_require__(19);
+var blockedNumberHelper = __webpack_require__(20);
+var callHelper = __webpack_require__(21);
+var contactHelper = __webpack_require__(24);
+var contactGroupHelper = __webpack_require__(25);
+var conferencingHelper = __webpack_require__(26);
+var countryHelper = __webpack_require__(27);
+var deviceHelper = __webpack_require__(28);
+var deviceModelHelper = __webpack_require__(29);
+var extensionHelper = __webpack_require__(23);
+var forwardingNumberHelper = __webpack_require__(30);
 var languageHelper = __webpack_require__(31);
 var locationHelper = __webpack_require__(32);
 var messageHelper = __webpack_require__(34);
 var phoneNumberHelper = __webpack_require__(35);
-var presenceHelper = __webpack_require__(23);
+var presenceHelper = __webpack_require__(22);
 var ringoutHelper = __webpack_require__(36);
 var serviceHelper = __webpack_require__(37);
 var shippingMethodHelper = __webpack_require__(38);
@@ -94,15 +94,14 @@ var timezoneHelper = __webpack_require__(39);
 var accountClient = __webpack_require__(40);
 var versioningClient = __webpack_require__(64);
 var callLogClient = __webpack_require__(68);
-var clientAppClient = __webpack_require__(81);
-var dictionaryClient = __webpack_require__(90);
-var extensionClient = __webpack_require__(94);
-var messagesClient = __webpack_require__(96);
-var notificationsClient = __webpack_require__(101);
-var presenceClient = __webpack_require__(104);
-var ringoutClient = __webpack_require__(107);
-var promise = __webpack_require__(110);
-var pubnub = __webpack_require__(113);
+var dictionaryClient = __webpack_require__(79);
+var extensionClient = __webpack_require__(87);
+var messagesClient = __webpack_require__(89);
+var notificationsClient = __webpack_require__(94);
+var presenceClient = __webpack_require__(97);
+var ringoutClient = __webpack_require__(100);
+var promise = __webpack_require__(103);
+var pubnub = __webpack_require__(106);
 var RCSDK = (function () {
     function RCSDK(options) {
         options = options || {};
@@ -155,14 +154,13 @@ var RCSDK = (function () {
     RCSDK.prototype.getAccount = function () { return accountClient.$get(this.getContext()); };
     RCSDK.prototype.getVersioning = function () { return versioningClient.$get(this.getContext()); };
     RCSDK.prototype.getCallLog = function () { return callLogClient.$get(this.getContext()); };
-    RCSDK.prototype.getClientApp = function () { return clientAppClient.$get(this.getContext()); };
     RCSDK.prototype.getDictionary = function () { return dictionaryClient.$get(this.getContext()); };
     RCSDK.prototype.getExtension = function () { return extensionClient.$get(this.getContext()); };
     RCSDK.prototype.getMessages = function () { return messagesClient.$get(this.getContext()); };
     RCSDK.prototype.getNotifications = function () { return notificationsClient.$get(this.getContext()); };
     RCSDK.prototype.getPresence = function () { return presenceClient.$get(this.getContext()); };
     RCSDK.prototype.getRingout = function () { return ringoutClient.$get(this.getContext()); };
-    RCSDK.version = '1.3.0';
+    RCSDK.version = '1.3.1';
     RCSDK.url = {
         sandbox: 'https://platform.devtest.ringcentral.com',
         production: 'https://platform.ringcentral.com'
@@ -170,7 +168,7 @@ var RCSDK = (function () {
     RCSDK.injections = {
         localStorage: (typeof (localStorage) !== 'undefined'
             ? localStorage
-            : __webpack_require__(115)),
+            : __webpack_require__(108)),
         Promise: typeof (Promise) !== 'undefined' ? Promise : promise.Promise,
         PUBNUB: pubnub,
         XHR: function () {
@@ -191,7 +189,7 @@ var RCSDK = (function () {
             }
             catch (e3) { }
             try {
-                return new (__webpack_require__(116))();
+                return new (__webpack_require__(109))();
             }
             catch (e4) { } // Node only
             throw new Error("This browser does not support XMLHttpRequest.");
@@ -208,57 +206,47 @@ module.exports = RCSDK;
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-/// <reference path="../../typings/externals.d.ts" />
+/// <reference path="../../../typings/externals.d.ts" />
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var list = __webpack_require__(4);
-var ForwardingNumber = (function (_super) {
-    __extends(ForwardingNumber, _super);
-    function ForwardingNumber(context) {
+var observable = __webpack_require__(2);
+var PubnubMock = (function (_super) {
+    __extends(PubnubMock, _super);
+    function PubnubMock(context, options) {
+        this.options = options;
+        this.crypto_obj = context.getPubnubReal().crypto_obj;
         _super.call(this, context);
-        this.list = list.$get(context);
     }
-    ForwardingNumber.prototype.createUrl = function (options, id) {
-        options = options || {};
-        return '/account/~/extension/' + (options.extensionId || '~') + '/forwarding-number' + (id ? '/' + id : '');
+    PubnubMock.prototype.ready = function () { };
+    PubnubMock.prototype.subscribe = function (options) {
+        this.on('message-' + options.channel, options.message);
     };
-    ForwardingNumber.prototype.getId = function (forwardingNumber) {
-        return forwardingNumber && (forwardingNumber.id || (forwardingNumber.phoneNumber)); //TODO @exceptionalCase
+    PubnubMock.prototype.unsubscribe = function (options) {
+        this.off('message-' + options.channel);
     };
-    ForwardingNumber.prototype.hasFeature = function (phoneNumber, feature) {
-        return (!!phoneNumber && !!phoneNumber.features && phoneNumber.features.indexOf(feature) != -1);
+    PubnubMock.prototype.receiveMessage = function (msg, channel) {
+        this.emit('message-' + channel, msg, 'env', channel);
     };
-    ForwardingNumber.prototype.comparator = function (options) {
-        return this.list.comparator(this.utils.extend({
-            sortBy: 'label'
-        }, options));
+    return PubnubMock;
+})(observable.Observable);
+exports.PubnubMock = PubnubMock;
+var PubnubFactory = (function () {
+    function PubnubFactory(context) {
+        this.context = context;
+        this.crypto_obj = context.getPubnubReal().crypto_obj;
+    }
+    PubnubFactory.prototype.init = function (options) {
+        return new PubnubMock(this.context, options);
     };
-    ForwardingNumber.prototype.filter = function (options) {
-        var _this = this;
-        options = this.utils.extend({
-            features: []
-        }, options);
-        return this.list.filter([{
-                condition: options.features.length,
-                filterFn: function (item) {
-                    return options.features.some(function (feature) {
-                        return _this.hasFeature(item, feature);
-                    });
-                }
-            }]);
-    };
-    return ForwardingNumber;
-})(helper.Helper);
-exports.ForwardingNumber = ForwardingNumber;
+    return PubnubFactory;
+})();
+exports.PubnubFactory = PubnubFactory;
 function $get(context) {
-    return context.createSingleton('ForwardingNumber', function () {
-        return new ForwardingNumber(context);
-    });
+    return new PubnubFactory(context);
 }
 exports.$get = $get;
 
@@ -269,156 +257,163 @@ exports.$get = $get;
 
 /// <reference path="../../typings/externals.d.ts" />
 var utils = __webpack_require__(3);
-var Helper = (function () {
-    function Helper(context) {
-        this.defaultProperty = 'id';
+var log = __webpack_require__(4);
+/**
+ * @see https://github.com/Microsoft/TypeScript/issues/275
+ */
+var Observable = (function () {
+    function Observable(context) {
+        if (!(this instanceof Observable))
+            throw new Error('Observable(): New operator was omitted');
+        Object.defineProperty(this, 'listeners', { value: {}, enumerable: false, writable: true });
+        Object.defineProperty(this, 'oneTimeEvents', { value: {}, enumerable: false, writable: true });
+        Object.defineProperty(this, 'oneTimeArguments', { value: {}, enumerable: false, writable: true });
         this.context = context;
         this.utils = utils.$get(context);
+        this.log = log.$get(context);
     }
-    Helper.prototype.getContext = function () {
-        return this.context;
-    };
-    Helper.prototype.createUrl = function (options, id) {
-        return '';
-    };
-    Helper.prototype.getId = function (object) {
-        return object && object[this.defaultProperty];
-    };
-    Helper.prototype.isNew = function (object) {
-        return !this.getId(object) || !this.getUri(object);
-    };
-    Helper.prototype.resetAsNew = function (object) {
-        if (object) {
-            delete object.id;
-            delete object.uri;
-        }
-        return object;
-    };
-    Helper.prototype.getUri = function (object) {
-        return object && object.uri;
-    };
-    Helper.prototype.parseMultipartResponse = function (ajax) {
-        if (ajax.isMultipart()) {
-            // ajax.data has full array, leave only successful
-            return ajax.data.filter(function (result) {
-                return (!result.error);
-            }).map(function (result) {
-                return result.data;
-            });
-        }
-        else {
-            return [ajax.data];
-        }
+    Observable.prototype.hasListeners = function (event) {
+        return (event in this.listeners);
     };
     /**
-     * Options have higher priority, if object.url and options.url were provided, options.url will be returned
-     * If no URL was provided, default will be returned
+     * @deprecated
+     * @param {string} event
      */
-    Helper.prototype.loadRequest = function (object, options) {
-        return this.utils.extend(options || {}, {
-            url: (options && options.url) || (object && this.getUri(object)) || this.createUrl(),
-            method: (options && options.method) || 'GET'
-        });
+    Observable.prototype.registerOneTimeEvent = function (event) {
+        this.oneTimeEvents[event] = false;
+        this.oneTimeArguments[event] = [];
     };
-    /**
-     * Options have higher priority, if object.url and options.url were provided, options.url will be returned
-     * If no URL was provided, default will be returned
-     */
-    Helper.prototype.saveRequest = function (object, options) {
-        if (!object && !(options && (options.post || options.body)))
-            throw new Error('No Object');
-        return this.utils.extend(options || {}, {
-            method: (options && options.method) || (this.isNew(object) ? 'POST' : 'PUT'),
-            url: (options && options.url) || this.getUri(object) || this.createUrl(),
-            body: (options && (options.body || options.post)) || object
-        });
-    };
-    /**
-     * Options have higher priority, if object.url and options.url were provided, options.url will be returned
-     * If no URL was provided exception will be thrown
-     */
-    Helper.prototype.deleteRequest = function (object, options) {
-        options = options || {};
-        if (!this.getUri(object) && !(options && options.url))
-            throw new Error('Object has to be not new or URL must be provided');
-        return this.utils.extend(options || {}, {
-            method: (options && options.method) || 'DELETE',
-            url: (options && options.url) || this.getUri(object)
-        });
-    };
-    /**
-     * If no url was provided, default SYNC url will be returned
-     */
-    Helper.prototype.syncRequest = function (options) {
-        options = options || {};
-        options.url = options.url || this.createUrl({ sync: true });
-        options.query = options.query || options.get || {};
-        if (!!options.query.syncToken) {
-            options.query = {
-                syncType: 'ISync',
-                syncToken: options.get.syncToken
-            };
-        }
-        else {
-            options.query.syncType = 'FSync';
-        }
-        return options;
-    };
-    Helper.prototype.nextPageExists = function (data) {
-        return (data && data.navigation && ('nextPage' in data.navigation));
-    };
-    /**
-     * array - an array to be indexed
-     * getIdFn - must return an ID for each array item
-     * gather - if true, then each index will have an array of items, that has same ID, otherwise the first indexed
-     * item wins
-     */
-    Helper.prototype.index = function (array, getIdFn, gather) {
-        getIdFn = getIdFn || this.getId.bind(this);
-        array = array || [];
-        return array.reduce(function (index, item) {
-            var id = getIdFn(item);
-            if (!id || (index[id] && !gather))
-                return index;
-            if (gather) {
-                if (!index[id])
-                    index[id] = [];
-                index[id].push(item);
-            }
-            else {
-                index[id] = item;
-            }
-            return index;
-        }, {});
-    };
-    /**
-     * Returns a shallow copy of merged _target_ array plus _supplement_ array
-     * mergeItems
-     * - if true, properties of _supplement_ item will be applied to _target_ item,
-     * - otherwise _target_ item will be replaced
-     */
-    Helper.prototype.merge = function (target, supplement, getIdFn, mergeItems) {
+    Observable.prototype.on = function (events, callback) {
         var _this = this;
-        getIdFn = getIdFn || this.getId.bind(this);
-        target = target || [];
-        supplement = supplement || [];
-        var supplementIndex = this.index(supplement, getIdFn), updatedIDs = [], result = target.map(function (item) {
-            var id = getIdFn(item), newItem = supplementIndex[id];
-            if (newItem)
-                updatedIDs.push(id);
-            return newItem ? (mergeItems ? _this.utils.extend(item, newItem) : newItem) : item;
+        if (typeof events == 'string')
+            events = [events];
+        if (!events)
+            throw new Error('No events to subscribe to');
+        if (typeof callback !== 'function')
+            throw new Error('Callback must be a function');
+        var self = this;
+        events.forEach(function (event) {
+            if (!self.hasListeners(event))
+                self.listeners[event] = [];
+            self.listeners[event].push(callback);
+            if (self.isOneTimeEventFired(event)) {
+                _this.log.debug('Observable.on(%s): One-time event has been fired already, executing callback', event);
+                callback.apply(self, self.getOneTimeEventArgumens(event));
+            }
         });
-        supplement.forEach(function (item) {
-            if (updatedIDs.indexOf(getIdFn(item)) == -1)
-                result.push(item);
+        return this;
+    };
+    Observable.prototype.emit = function (event) {
+        var _this = this;
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        if (this.isOneTimeEventFired(event)) {
+            this.log.debug('Observable.emit(%s): One-time event has been fired already', event);
+            return null;
+        }
+        var result = null;
+        if (this.isOneTimeEvent(event)) {
+            this.setOneTimeEventFired(event);
+            this.setOneTimeEventArgumens(event, args);
+        }
+        if (!this.hasListeners(event))
+            return null;
+        this.listeners[event].some(function (callback) {
+            result = callback.apply(_this, args);
+            return (result === false);
         });
         return result;
     };
-    return Helper;
+    Observable.prototype.off = function (event, callback) {
+        var _this = this;
+        if (!event) {
+            this.listeners = {};
+            this.oneTimeEvents = {};
+            this.oneTimeArguments = {};
+        }
+        else {
+            if (!callback) {
+                delete this.listeners[event];
+            }
+            else {
+                if (!this.hasListeners(event))
+                    return this;
+                this.listeners[event].forEach(function (cb, i) {
+                    if (cb === callback)
+                        delete _this.listeners[event][i];
+                });
+            }
+        }
+        return this;
+    };
+    /**
+     * @deprecated
+     * @param event
+     * @returns {boolean}
+     */
+    Observable.prototype.isOneTimeEvent = function (event) {
+        return (event in this.oneTimeEvents);
+    };
+    /**
+     * @deprecated
+     * @param {string} event
+     * @returns {boolean}
+     */
+    Observable.prototype.isOneTimeEventFired = function (event) {
+        if (!this.isOneTimeEvent(event))
+            return false;
+        return (this.oneTimeEvents[event]);
+    };
+    /**
+     * @deprecated
+     * @param event
+     */
+    Observable.prototype.setOneTimeEventFired = function (event) {
+        this.oneTimeEvents[event] = true;
+    };
+    /**
+     * @deprecated
+     * @param {string} event
+     * @param args
+     */
+    Observable.prototype.setOneTimeEventArgumens = function (event, args) {
+        this.oneTimeArguments[event] = args;
+    };
+    /**
+     * @deprecated
+     * @param {string} event
+     * @returns {any}
+     */
+    Observable.prototype.getOneTimeEventArgumens = function (event) {
+        return this.oneTimeArguments[event];
+    };
+    /**
+     * @deprecated
+     * @returns {T}
+     */
+    Observable.prototype.offAll = function () {
+        return this.off();
+    };
+    Observable.prototype.destroy = function () {
+        this.off();
+        this.log.debug('Observable.destroy(): Listeners were destroyed');
+        return this;
+    };
+    Observable.prototype.emitAndCallback = function (event, args, callback) {
+        args = this.utils.argumentsToArray(args);
+        if (event)
+            this.emit.apply(this, [event].concat(args));
+        if (callback)
+            callback.apply(this, args);
+        return this;
+    };
+    return Observable;
 })();
-exports.Helper = Helper;
+exports.Observable = Observable;
 function $get(context) {
-    return new Helper(context);
+    return new Observable(context);
 }
 exports.$get = $get;
 
@@ -658,6 +653,531 @@ exports.$get = $get;
 
 /// <reference path="../../typings/externals.d.ts" />
 var utils = __webpack_require__(3);
+var Log = (function () {
+    function Log(context, console) {
+        if (!console) {
+            console = {
+                log: function () { },
+                warn: function () { },
+                info: function () { },
+                error: function () { }
+            };
+        }
+        this.context = context;
+        this.console = console;
+        this.utils = utils.$get(context);
+        this.logDebug = false;
+        this.logInfo = false;
+        this.logWarnings = false;
+        this.logErrors = false;
+        this.addTimestamps = false;
+    }
+    Log.prototype.disableAll = function () {
+        this.logDebug = false;
+        this.logInfo = false;
+        this.logWarnings = false;
+        this.logErrors = false;
+    };
+    Log.prototype.enableAll = function () {
+        this.logDebug = true;
+        this.logInfo = true;
+        this.logWarnings = true;
+        this.logErrors = true;
+    };
+    Log.prototype.parseArguments = function (args) {
+        args = this.utils.argumentsToArray(args);
+        if (this.addTimestamps)
+            args.unshift(new Date().toLocaleString(), '-');
+        return args;
+    };
+    Log.prototype.debug = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i - 0] = arguments[_i];
+        }
+        if (this.logDebug)
+            this.console.log.apply(this.console, this.parseArguments(arguments));
+    };
+    Log.prototype.info = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i - 0] = arguments[_i];
+        }
+        if (this.logInfo)
+            this.console.info.apply(this.console, this.parseArguments(arguments));
+    };
+    Log.prototype.warn = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i - 0] = arguments[_i];
+        }
+        if (this.logWarnings)
+            this.console.warn.apply(this.console, this.parseArguments(arguments));
+    };
+    Log.prototype.error = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i - 0] = arguments[_i];
+        }
+        if (this.logErrors)
+            this.console.error.apply(this.console, this.parseArguments(arguments));
+    };
+    return Log;
+})();
+exports.Log = Log;
+function $get(context) {
+    return context.createSingleton('Log', function () {
+        return new Log(context, console);
+    });
+}
+exports.$get = $get;
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+var utils = __webpack_require__(3);
+var log = __webpack_require__(4);
+var xhrResponse = __webpack_require__(6); //FIXME Circular
+var XhrMock = (function () {
+    function XhrMock(context) {
+        // Service
+        this.context = context;
+        this.responses = xhrResponse.$get(context);
+        this.log = log.$get(context);
+        this.utils = utils.$get(context);
+        // Request
+        this.async = true;
+        this.method = '';
+        this.url = '';
+        this.requestHeaders = {};
+        this.withCredentials = false;
+        // Response
+        this.data = null;
+        this.readyState = 0;
+        this.responseHeaders = {};
+        this.status = 0;
+    }
+    XhrMock.prototype.getResponseHeader = function (header) {
+        return this.responseHeaders[header.toLowerCase()];
+    };
+    XhrMock.prototype.setRequestHeader = function (header, value) {
+        this.requestHeaders[header.toLowerCase()] = value;
+    };
+    XhrMock.prototype.getAllResponseHeaders = function () {
+        var res = [];
+        this.utils.forEach(this.responseHeaders, function (value, name) {
+            res.push(name + ':' + value);
+        });
+        return res.join('\n');
+    };
+    XhrMock.prototype.open = function (method, url, async) {
+        this.method = method;
+        this.url = url;
+        this.async = async;
+    };
+    XhrMock.prototype.send = function (data) {
+        var _this = this;
+        var contentType = this.getRequestHeader('Content-Type');
+        this.data = data;
+        if (this.data && typeof this.data == 'string') {
+            // For convenience encoded post data will be decoded
+            if (contentType == 'application/json')
+                this.data = JSON.parse(this.data);
+            if (contentType == 'application/x-www-form-urlencoded')
+                this.data = this.utils.parseQueryString(this.data);
+        }
+        this.log.debug('API REQUEST', this.method, this.url);
+        var currentResponse = this.responses.find(this);
+        if (!currentResponse) {
+            setTimeout(function () {
+                if (_this.onerror)
+                    _this.onerror(new Error('Unknown request: ' + _this.url));
+            }, 1);
+            return;
+        }
+        this.setStatus(200);
+        this.setResponseHeader('Content-Type', 'application/json');
+        var res = currentResponse.response(this), Promise = this.context.getPromise(), onLoad = function (res) {
+            if (_this.getResponseHeader('Content-Type') == 'application/json')
+                res = JSON.stringify(res);
+            _this.responseText = res;
+            setTimeout(function () {
+                if (_this.onload)
+                    _this.onload();
+            }, 1);
+        };
+        if (res instanceof Promise) {
+            res.then(onLoad.bind(this)).catch(this.onerror.bind(this));
+        }
+        else
+            onLoad(res);
+    };
+    XhrMock.prototype.abort = function () {
+        this.log.debug('XhrMock.destroy(): Aborted');
+    };
+    XhrMock.prototype.getRequestHeader = function (header) {
+        return this.requestHeaders[header.toLowerCase()];
+    };
+    XhrMock.prototype.setResponseHeader = function (header, value) {
+        this.responseHeaders[header.toLowerCase()] = value;
+    };
+    XhrMock.prototype.setStatus = function (status) {
+        this.status = status;
+        return this;
+    };
+    return XhrMock;
+})();
+exports.XhrMock = XhrMock;
+function $get(context) {
+    return new XhrMock(context);
+}
+exports.$get = $get;
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+var XhrResponse = (function () {
+    function XhrResponse(context) {
+        this.responses = [];
+    }
+    XhrResponse.prototype.add = function (response) {
+        this.responses.push(response);
+    };
+    XhrResponse.prototype.clear = function () {
+        this.responses = [];
+    };
+    XhrResponse.prototype.find = function (ajax) {
+        var currentResponse = null;
+        this.responses.forEach(function (response) {
+            if (ajax.url.indexOf(response.path) > -1 && (!response.test || response.test(ajax))) {
+                currentResponse = response;
+            }
+        });
+        return currentResponse;
+    };
+    return XhrResponse;
+})();
+exports.XhrResponse = XhrResponse;
+function $get(context) {
+    return context.createSingleton('XhrResponse', function () {
+        return new XhrResponse(context);
+    });
+}
+exports.$get = $get;
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+/// <reference path="../../typings/externals.d.ts" />
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var observable = __webpack_require__(2);
+var AjaxObserver = (function (_super) {
+    __extends(AjaxObserver, _super);
+    function AjaxObserver() {
+        _super.apply(this, arguments);
+        this.events = {
+            beforeRequest: 'beforeRequest',
+            requestSuccess: 'requestSuccess',
+            requestError: 'requestError' // means that request failed completely
+        };
+    }
+    return AjaxObserver;
+})(observable.Observable);
+exports.AjaxObserver = AjaxObserver;
+function $get(context) {
+    return context.createSingleton('AjaxObserver', function () {
+        return new AjaxObserver(context);
+    });
+}
+exports.$get = $get;
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+/// <reference path="../../typings/externals.d.ts" />
+var Cache = (function () {
+    function Cache(context) {
+        this.setPrefix();
+        this.context = context;
+        this.storage = context.getLocalStorage(); // storage must be defined from outside
+    }
+    Cache.prototype.setPrefix = function (prefix) {
+        this.prefix = prefix || 'rc-';
+        return this;
+    };
+    Cache.prototype.prefixKey = function (key) {
+        return this.prefix + key;
+    };
+    Cache.prototype.setItem = function (key, data) {
+        this.storage.setItem(this.prefixKey(key), JSON.stringify(data));
+        return this;
+    };
+    Cache.prototype.removeItem = function (key) {
+        this.storage.removeItem(this.prefixKey(key));
+        return this;
+    };
+    Cache.prototype.getItem = function (key) {
+        var item = this.storage.getItem(this.prefixKey(key));
+        if (!item)
+            return null;
+        return JSON.parse(item);
+    };
+    Cache.prototype.clean = function () {
+        for (var key in this.storage) {
+            if (!this.storage.hasOwnProperty(key))
+                continue;
+            if (key.indexOf(this.prefix) === 0) {
+                this.storage.removeItem(key);
+                delete this.storage[key];
+            }
+        }
+        return this;
+    };
+    return Cache;
+})();
+exports.Cache = Cache;
+function $get(context) {
+    return context.createSingleton('Cache', function () {
+        return new Cache(context);
+    });
+}
+exports.$get = $get;
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+/// <reference path="../../typings/externals.d.ts" />
+var Context = (function () {
+    function Context(injections) {
+        this.singletons = {};
+        this.injections = injections;
+        this.stubPubnub = false;
+        this.stubAjax = false;
+    }
+    Context.prototype.createSingleton = function (name, factory) {
+        if (!this.singletons[name])
+            this.singletons[name] = factory();
+        return this.singletons[name];
+    };
+    Context.prototype.usePubnubStub = function (flag) {
+        this.stubPubnub = !!flag;
+        return this;
+    };
+    Context.prototype.useAjaxStub = function (flag) {
+        this.stubAjax = !!flag;
+        return this;
+    };
+    Context.prototype.getPubnub = function () {
+        return this.stubPubnub ? this.injections.pubnubMock.$get(this) : this.getPubnubReal();
+    };
+    Context.prototype.getPubnubReal = function () {
+        return this.injections.PUBNUB;
+    };
+    Context.prototype.getLocalStorage = function () {
+        var _this = this;
+        return this.createSingleton('localStorage', function () {
+            if (typeof _this.injections.localStorage !== 'function') {
+                return _this.injections.localStorage; // this is window.localStorage
+            }
+            return new _this.injections.localStorage(); // this is NPM dom-storage constructor
+        });
+    };
+    Context.prototype.getPromise = function () {
+        return this.injections.Promise;
+    };
+    Context.prototype.getXHR = function () {
+        return (this.stubAjax ? this.injections.xhrMock.$get(this) : this.injections.XHR());
+    };
+    return Context;
+})();
+exports.Context = Context;
+function $get(injections) {
+    return new Context(injections);
+}
+exports.$get = $get;
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+/// <reference path="../../typings/externals.d.ts" />
+var utils = __webpack_require__(3);
+var Helper = (function () {
+    function Helper(context) {
+        this.defaultProperty = 'id';
+        this.context = context;
+        this.utils = utils.$get(context);
+    }
+    Helper.prototype.getContext = function () {
+        return this.context;
+    };
+    Helper.prototype.createUrl = function (options, id) {
+        return '';
+    };
+    Helper.prototype.getId = function (object) {
+        return object && object[this.defaultProperty];
+    };
+    Helper.prototype.isNew = function (object) {
+        return !this.getId(object) || !this.getUri(object);
+    };
+    Helper.prototype.resetAsNew = function (object) {
+        if (object) {
+            delete object.id;
+            delete object.uri;
+        }
+        return object;
+    };
+    Helper.prototype.getUri = function (object) {
+        return object && object.uri;
+    };
+    Helper.prototype.parseMultipartResponse = function (ajax) {
+        if (ajax.isMultipart()) {
+            // ajax.data has full array, leave only successful
+            return ajax.data.filter(function (result) {
+                return (!result.error);
+            }).map(function (result) {
+                return result.data;
+            });
+        }
+        else {
+            return [ajax.data];
+        }
+    };
+    /**
+     * Options have higher priority, if object.url and options.url were provided, options.url will be returned
+     * If no URL was provided, default will be returned
+     */
+    Helper.prototype.loadRequest = function (object, options) {
+        return this.utils.extend(options || {}, {
+            url: (options && options.url) || (object && this.getUri(object)) || this.createUrl(),
+            method: (options && options.method) || 'GET'
+        });
+    };
+    /**
+     * Options have higher priority, if object.url and options.url were provided, options.url will be returned
+     * If no URL was provided, default will be returned
+     */
+    Helper.prototype.saveRequest = function (object, options) {
+        if (!object && !(options && (options.post || options.body)))
+            throw new Error('No Object');
+        return this.utils.extend(options || {}, {
+            method: (options && options.method) || (this.isNew(object) ? 'POST' : 'PUT'),
+            url: (options && options.url) || this.getUri(object) || this.createUrl(),
+            body: (options && (options.body || options.post)) || object
+        });
+    };
+    /**
+     * Options have higher priority, if object.url and options.url were provided, options.url will be returned
+     * If no URL was provided exception will be thrown
+     */
+    Helper.prototype.deleteRequest = function (object, options) {
+        options = options || {};
+        if (!this.getUri(object) && !(options && options.url))
+            throw new Error('Object has to be not new or URL must be provided');
+        return this.utils.extend(options || {}, {
+            method: (options && options.method) || 'DELETE',
+            url: (options && options.url) || this.getUri(object)
+        });
+    };
+    /**
+     * If no url was provided, default SYNC url will be returned
+     */
+    Helper.prototype.syncRequest = function (options) {
+        options = options || {};
+        options.url = options.url || this.createUrl({ sync: true });
+        options.query = options.query || options.get || {};
+        if (!!options.query.syncToken) {
+            options.query = {
+                syncType: 'ISync',
+                syncToken: options.get.syncToken
+            };
+        }
+        else {
+            options.query.syncType = 'FSync';
+        }
+        return options;
+    };
+    Helper.prototype.nextPageExists = function (data) {
+        return (data && data.navigation && ('nextPage' in data.navigation));
+    };
+    /**
+     * array - an array to be indexed
+     * getIdFn - must return an ID for each array item
+     * gather - if true, then each index will have an array of items, that has same ID, otherwise the first indexed
+     * item wins
+     */
+    Helper.prototype.index = function (array, getIdFn, gather) {
+        getIdFn = getIdFn || this.getId.bind(this);
+        array = array || [];
+        return array.reduce(function (index, item) {
+            var id = getIdFn(item);
+            if (!id || (index[id] && !gather))
+                return index;
+            if (gather) {
+                if (!index[id])
+                    index[id] = [];
+                index[id].push(item);
+            }
+            else {
+                index[id] = item;
+            }
+            return index;
+        }, {});
+    };
+    /**
+     * Returns a shallow copy of merged _target_ array plus _supplement_ array
+     * mergeItems
+     * - if true, properties of _supplement_ item will be applied to _target_ item,
+     * - otherwise _target_ item will be replaced
+     */
+    Helper.prototype.merge = function (target, supplement, getIdFn, mergeItems) {
+        var _this = this;
+        getIdFn = getIdFn || this.getId.bind(this);
+        target = target || [];
+        supplement = supplement || [];
+        var supplementIndex = this.index(supplement, getIdFn), updatedIDs = [], result = target.map(function (item) {
+            var id = getIdFn(item), newItem = supplementIndex[id];
+            if (newItem)
+                updatedIDs.push(id);
+            return newItem ? (mergeItems ? _this.utils.extend(item, newItem) : newItem) : item;
+        });
+        supplement.forEach(function (item) {
+            if (updatedIDs.indexOf(getIdFn(item)) == -1)
+                result.push(item);
+        });
+        return result;
+    };
+    return Helper;
+})();
+exports.Helper = Helper;
+function $get(context) {
+    return new Helper(context);
+}
+exports.$get = $get;
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+/// <reference path="../../typings/externals.d.ts" />
+var utils = __webpack_require__(3);
 var List = (function () {
     function List(context) {
         this.context = context;
@@ -771,588 +1291,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-/// <reference path="../../../typings/externals.d.ts" />
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var observable = __webpack_require__(6);
-var PubnubMock = (function (_super) {
-    __extends(PubnubMock, _super);
-    function PubnubMock(context, options) {
-        this.options = options;
-        this.crypto_obj = context.getPubnubReal().crypto_obj;
-        _super.call(this, context);
-    }
-    PubnubMock.prototype.ready = function () { };
-    PubnubMock.prototype.subscribe = function (options) {
-        this.on('message-' + options.channel, options.message);
-    };
-    PubnubMock.prototype.unsubscribe = function (options) {
-        this.off('message-' + options.channel);
-    };
-    PubnubMock.prototype.receiveMessage = function (msg, channel) {
-        this.emit('message-' + channel, msg, 'env', channel);
-    };
-    return PubnubMock;
-})(observable.Observable);
-exports.PubnubMock = PubnubMock;
-var PubnubFactory = (function () {
-    function PubnubFactory(context) {
-        this.context = context;
-        this.crypto_obj = context.getPubnubReal().crypto_obj;
-    }
-    PubnubFactory.prototype.init = function (options) {
-        return new PubnubMock(this.context, options);
-    };
-    return PubnubFactory;
-})();
-exports.PubnubFactory = PubnubFactory;
-function $get(context) {
-    return new PubnubFactory(context);
-}
-exports.$get = $get;
-
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-/// <reference path="../../typings/externals.d.ts" />
-var utils = __webpack_require__(3);
-var log = __webpack_require__(7);
-/**
- * @see https://github.com/Microsoft/TypeScript/issues/275
- */
-var Observable = (function () {
-    function Observable(context) {
-        if (!(this instanceof Observable))
-            throw new Error('Observable(): New operator was omitted');
-        Object.defineProperty(this, 'listeners', { value: {}, enumerable: false, writable: true });
-        Object.defineProperty(this, 'oneTimeEvents', { value: {}, enumerable: false, writable: true });
-        Object.defineProperty(this, 'oneTimeArguments', { value: {}, enumerable: false, writable: true });
-        this.context = context;
-        this.utils = utils.$get(context);
-        this.log = log.$get(context);
-    }
-    Observable.prototype.hasListeners = function (event) {
-        return (event in this.listeners);
-    };
-    /**
-     * @deprecated
-     * @param {string} event
-     */
-    Observable.prototype.registerOneTimeEvent = function (event) {
-        this.oneTimeEvents[event] = false;
-        this.oneTimeArguments[event] = [];
-    };
-    Observable.prototype.on = function (events, callback) {
-        var _this = this;
-        if (typeof events == 'string')
-            events = [events];
-        if (!events)
-            throw new Error('No events to subscribe to');
-        if (typeof callback !== 'function')
-            throw new Error('Callback must be a function');
-        var self = this;
-        events.forEach(function (event) {
-            if (!self.hasListeners(event))
-                self.listeners[event] = [];
-            self.listeners[event].push(callback);
-            if (self.isOneTimeEventFired(event)) {
-                _this.log.debug('Observable.on(%s): One-time event has been fired already, executing callback', event);
-                callback.apply(self, self.getOneTimeEventArgumens(event));
-            }
-        });
-        return this;
-    };
-    Observable.prototype.emit = function (event) {
-        var _this = this;
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
-        if (this.isOneTimeEventFired(event)) {
-            this.log.debug('Observable.emit(%s): One-time event has been fired already', event);
-            return null;
-        }
-        var result = null;
-        if (this.isOneTimeEvent(event)) {
-            this.setOneTimeEventFired(event);
-            this.setOneTimeEventArgumens(event, args);
-        }
-        if (!this.hasListeners(event))
-            return null;
-        this.listeners[event].some(function (callback) {
-            result = callback.apply(_this, args);
-            return (result === false);
-        });
-        return result;
-    };
-    Observable.prototype.off = function (event, callback) {
-        var _this = this;
-        if (!event) {
-            this.listeners = {};
-            this.oneTimeEvents = {};
-            this.oneTimeArguments = {};
-        }
-        else {
-            if (!callback) {
-                delete this.listeners[event];
-            }
-            else {
-                if (!this.hasListeners(event))
-                    return this;
-                this.listeners[event].forEach(function (cb, i) {
-                    if (cb === callback)
-                        delete _this.listeners[event][i];
-                });
-            }
-        }
-        return this;
-    };
-    /**
-     * @deprecated
-     * @param event
-     * @returns {boolean}
-     */
-    Observable.prototype.isOneTimeEvent = function (event) {
-        return (event in this.oneTimeEvents);
-    };
-    /**
-     * @deprecated
-     * @param {string} event
-     * @returns {boolean}
-     */
-    Observable.prototype.isOneTimeEventFired = function (event) {
-        if (!this.isOneTimeEvent(event))
-            return false;
-        return (this.oneTimeEvents[event]);
-    };
-    /**
-     * @deprecated
-     * @param event
-     */
-    Observable.prototype.setOneTimeEventFired = function (event) {
-        this.oneTimeEvents[event] = true;
-    };
-    /**
-     * @deprecated
-     * @param {string} event
-     * @param args
-     */
-    Observable.prototype.setOneTimeEventArgumens = function (event, args) {
-        this.oneTimeArguments[event] = args;
-    };
-    /**
-     * @deprecated
-     * @param {string} event
-     * @returns {any}
-     */
-    Observable.prototype.getOneTimeEventArgumens = function (event) {
-        return this.oneTimeArguments[event];
-    };
-    /**
-     * @deprecated
-     * @returns {T}
-     */
-    Observable.prototype.offAll = function () {
-        return this.off();
-    };
-    Observable.prototype.destroy = function () {
-        this.off();
-        this.log.debug('Observable.destroy(): Listeners were destroyed');
-        return this;
-    };
-    Observable.prototype.emitAndCallback = function (event, args, callback) {
-        args = this.utils.argumentsToArray(args);
-        if (event)
-            this.emit.apply(this, [event].concat(args));
-        if (callback)
-            callback.apply(this, args);
-        return this;
-    };
-    return Observable;
-})();
-exports.Observable = Observable;
-function $get(context) {
-    return new Observable(context);
-}
-exports.$get = $get;
-
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-/// <reference path="../../typings/externals.d.ts" />
-var utils = __webpack_require__(3);
-var Log = (function () {
-    function Log(context, console) {
-        if (!console) {
-            console = {
-                log: function () { },
-                warn: function () { },
-                info: function () { },
-                error: function () { }
-            };
-        }
-        this.context = context;
-        this.console = console;
-        this.utils = utils.$get(context);
-        this.logDebug = false;
-        this.logInfo = false;
-        this.logWarnings = false;
-        this.logErrors = false;
-        this.addTimestamps = false;
-    }
-    Log.prototype.disableAll = function () {
-        this.logDebug = false;
-        this.logInfo = false;
-        this.logWarnings = false;
-        this.logErrors = false;
-    };
-    Log.prototype.enableAll = function () {
-        this.logDebug = true;
-        this.logInfo = true;
-        this.logWarnings = true;
-        this.logErrors = true;
-    };
-    Log.prototype.parseArguments = function (args) {
-        args = this.utils.argumentsToArray(args);
-        if (this.addTimestamps)
-            args.unshift(new Date().toLocaleString(), '-');
-        return args;
-    };
-    Log.prototype.debug = function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
-        }
-        if (this.logDebug)
-            this.console.log.apply(this.console, this.parseArguments(arguments));
-    };
-    Log.prototype.info = function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
-        }
-        if (this.logInfo)
-            this.console.info.apply(this.console, this.parseArguments(arguments));
-    };
-    Log.prototype.warn = function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
-        }
-        if (this.logWarnings)
-            this.console.warn.apply(this.console, this.parseArguments(arguments));
-    };
-    Log.prototype.error = function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
-        }
-        if (this.logErrors)
-            this.console.error.apply(this.console, this.parseArguments(arguments));
-    };
-    return Log;
-})();
-exports.Log = Log;
-function $get(context) {
-    return context.createSingleton('Log', function () {
-        return new Log(context, console);
-    });
-}
-exports.$get = $get;
-
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-var utils = __webpack_require__(3);
-var log = __webpack_require__(7);
-var xhrResponse = __webpack_require__(9); //FIXME Circular
-var XhrMock = (function () {
-    function XhrMock(context) {
-        // Service
-        this.context = context;
-        this.responses = xhrResponse.$get(context);
-        this.log = log.$get(context);
-        this.utils = utils.$get(context);
-        // Request
-        this.async = true;
-        this.method = '';
-        this.url = '';
-        this.requestHeaders = {};
-        this.withCredentials = false;
-        // Response
-        this.data = null;
-        this.readyState = 0;
-        this.responseHeaders = {};
-        this.status = 0;
-    }
-    XhrMock.prototype.getResponseHeader = function (header) {
-        return this.responseHeaders[header.toLowerCase()];
-    };
-    XhrMock.prototype.setRequestHeader = function (header, value) {
-        this.requestHeaders[header.toLowerCase()] = value;
-    };
-    XhrMock.prototype.getAllResponseHeaders = function () {
-        var res = [];
-        this.utils.forEach(this.responseHeaders, function (value, name) {
-            res.push(name + ':' + value);
-        });
-        return res.join('\n');
-    };
-    XhrMock.prototype.open = function (method, url, async) {
-        this.method = method;
-        this.url = url;
-        this.async = async;
-    };
-    XhrMock.prototype.send = function (data) {
-        var _this = this;
-        var contentType = this.getRequestHeader('Content-Type');
-        this.data = data;
-        if (this.data && typeof this.data == 'string') {
-            // For convenience encoded post data will be decoded
-            if (contentType == 'application/json')
-                this.data = JSON.parse(this.data);
-            if (contentType == 'application/x-www-form-urlencoded')
-                this.data = this.utils.parseQueryString(this.data);
-        }
-        this.log.debug('API REQUEST', this.method, this.url);
-        var currentResponse = this.responses.find(this);
-        if (!currentResponse) {
-            setTimeout(function () {
-                if (_this.onerror)
-                    _this.onerror(new Error('Unknown request: ' + _this.url));
-            }, 1);
-            return;
-        }
-        this.setStatus(200);
-        this.setResponseHeader('Content-Type', 'application/json');
-        var res = currentResponse.response(this), Promise = this.context.getPromise(), onLoad = function (res) {
-            if (_this.getResponseHeader('Content-Type') == 'application/json')
-                res = JSON.stringify(res);
-            _this.responseText = res;
-            setTimeout(function () {
-                if (_this.onload)
-                    _this.onload();
-            }, 1);
-        };
-        if (res instanceof Promise) {
-            res.then(onLoad.bind(this)).catch(this.onerror.bind(this));
-        }
-        else
-            onLoad(res);
-    };
-    XhrMock.prototype.abort = function () {
-        this.log.debug('XhrMock.destroy(): Aborted');
-    };
-    XhrMock.prototype.getRequestHeader = function (header) {
-        return this.requestHeaders[header.toLowerCase()];
-    };
-    XhrMock.prototype.setResponseHeader = function (header, value) {
-        this.responseHeaders[header.toLowerCase()] = value;
-    };
-    XhrMock.prototype.setStatus = function (status) {
-        this.status = status;
-        return this;
-    };
-    return XhrMock;
-})();
-exports.XhrMock = XhrMock;
-function $get(context) {
-    return new XhrMock(context);
-}
-exports.$get = $get;
-
-
-/***/ },
-/* 9 */
-/***/ function(module, exports) {
-
-var XhrResponse = (function () {
-    function XhrResponse(context) {
-        this.responses = [];
-    }
-    XhrResponse.prototype.add = function (response) {
-        this.responses.push(response);
-    };
-    XhrResponse.prototype.clear = function () {
-        this.responses = [];
-    };
-    XhrResponse.prototype.find = function (ajax) {
-        var currentResponse = null;
-        this.responses.forEach(function (response) {
-            if (ajax.url.indexOf(response.path) > -1 && (!response.test || response.test(ajax))) {
-                currentResponse = response;
-            }
-        });
-        return currentResponse;
-    };
-    return XhrResponse;
-})();
-exports.XhrResponse = XhrResponse;
-function $get(context) {
-    return context.createSingleton('XhrResponse', function () {
-        return new XhrResponse(context);
-    });
-}
-exports.$get = $get;
-
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-/// <reference path="../../typings/externals.d.ts" />
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var observable = __webpack_require__(6);
-var AjaxObserver = (function (_super) {
-    __extends(AjaxObserver, _super);
-    function AjaxObserver() {
-        _super.apply(this, arguments);
-        this.events = {
-            beforeRequest: 'beforeRequest',
-            requestSuccess: 'requestSuccess',
-            requestError: 'requestError' // means that request failed completely
-        };
-    }
-    return AjaxObserver;
-})(observable.Observable);
-exports.AjaxObserver = AjaxObserver;
-function $get(context) {
-    return context.createSingleton('AjaxObserver', function () {
-        return new AjaxObserver(context);
-    });
-}
-exports.$get = $get;
-
-
-/***/ },
-/* 11 */
-/***/ function(module, exports) {
-
-/// <reference path="../../typings/externals.d.ts" />
-var Cache = (function () {
-    function Cache(context) {
-        this.setPrefix();
-        this.context = context;
-        this.storage = context.getLocalStorage(); // storage must be defined from outside
-    }
-    Cache.prototype.setPrefix = function (prefix) {
-        this.prefix = prefix || 'rc-';
-        return this;
-    };
-    Cache.prototype.prefixKey = function (key) {
-        return this.prefix + key;
-    };
-    Cache.prototype.setItem = function (key, data) {
-        this.storage.setItem(this.prefixKey(key), JSON.stringify(data));
-        return this;
-    };
-    Cache.prototype.removeItem = function (key) {
-        this.storage.removeItem(this.prefixKey(key));
-        return this;
-    };
-    Cache.prototype.getItem = function (key) {
-        var item = this.storage.getItem(this.prefixKey(key));
-        if (!item)
-            return null;
-        return JSON.parse(item);
-    };
-    Cache.prototype.clean = function () {
-        for (var key in this.storage) {
-            if (!this.storage.hasOwnProperty(key))
-                continue;
-            if (key.indexOf(this.prefix) === 0) {
-                this.storage.removeItem(key);
-                delete this.storage[key];
-            }
-        }
-        return this;
-    };
-    return Cache;
-})();
-exports.Cache = Cache;
-function $get(context) {
-    return context.createSingleton('Cache', function () {
-        return new Cache(context);
-    });
-}
-exports.$get = $get;
-
-
-/***/ },
 /* 12 */
-/***/ function(module, exports) {
-
-/// <reference path="../../typings/externals.d.ts" />
-var Context = (function () {
-    function Context(injections) {
-        this.singletons = {};
-        this.injections = injections;
-        this.stubPubnub = false;
-        this.stubAjax = false;
-    }
-    Context.prototype.createSingleton = function (name, factory) {
-        if (!this.singletons[name])
-            this.singletons[name] = factory();
-        return this.singletons[name];
-    };
-    Context.prototype.usePubnubStub = function (flag) {
-        this.stubPubnub = !!flag;
-        return this;
-    };
-    Context.prototype.useAjaxStub = function (flag) {
-        this.stubAjax = !!flag;
-        return this;
-    };
-    Context.prototype.getPubnub = function () {
-        return this.stubPubnub ? this.injections.pubnubMock.$get(this) : this.getPubnubReal();
-    };
-    Context.prototype.getPubnubReal = function () {
-        return this.injections.PUBNUB;
-    };
-    Context.prototype.getLocalStorage = function () {
-        var _this = this;
-        return this.createSingleton('localStorage', function () {
-            if (typeof _this.injections.localStorage !== 'function') {
-                return _this.injections.localStorage; // this is window.localStorage
-            }
-            return new _this.injections.localStorage(); // this is NPM dom-storage constructor
-        });
-    };
-    Context.prototype.getPromise = function () {
-        return this.injections.Promise;
-    };
-    Context.prototype.getXHR = function () {
-        return (this.stubAjax ? this.injections.xhrMock.$get(this) : this.injections.XHR());
-    };
-    return Context;
-})();
-exports.Context = Context;
-function $get(injections) {
-    return new Context(injections);
-}
-exports.$get = $get;
-
-
-/***/ },
-/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -1362,7 +1301,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var observable = __webpack_require__(6);
+var observable = __webpack_require__(2);
 var PageVisibility = (function (_super) {
     __extends(PageVisibility, _super);
     function PageVisibility(context) {
@@ -1409,7 +1348,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -1419,9 +1358,9 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var observable = __webpack_require__(6);
-var cache = __webpack_require__(11);
-var request = __webpack_require__(15);
+var observable = __webpack_require__(2);
+var cache = __webpack_require__(8);
+var request = __webpack_require__(14);
 var Platform = (function (_super) {
     __extends(Platform, _super);
     function Platform(context) {
@@ -1805,7 +1744,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../../typings/externals.d.ts" />
@@ -1815,9 +1754,9 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var h = __webpack_require__(16);
-var ajaxObserver = __webpack_require__(10);
-var r = __webpack_require__(17);
+var h = __webpack_require__(15);
+var ajaxObserver = __webpack_require__(7);
+var r = __webpack_require__(16);
 /**
  * TODO @see https://github.com/github/fetch/blob/master/fetch.js
  */
@@ -1952,7 +1891,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../../typings/externals.d.ts" />
@@ -2012,7 +1951,7 @@ exports.Headers = Headers;
 
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../../typings/externals.d.ts" />
@@ -2022,8 +1961,8 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var h = __webpack_require__(16);
-var log = __webpack_require__(7);
+var h = __webpack_require__(15);
+var log = __webpack_require__(4);
 var Response = (function (_super) {
     __extends(Response, _super);
     function Response(context, status, statusText, body, headers) {
@@ -2132,7 +2071,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -2142,8 +2081,8 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var observable = __webpack_require__(6);
-var platform = __webpack_require__(14);
+var observable = __webpack_require__(2);
+var platform = __webpack_require__(13);
 var Subscription = (function (_super) {
     __extends(Subscription, _super);
     function Subscription(context) {
@@ -2390,7 +2329,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -2471,7 +2410,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -2481,7 +2420,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
+var helper = __webpack_require__(10);
 var Account = (function (_super) {
     __extends(Account, _super);
     function Account() {
@@ -2502,7 +2441,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -2512,8 +2451,8 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var validator = __webpack_require__(19);
+var helper = __webpack_require__(10);
+var validator = __webpack_require__(18);
 var BlockedNumber = (function (_super) {
     __extends(BlockedNumber, _super);
     function BlockedNumber(context) {
@@ -2546,7 +2485,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -2556,10 +2495,10 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var list = __webpack_require__(4);
-var presence = __webpack_require__(23);
-var contact = __webpack_require__(25);
+var helper = __webpack_require__(10);
+var list = __webpack_require__(11);
+var presence = __webpack_require__(22);
+var contact = __webpack_require__(24);
 var Call = (function (_super) {
     __extends(Call, _super);
     function Call(context) {
@@ -2792,7 +2731,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 23 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -2802,9 +2741,9 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var subscription = __webpack_require__(18);
-var extension = __webpack_require__(24);
+var helper = __webpack_require__(10);
+var subscription = __webpack_require__(17);
+var extension = __webpack_require__(23);
 var Presence = (function (_super) {
     __extends(Presence, _super);
     function Presence(context) {
@@ -2863,7 +2802,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 24 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -2873,8 +2812,8 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var list = __webpack_require__(4);
+var helper = __webpack_require__(10);
+var list = __webpack_require__(11);
 var Extension = (function (_super) {
     __extends(Extension, _super);
     function Extension(context) {
@@ -2940,7 +2879,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 25 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -2950,9 +2889,9 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var validator = __webpack_require__(19);
-var list = __webpack_require__(4);
+var helper = __webpack_require__(10);
+var validator = __webpack_require__(18);
+var list = __webpack_require__(11);
 var Contact = (function (_super) {
     __extends(Contact, _super);
     function Contact(context) {
@@ -3177,7 +3116,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 26 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -3187,8 +3126,8 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var validator = __webpack_require__(19);
+var helper = __webpack_require__(10);
+var validator = __webpack_require__(18);
 var ContactGroup = (function (_super) {
     __extends(ContactGroup, _super);
     function ContactGroup(context) {
@@ -3215,7 +3154,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -3225,7 +3164,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
+var helper = __webpack_require__(10);
 var Conferencing = (function (_super) {
     __extends(Conferencing, _super);
     function Conferencing() {
@@ -3246,7 +3185,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -3256,7 +3195,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
+var helper = __webpack_require__(10);
 var Country = (function (_super) {
     __extends(Country, _super);
     function Country() {
@@ -3277,7 +3216,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 29 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -3287,10 +3226,10 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var validator = __webpack_require__(19);
-var extension = __webpack_require__(24);
-var deviceModel = __webpack_require__(30);
+var helper = __webpack_require__(10);
+var validator = __webpack_require__(18);
+var extension = __webpack_require__(23);
+var deviceModel = __webpack_require__(29);
 var Device = (function (_super) {
     __extends(Device, _super);
     function Device(context) {
@@ -3353,7 +3292,7 @@ exports.$get = $get;
 
 
 /***/ },
-/* 30 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
@@ -3363,7 +3302,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
+var helper = __webpack_require__(10);
 var DeviceModel = (function (_super) {
     __extends(DeviceModel, _super);
     function DeviceModel() {
@@ -3387,6 +3326,65 @@ exports.$get = $get;
 
 
 /***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+/// <reference path="../../typings/externals.d.ts" />
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var helper = __webpack_require__(10);
+var list = __webpack_require__(11);
+var ForwardingNumber = (function (_super) {
+    __extends(ForwardingNumber, _super);
+    function ForwardingNumber(context) {
+        _super.call(this, context);
+        this.list = list.$get(context);
+    }
+    ForwardingNumber.prototype.createUrl = function (options, id) {
+        options = options || {};
+        return '/account/~/extension/' + (options.extensionId || '~') + '/forwarding-number' + (id ? '/' + id : '');
+    };
+    ForwardingNumber.prototype.getId = function (forwardingNumber) {
+        return forwardingNumber && (forwardingNumber.id || (forwardingNumber.phoneNumber)); //TODO @exceptionalCase
+    };
+    ForwardingNumber.prototype.hasFeature = function (phoneNumber, feature) {
+        return (!!phoneNumber && !!phoneNumber.features && phoneNumber.features.indexOf(feature) != -1);
+    };
+    ForwardingNumber.prototype.comparator = function (options) {
+        return this.list.comparator(this.utils.extend({
+            sortBy: 'label'
+        }, options));
+    };
+    ForwardingNumber.prototype.filter = function (options) {
+        var _this = this;
+        options = this.utils.extend({
+            features: []
+        }, options);
+        return this.list.filter([{
+                condition: options.features.length,
+                filterFn: function (item) {
+                    return options.features.some(function (feature) {
+                        return _this.hasFeature(item, feature);
+                    });
+                }
+            }]);
+    };
+    return ForwardingNumber;
+})(helper.Helper);
+exports.ForwardingNumber = ForwardingNumber;
+function $get(context) {
+    return context.createSingleton('ForwardingNumber', function () {
+        return new ForwardingNumber(context);
+    });
+}
+exports.$get = $get;
+
+
+/***/ },
 /* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -3397,7 +3395,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
+var helper = __webpack_require__(10);
 var Language = (function (_super) {
     __extends(Language, _super);
     function Language() {
@@ -3428,8 +3426,8 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var list = __webpack_require__(4);
+var helper = __webpack_require__(10);
+var list = __webpack_require__(11);
 var state = __webpack_require__(33);
 var Location = (function (_super) {
     __extends(Location, _super);
@@ -3503,9 +3501,9 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var list = __webpack_require__(4);
-var country = __webpack_require__(28);
+var helper = __webpack_require__(10);
+var list = __webpack_require__(11);
+var country = __webpack_require__(27);
 var State = (function (_super) {
     __extends(State, _super);
     function State(context) {
@@ -3552,12 +3550,12 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var list = __webpack_require__(4);
-var validator = __webpack_require__(19);
-var subscription = __webpack_require__(18);
-var platform = __webpack_require__(14);
-var contact = __webpack_require__(25);
+var helper = __webpack_require__(10);
+var list = __webpack_require__(11);
+var validator = __webpack_require__(18);
+var subscription = __webpack_require__(17);
+var platform = __webpack_require__(13);
+var contact = __webpack_require__(24);
 var Message = (function (_super) {
     __extends(Message, _super);
     function Message(context) {
@@ -3720,9 +3718,9 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var list = __webpack_require__(4);
-var extension = __webpack_require__(24);
+var helper = __webpack_require__(10);
+var list = __webpack_require__(11);
+var extension = __webpack_require__(23);
 var PhoneNumber = (function (_super) {
     __extends(PhoneNumber, _super);
     function PhoneNumber(context) {
@@ -3808,8 +3806,8 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
-var validator = __webpack_require__(19);
+var helper = __webpack_require__(10);
+var validator = __webpack_require__(18);
 var Ringout = (function (_super) {
     __extends(Ringout, _super);
     function Ringout(context) {
@@ -3864,7 +3862,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
+var helper = __webpack_require__(10);
 var Service = (function (_super) {
     __extends(Service, _super);
     function Service() {
@@ -3929,7 +3927,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
+var helper = __webpack_require__(10);
 var ShippingMethod = (function (_super) {
     __extends(ShippingMethod, _super);
     function ShippingMethod() {
@@ -3963,7 +3961,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var helper = __webpack_require__(2);
+var helper = __webpack_require__(10);
 var Timezone = (function (_super) {
     __extends(Timezone, _super);
     function Timezone() {
@@ -4001,130 +3999,53 @@ var Account = (function (_super) {
     function Account() {
         _super.apply(this, arguments);
     }
-    Account.prototype.create = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account',
-            'method': 'post'
-        }, ResponseClass = getaccountinforesponse.GetAccountInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "body",
-                "type": "createaccountrequest.CreateAccountRequest",
-                "in": "body",
-                "description": "JSON body",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
-    };
+    /**
+     * Get Account Info
+     *
+     * <p style='font-style:italic;'>Since 1.0.0</p>
+     * <p>Returns basic information about a particular RingCentral customer account.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadAccounts</td>
+     *             <td>Viewing user account info (including name, business name, address and phone number/account number)</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Account.prototype.load = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}',
-            'method': 'get'
-        }, ResponseClass = getaccountinforesponse.GetAccountInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}', options, exports.loadOptions), getaccountinforesponse.GetAccountInfoResponse);
     };
     return Account;
 })(client.Client);
 exports.Account = Account;
+/**
+ * Definition of options for load operation
+ */
+exports.loadOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    }
+];
 function $get(context) {
     return context.createSingleton('Account', function () {
         return new Account(context);
     });
 }
 exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "create",
- *         "tags": [
- *             "Account"
- *         ],
- *         "summary": "Create Account",
- *         "description": "<p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p><p>Creates the account in Initial state.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>Accounts</td><td>Managing accounts: creating new accounts, viewing and updating account information, deleting existing accounts</td></tr><tr><td class='code'>EditAccounts</td><td>Viewing and updating user account info (including name, business name, address and phone number/account number)</td></tr><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr><tr><td class='code'>EditExtensions</td><td>Viewing and updating user extension info (includes extension name, number, email and phone number, assigned phone numbers, devices and other extension settings)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "body",
- *                 "type": "createaccountrequest.CreateAccountRequest",
- *                 "in": "body",
- *                 "description": "JSON body",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetAccountInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account",
- *         "method": "post",
- *         "responseSchema": "getaccountinforesponse.GetAccountInfoResponse",
- *         "imports": [
- *             "getaccountinforesponse.GetAccountInfoResponse",
- *             "createaccountrequest.CreateAccountRequest"
- *         ]
- *     },
- *     {
- *         "operationId": "load",
- *         "tags": [
- *             "Account"
- *         ],
- *         "summary": "Get Account Info",
- *         "description": "<p style='font-style:italic;'>Since 1.0.0</p><p>Returns basic information about a particular RingCentral customer account.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetAccountInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}",
- *         "method": "get",
- *         "responseSchema": "getaccountinforesponse.GetAccountInfoResponse",
- *         "imports": [
- *             "getaccountinforesponse.GetAccountInfoResponse"
- *         ]
- *     }
- * ]
- */ 
 
 
 /***/ },
@@ -4132,16 +4053,20 @@ exports.$get = $get;
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../typings/externals.d.ts" />
-var platform = __webpack_require__(14);
+var platform = __webpack_require__(13);
 var Client = (function () {
     function Client(context) {
         this.context = context;
         this.platform = platform.$get(context);
     }
-    Client.prototype.parseOptions = function (apiOptions, //request.IAjaxOptions,
-        options, operationParameters) {
+    Client.prototype.parseOptions = function (method, url, options, operationParameters) {
         options = options || {};
-        apiOptions = apiOptions || {};
+        var apiOptions = {
+            url: url,
+            method: method,
+            query: {},
+            body: null
+        };
         operationParameters.forEach(function (param) {
             if (param.required && !param.default && !options.hasOwnProperty(param.name)) {
                 throw new Error('Required parameter "' + param.name + '" not found');
@@ -4153,7 +4078,6 @@ var Client = (function () {
                 apiOptions.url = apiOptions.url.replace('{' + param.name + '}', options[param.name]);
             }
             if (param.in == 'query' && options.hasOwnProperty(param.name)) {
-                apiOptions.query = apiOptions.query || {};
                 apiOptions.query[param.name] = options[param.name];
             }
             if (param.in == 'body') {
@@ -4207,7 +4131,7 @@ var GetAccountInfoResponse = (function (_super) {
             { property: 'id', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'uri', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'mainNumber', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'opeartor', Class: getextensioninforesponse.GetExtensionInfoResponse, isArray: false, isRequired: false },
+            { property: 'operator', Class: getextensioninforesponse.GetExtensionInfoResponse, isArray: false, isRequired: false },
             { property: 'partnerId', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'serviceInfo', Class: serviceinforesponse.ServiceInfoResponse, isArray: false, isRequired: false },
             { property: 'setupWizardState', Class: GetAccountInfoResponseSetupWizardState, isArray: false, isRequired: false },
@@ -4232,86 +4156,6 @@ var GetAccountInfoResponseSetupWizardState = exports.GetAccountInfoResponseSetup
     GetAccountInfoResponseStatus[GetAccountInfoResponseStatus["Disabled"] = 'Disabled'] = "Disabled";
 })(exports.GetAccountInfoResponseStatus || (exports.GetAccountInfoResponseStatus = {}));
 var GetAccountInfoResponseStatus = exports.GetAccountInfoResponseStatus;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetAccountInfoResponse",
- *     "imports": [
- *         "getextensioninforesponse.GetExtensionInfoResponse",
- *         "serviceinforesponse.ServiceInfoResponse",
- *         "accountstatusinfo.AccountStatusInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of an account",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of an account",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Main phone number of the current account",
- *             "$name": "mainNumber",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/GetExtensionInfoResponse",
- *             "description": "Operator's extension information. This extension will receive all calls and messages intended for the operator",
- *             "$name": "opeartor",
- *             "isRequired": false,
- *             "type": "getextensioninforesponse.GetExtensionInfoResponse"
- *         },
- *         {
- *             "type": "string",
- *             "description": "Additional account identifier, developed and applied by the client",
- *             "$name": "partnerId",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/ServiceInfoResponse",
- *             "description": "Account service information, including brand, service plan and billing plan",
- *             "$name": "serviceInfo",
- *             "isRequired": false,
- *             "type": "serviceinforesponse.ServiceInfoResponse"
- *         },
- *         {
- *             "type": "GetAccountInfoResponseSetupWizardState",
- *             "enum": [
- *                 "NotStarted",
- *                 "Incomplete",
- *                 "Completed"
- *             ],
- *             "description": "Specifies account configuration wizard state (web service setup). The default value is 'NotStarted'",
- *             "$name": "setupWizardState",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetAccountInfoResponseStatus",
- *             "enum": [
- *                 "Confirmed",
- *                 "Disabled"
- *             ],
- *             "description": "Status of the current account",
- *             "$name": "status",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/AccountStatusInfo",
- *             "description": "Status information (reason, comment, lifetime). Returned for 'Disabled' status only",
- *             "$name": "statusInfo",
- *             "isRequired": false,
- *             "type": "accountstatusinfo.AccountStatusInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -4435,138 +4279,6 @@ var GetExtensionInfoResponseStatus = exports.GetExtensionInfoResponseStatus;
     GetExtensionInfoResponseType[GetExtensionInfoResponseType["ApplicationExtension"] = 'ApplicationExtension'] = "ApplicationExtension";
 })(exports.GetExtensionInfoResponseType || (exports.GetExtensionInfoResponseType = {}));
 var GetExtensionInfoResponseType = exports.GetExtensionInfoResponseType;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetExtensionInfoResponse",
- *     "imports": [
- *         "contactinfo.ContactInfo",
- *         "departmentinfo.DepartmentInfo",
- *         "extensionpermissions.ExtensionPermissions",
- *         "regionalsettingsinfo.RegionalSettingsInfo",
- *         "extensionservicefeatureinfo.ExtensionServiceFeatureInfo",
- *         "extensionstatusinfo.ExtensionStatusInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of an extension",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of an extension",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/ContactInfo",
- *             "description": "Contact detailed information",
- *             "$name": "contact",
- *             "isRequired": false,
- *             "type": "contactinfo.ContactInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/DepartmentInfo",
- *             "description": "Information on department extension(s), to which the requested extension belongs. Returned only for user extensions, members of department, requested by single extensionId",
- *             "$name": "departments",
- *             "isRequired": false,
- *             "type": "departmentinfo.DepartmentInfo"
- *         },
- *         {
- *             "type": "string",
- *             "description": "Number of department extension",
- *             "$name": "extensionNumber",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Extension user name",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding accountId/extensionId for each partnerId of a client application. In request URIs partnerIds are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding accountIds and extensionIds. In all request and response bodies these values are reflected via  partnerId  attributes of account and extension",
- *             "$name": "partnerId",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/ExtensionPermissions",
- *             "description": "Extension permissions, corresponding to the Service Web permissions 'Admin' and 'InternationalCalling'",
- *             "$name": "permissions",
- *             "isRequired": false,
- *             "type": "extensionpermissions.ExtensionPermissions"
- *         },
- *         {
- *             "$ref": "#/definitions/RegionalSettingsInfo",
- *             "description": "Extension region data (timezone, home country, language)",
- *             "$name": "regionalSettings",
- *             "isRequired": false,
- *             "type": "regionalsettingsinfo.RegionalSettingsInfo"
- *         },
- *         {
- *             "type": "extensionservicefeatureinfo.ExtensionServiceFeatureInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/ExtensionServiceFeatureInfo"
- *             },
- *             "$name": "serviceFeatures",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionInfoResponseSetupWizardState",
- *             "enum": [
- *                 "NotStarted",
- *                 "Incomplete",
- *                 "Completed"
- *             ],
- *             "description": "Specifies extension configuration wizard state (web service setup). The default value is 'NotStarted'",
- *             "$name": "setupWizardState",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionInfoResponseStatus",
- *             "enum": [
- *                 "Enabled",
- *                 "Disabled",
- *                 "NotActivated",
- *                 "Unassigned"
- *             ],
- *             "description": "Extension current state",
- *             "$name": "status",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/ExtensionStatusInfo",
- *             "description": "Status information (reason, comment). Returned for 'Disabled' status only",
- *             "$name": "statusInfo",
- *             "isRequired": false,
- *             "type": "extensionstatusinfo.ExtensionStatusInfo"
- *         },
- *         {
- *             "type": "GetExtensionInfoResponseType",
- *             "enum": [
- *                 "User",
- *                 "Fax User",
- *                 "VirtualUser",
- *                 "DigitalUser",
- *                 "Department",
- *                 "Announcement",
- *                 "Voicemail",
- *                 "SharedLinesGroup",
- *                 "PagingOnly",
- *                 "IvrMenu",
- *                 "ApplicationExtension"
- *             ],
- *             "description": "Extension type",
- *             "$name": "type",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -4602,55 +4314,6 @@ var ContactInfo = (function (_super) {
     return ContactInfo;
 })(model.Model);
 exports.ContactInfo = ContactInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ContactInfo",
- *     "imports": [
- *         "contactaddressinfo.ContactAddressInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "For User extension type only. Extension user first name",
- *             "$name": "firstName",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "For User extension type only. Extension user last name",
- *             "$name": "lastName",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Extension user company name",
- *             "$name": "company",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Email of extension user",
- *             "$name": "email",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Extension user contact phone number",
- *             "$name": "businessPhone",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/ContactAddressInfo",
- *             "description": "Business address of extension user company",
- *             "$name": "businessAddress",
- *             "isRequired": false,
- *             "type": "contactaddressinfo.ContactAddressInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -4684,46 +4347,6 @@ var ContactAddressInfo = (function (_super) {
     return ContactAddressInfo;
 })(model.Model);
 exports.ContactAddressInfo = ContactAddressInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ContactAddressInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Country name of extension user company",
- *             "$name": "country",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "State/province name of extension user company",
- *             "$name": "state",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "City name of extension user company",
- *             "$name": "city",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Street address of extension user company",
- *             "$name": "street",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Zip code of extension user company",
- *             "$name": "zip",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -4755,34 +4378,6 @@ var DepartmentInfo = (function (_super) {
     return DepartmentInfo;
 })(model.Model);
 exports.DepartmentInfo = DepartmentInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "DepartmentInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a department extension",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a department extension",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Number of a department extension",
- *             "$name": "extensionNumber",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -4814,32 +4409,6 @@ var ExtensionPermissions = (function (_super) {
     return ExtensionPermissions;
 })(model.Model);
 exports.ExtensionPermissions = ExtensionPermissions;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ExtensionPermissions",
- *     "imports": [
- *         "permissioninfo.PermissionInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/PermissionInfo",
- *             "description": "Admin permission",
- *             "$name": "admin",
- *             "isRequired": false,
- *             "type": "permissioninfo.PermissionInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/PermissionInfo",
- *             "description": "International Calling permission",
- *             "$name": "internationalCalling",
- *             "isRequired": false,
- *             "type": "permissioninfo.PermissionInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -4869,22 +4438,6 @@ var PermissionInfo = (function (_super) {
     return PermissionInfo;
 })(model.Model);
 exports.PermissionInfo = PermissionInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "PermissionInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "boolean",
- *             "description": "Specifies if a permission is enabled or not",
- *             "$name": "enabled",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -4923,57 +4476,6 @@ var RegionalSettingsInfo = (function (_super) {
     return RegionalSettingsInfo;
 })(model.Model);
 exports.RegionalSettingsInfo = RegionalSettingsInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "RegionalSettingsInfo",
- *     "imports": [
- *         "countryinfo.CountryInfo",
- *         "timezoneinfo.TimezoneInfo",
- *         "languageinfo.LanguageInfo",
- *         "greetinglanguageinfo.GreetingLanguageInfo",
- *         "formattinglocaleinfo.FormattingLocaleInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/CountryInfo",
- *             "description": "Extension country information",
- *             "$name": "homeCountry",
- *             "isRequired": false,
- *             "type": "countryinfo.CountryInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/TimezoneInfo",
- *             "description": "Extension timezone information",
- *             "$name": "timezone",
- *             "isRequired": false,
- *             "type": "timezoneinfo.TimezoneInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/LanguageInfo",
- *             "description": "User interface language data",
- *             "$name": "language",
- *             "isRequired": false,
- *             "type": "languageinfo.LanguageInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/GreetingLanguageInfo",
- *             "description": "Information on language used for telephony greetings",
- *             "$name": "greetingLanguage",
- *             "isRequired": false,
- *             "type": "greetinglanguageinfo.GreetingLanguageInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/FormattingLocaleInfo",
- *             "description": "Formatting language preferences for numbers, dates and currencies",
- *             "$name": "formattingLocale",
- *             "isRequired": false,
- *             "type": "formattinglocaleinfo.FormattingLocaleInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5009,58 +4511,6 @@ var LanguageInfo = (function (_super) {
     return LanguageInfo;
 })(model.Model);
 exports.LanguageInfo = LanguageInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "LanguageInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a language",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a language",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "boolean",
- *             "description": "Indicates whether a language is available as greeting language",
- *             "$name": "greeting",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "boolean",
- *             "description": "Indicates whether a language is available as formatting locale",
- *             "$name": "formattingLocale",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Localization code of a language",
- *             "$name": "localeCode",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Official name of a language",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "boolean",
- *             "description": "Indicates whether a language is available as UI language",
- *             "$name": "ui",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5093,40 +4543,6 @@ var CountryInfo = (function (_super) {
     return CountryInfo;
 })(model.Model);
 exports.CountryInfo = CountryInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "CountryInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a home country",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Home country URI",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Home country calling code defined by ITU-T recommendations E.123 and E.164, see Calling Codes",
- *             "$name": "callingCode",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Home country code according to the ISO standard, see ISO 3166",
- *             "$name": "isoCode",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5159,40 +4575,6 @@ var TimezoneInfo = (function (_super) {
     return TimezoneInfo;
 })(model.Model);
 exports.TimezoneInfo = TimezoneInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "TimezoneInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a timezone",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a timezone",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Short name of a timezone",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Meaningful description of the timezone",
- *             "$name": "description",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5224,34 +4606,6 @@ var GreetingLanguageInfo = (function (_super) {
     return GreetingLanguageInfo;
 })(model.Model);
 exports.GreetingLanguageInfo = GreetingLanguageInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GreetingLanguageInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a greeting language",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Localization code of a greeting language",
- *             "$name": "localeCode",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Official name of a greeting language",
- *             "$name": "name",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5283,34 +4637,6 @@ var FormattingLocaleInfo = (function (_super) {
     return FormattingLocaleInfo;
 })(model.Model);
 exports.FormattingLocaleInfo = FormattingLocaleInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "FormattingLocaleInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a formatting language",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Localization code of a formatting language",
- *             "$name": "localeCode",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Official name of a formatting language",
- *             "$name": "name",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5342,34 +4668,6 @@ var ExtensionServiceFeatureInfo = (function (_super) {
     return ExtensionServiceFeatureInfo;
 })(model.Model);
 exports.ExtensionServiceFeatureInfo = ExtensionServiceFeatureInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ExtensionServiceFeatureInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "boolean",
- *             "description": "Feature status; shows feature availability for an extension",
- *             "$name": "enabled",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Feature name, see all available values in Service Feature List",
- *             "$name": "featureName",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Reason of limitation for a particular service feature. Returned only if the enabled parameter value is 'False', see Service Feature Limitations and Reasons. When retrieving service features for an extension, the reasons for the limitations, if any, are returned in response",
- *             "$name": "reason",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5405,32 +4703,6 @@ exports.ExtensionStatusInfo = ExtensionStatusInfo;
     ExtensionStatusInfoReason[ExtensionStatusInfoReason["Involuntarily"] = 'Involuntarily'] = "Involuntarily";
 })(exports.ExtensionStatusInfoReason || (exports.ExtensionStatusInfoReason = {}));
 var ExtensionStatusInfoReason = exports.ExtensionStatusInfoReason;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ExtensionStatusInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "A free-form user comment, describing the status change reason",
- *             "$name": "comment",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "ExtensionStatusInfoReason",
- *             "enum": [
- *                 "Voluntarily",
- *                 "Involuntarily"
- *             ],
- *             "description": "Type of suspension",
- *             "$name": "reason",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5468,55 +4740,6 @@ var ServiceInfoResponse = (function (_super) {
     return ServiceInfoResponse;
 })(model.Model);
 exports.ServiceInfoResponse = ServiceInfoResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ServiceInfoResponse",
- *     "imports": [
- *         "billingplaninfo.BillingPlanInfo",
- *         "brandinfo.BrandInfo",
- *         "serviceplaninfo.ServicePlanInfo",
- *         "targetserviceplaninfo.TargetServicePlanInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a service info resource",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/BillingPlanInfo",
- *             "description": "Information on account billing plan",
- *             "$name": "billingPlan",
- *             "isRequired": false,
- *             "type": "billingplaninfo.BillingPlanInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/BrandInfo",
- *             "description": "Information on account brand",
- *             "$name": "brand",
- *             "isRequired": false,
- *             "type": "brandinfo.BrandInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/ServicePlanInfo",
- *             "description": "Information on account service plan",
- *             "$name": "servicePlan",
- *             "isRequired": false,
- *             "type": "serviceplaninfo.ServicePlanInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/TargetServicePlanInfo",
- *             "description": "Information on account target service plan",
- *             "$name": "targetServicePlan",
- *             "isRequired": false,
- *             "type": "targetserviceplaninfo.TargetServicePlanInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5564,58 +4787,6 @@ var BillingPlanInfoDurationUnit = exports.BillingPlanInfoDurationUnit;
     BillingPlanInfoType[BillingPlanInfoType["Free"] = 'Free'] = "Free";
 })(exports.BillingPlanInfoType || (exports.BillingPlanInfoType = {}));
 var BillingPlanInfoType = exports.BillingPlanInfoType;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "BillingPlanInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a billing plan",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Billing plan name",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "BillingPlanInfoDurationUnit",
- *             "enum": [
- *                 "Month",
- *                 "Day"
- *             ],
- *             "description": "Duration period",
- *             "$name": "durationUnit",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Number of duration units",
- *             "$name": "duration",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "BillingPlanInfoType",
- *             "enum": [
- *                 "Initial",
- *                 "Regular",
- *                 "Suspended",
- *                 "Trial",
- *                 "TrialNoCC",
- *                 "Free"
- *             ],
- *             "description": "Billing plan type",
- *             "$name": "type",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5648,37 +4819,6 @@ var BrandInfo = (function (_super) {
     return BrandInfo;
 })(model.Model);
 exports.BrandInfo = BrandInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "BrandInfo",
- *     "imports": [
- *         "countryinfo.CountryInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a brand",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Brand name, for example  RingCentral UK ,  ClearFax ",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/CountryInfo",
- *             "description": "Home country information",
- *             "$name": "homeCountry",
- *             "isRequired": false,
- *             "type": "countryinfo.CountryInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5710,34 +4850,6 @@ var ServicePlanInfo = (function (_super) {
     return ServicePlanInfo;
 })(model.Model);
 exports.ServicePlanInfo = ServicePlanInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ServicePlanInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a service plan",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Name of a service plan",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Edition of a service plan",
- *             "$name": "edition",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5768,28 +4880,6 @@ var TargetServicePlanInfo = (function (_super) {
     return TargetServicePlanInfo;
 })(model.Model);
 exports.TargetServicePlanInfo = TargetServicePlanInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "TargetServicePlanInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a target service plan",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Name of a target service plan",
- *             "$name": "name",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5821,34 +4911,6 @@ var AccountStatusInfo = (function (_super) {
     return AccountStatusInfo;
 })(model.Model);
 exports.AccountStatusInfo = AccountStatusInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "AccountStatusInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Foo",
- *             "$name": "reason",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Foo",
- *             "$name": "comment",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Foo",
- *             "$name": "lifetime",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -5865,116 +4927,53 @@ var __extends = this.__extends || function (d, b) {
 var client = __webpack_require__(41);
 var getversionsresponse = __webpack_require__(65);
 var getversionresponse = __webpack_require__(67);
-var APIVersioning = (function (_super) {
-    __extends(APIVersioning, _super);
-    function APIVersioning() {
+var APIVersions = (function (_super) {
+    __extends(APIVersions, _super);
+    function APIVersions() {
         _super.apply(this, arguments);
     }
-    APIVersioning.prototype.list = function (options) {
-        var apiOptions = {
-            'url': '/restapi/',
-            'method': 'get'
-        }, ResponseClass = getversionsresponse.GetVersionsResponse;
-        apiOptions = this.parseOptions(apiOptions, options, []);
-        return this.apiCall(apiOptions, ResponseClass);
+    /**
+     * Get API Versions
+     *
+     * <p style='font-style:italic;'>Since 1.0.0</p>
+     * <p>Returns current API version(s) and server info.</p>
+     */
+    APIVersions.prototype.list = function (options) {
+        return this.apiCall(this.parseOptions('get', '/restapi/', options, exports.listOptions), getversionsresponse.GetVersionsResponse);
     };
-    APIVersioning.prototype.load = function (options) {
-        var apiOptions = {
-            'url': '/restapi/{apiVersion}',
-            'method': 'get'
-        }, ResponseClass = getversionresponse.GetVersionResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "apiVersion",
-                "type": "string",
-                "in": "path",
-                "description": "API version to be requested, for example 'v1.0'",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+    /**
+     * Get Version Info
+     *
+     * <p style='font-style:italic;'>Since 1.0.0</p>
+     * <p>Returns current API version info by apiVersion.</p>
+     */
+    APIVersions.prototype.load = function (options) {
+        return this.apiCall(this.parseOptions('get', '/restapi/{apiVersion}', options, exports.loadOptions), getversionresponse.GetVersionResponse);
     };
-    return APIVersioning;
+    return APIVersions;
 })(client.Client);
-exports.APIVersioning = APIVersioning;
+exports.APIVersions = APIVersions;
+/**
+ * Definition of options for list operation
+ */
+exports.listOptions = [];
+/**
+ * Definition of options for load operation
+ */
+exports.loadOptions = [
+    {
+        "name": "apiVersion",
+        "type": "string",
+        "in": "path",
+        "required": true
+    }
+];
 function $get(context) {
-    return context.createSingleton('APIVersioning', function () {
-        return new APIVersioning(context);
+    return context.createSingleton('APIVersions', function () {
+        return new APIVersions(context);
     });
 }
 exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "list",
- *         "tags": [
- *             "API Versioning"
- *         ],
- *         "summary": "Get API Versions",
- *         "description": "<p style='font-style:italic;'>Since 1.0.0</p><p>Returns current API version(s) and server info.</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetVersionsResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/",
- *         "method": "get",
- *         "responseSchema": "getversionsresponse.GetVersionsResponse",
- *         "imports": [
- *             "getversionsresponse.GetVersionsResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "load",
- *         "tags": [
- *             "API Versioning"
- *         ],
- *         "summary": "Get Version Info",
- *         "description": "<p style='font-style:italic;'>Since 1.0.0</p><p>Returns current API version info by apiVersion.</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "apiVersion",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "API version to be requested, for example 'v1.0'",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetVersionResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/{apiVersion}",
- *         "method": "get",
- *         "responseSchema": "getversionresponse.GetVersionResponse",
- *         "imports": [
- *             "getversionresponse.GetVersionResponse"
- *         ]
- *     }
- * ]
- */ 
 
 
 /***/ },
@@ -6008,44 +5007,6 @@ var GetVersionsResponse = (function (_super) {
     return GetVersionsResponse;
 })(model.Model);
 exports.GetVersionsResponse = GetVersionsResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetVersionsResponse",
- *     "imports": [
- *         "versioninfo.VersionInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Сanonical URI of the API version",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "versioninfo.VersionInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/VersionInfo"
- *             },
- *             "$name": "apiVersions",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Server version",
- *             "$name": "serverVersion",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Server revision",
- *             "$name": "serverRevision",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -6078,40 +5039,6 @@ var VersionInfo = (function (_super) {
     return VersionInfo;
 })(model.Model);
 exports.VersionInfo = VersionInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "VersionInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of API versions",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Version of the RingCentral REST API",
- *             "$name": "versionString",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Release date of this version",
- *             "$name": "releaseDate",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "URI part determining the current version",
- *             "$name": "uriString",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -6144,40 +5071,6 @@ var GetVersionResponse = (function (_super) {
     return GetVersionResponse;
 })(model.Model);
 exports.GetVersionResponse = GetVersionResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetVersionResponse",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of the version info resource",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Version of the RingCentral REST API",
- *             "$name": "versionString",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Release date of this version",
- *             "$name": "releaseDate",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "URI part determining the current version",
- *             "$name": "uriString",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -6192,342 +5085,336 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var client = __webpack_require__(41);
-var accountactivecallsresponse = __webpack_require__(77);
-var extensionactivecallsresponse = __webpack_require__(78);
-var extensioncalllogresponse = __webpack_require__(69);
-var getextensioncalllogrecordresponse = __webpack_require__(79);
-var getcallrecordingresponse = __webpack_require__(80);
+var extensionactivecallsresponse = __webpack_require__(69);
+var extensioncalllogresponse = __webpack_require__(76);
+var getextensioncalllogrecordresponse = __webpack_require__(77);
+var getcallrecordingresponse = __webpack_require__(78);
 var CallLog = (function (_super) {
     __extends(CallLog, _super);
     function CallLog() {
         _super.apply(this, arguments);
     }
-    CallLog.prototype.listAccountActiveCalls = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/active-calls',
-            'method': 'get'
-        }, ResponseClass = accountactivecallsresponse.AccountActiveCallsResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "direction",
-                "type": "IListAccountActiveCallsDirection",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Inbound",
-                    "Outbound"
-                ],
-                "in": "query",
-                "description": "The direction for the result records. It is allowed to specify more than one direction. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "type",
-                "type": "IListAccountActiveCallsType",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Voice",
-                    "Fax"
-                ],
-                "in": "query",
-                "description": "Call type of a record. It is allowed to specify more than one type. If not specified, all call types are returned. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "page",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
-                "required": false
-            },
-            {
-                "name": "perPage",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
-    };
+    /**
+     * Get Active Calls
+     *
+     * <p style='font-style:italic;'>Since 1.0.13 (Release 6.5)</p>
+     * <p>Returns records of all extension calls that are in progress, ordered by start time in descending order.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadCallLog</td>
+     *             <td>Viewing user call logs</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Heavy</p>
+     */
     CallLog.prototype.listActiveCalls = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls',
-            'method': 'get'
-        }, ResponseClass = extensionactivecallsresponse.ExtensionActiveCallsResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "direction",
-                "type": "IListActiveCallsDirection",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Inbound",
-                    "Outbound"
-                ],
-                "in": "query",
-                "description": "The direction for the result records. It is allowed to specify more than one direction. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "type",
-                "type": "IListActiveCallsType",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Voice",
-                    "Fax"
-                ],
-                "in": "query",
-                "description": "Call type of a record. It is allowed to specify more than one type. If not specified, all call types are returned. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "page",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
-                "required": false
-            },
-            {
-                "name": "perPage",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls', options, exports.listActiveCallsOptions), extensionactivecallsresponse.ExtensionActiveCallsResponse);
     };
+    /**
+     * Get Call Log Records by Filter
+     *
+     * <p style='font-style:italic;'>Since 1.0.3 (Release 5.11)</p>
+     * <p>Returns call log records filtered by the specified parameters.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadCallLog</td>
+     *             <td>Viewing user call logs</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Heavy</p>
+     */
     CallLog.prototype.list = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log',
-            'method': 'get'
-        }, ResponseClass = extensioncalllogresponse.ExtensionCallLogResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionNumber",
-                "type": "string",
-                "in": "query",
-                "description": "Extension number of a user. If specified, returns call log for a particular extension only. Cannot be specified together with the phoneNumber filter",
-                "required": false
-            },
-            {
-                "name": "phoneNumber",
-                "type": "string",
-                "in": "query",
-                "description": "Phone number of a caller/call recipient. If specified, returns all calls (both incoming and outcoming) with the mentioned phone number. Cannot be specified together with the extensionNumber filter",
-                "required": false
-            },
-            {
-                "name": "direction",
-                "type": "IListDirection",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Inbound",
-                    "Outbound"
-                ],
-                "in": "query",
-                "description": "The direction for the result records. It is allowed to specify more than one direction. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "type",
-                "type": "IListType",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Voice",
-                    "Fax"
-                ],
-                "in": "query",
-                "description": "Call type of a record. It is allowed to specify more than one type. If not specified, all call types are returned. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "view",
-                "type": "IListView",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Simple",
-                    "Detailed"
-                ],
-                "in": "query",
-                "description": "The default value is 'Simple' for both account and extension call log",
-                "required": false
-            },
-            {
-                "name": "withRecording",
-                "type": "IListWithRecording",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "True",
-                    "False"
-                ],
-                "in": "query",
-                "description": "'True' if only recorded calls have to be returned",
-                "required": false
-            },
-            {
-                "name": "dateTo",
-                "type": "Date",
-                "in": "query",
-                "description": "Specifies the ending timestamp for result records. Default: current time",
-                "required": false
-            },
-            {
-                "name": "dateFrom",
-                "type": "Date",
-                "in": "query",
-                "description": "The start timestamp for result records. Default value is equal to dateTo minus 1 week",
-                "required": false
-            },
-            {
-                "name": "page",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
-                "required": false
-            },
-            {
-                "name": "perPage",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log', options, exports.listOptions), extensioncalllogresponse.ExtensionCallLogResponse);
     };
+    /**
+     * Get Call Log Record
+     *
+     * <p style='font-style:italic;'>Since 1.0.3 (Release 5.11)</p>
+     * <p>Returns individual call log record by callRecordId(s).</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadCallLog</td>
+     *             <td>Viewing user call logs</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Heavy</p>
+     */
     CallLog.prototype.load = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}',
-            'method': 'get'
-        }, ResponseClass = getextensioncalllogrecordresponse.GetExtensionCallLogRecordResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "callRecordId",
-                "type": "number",
-                "in": "path",
-                "description": "Internal identifier of a call log record",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}', options, exports.loadOptions), getextensioncalllogrecordresponse.GetExtensionCallLogRecordResponse);
     };
-    CallLog.prototype.loadAccountRecording = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/recording/{recordingId}',
-            'method': 'get'
-        }, ResponseClass = getcallrecordingresponse.GetCallRecordingResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "recordingId",
-                "type": "number",
-                "in": "path",
-                "description": "Internal identifier of recording (returned in Call Log)",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+    /**
+     * Get Call Recording
+     *
+     * <p style='font-style:italic;'>Since 1.0.18</p>
+     * <p>Returns call recording metadata.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadCallRecording</td>
+     *             <td>Downloading call recording content</td>
+     *         </tr>
+     *         <tr>
+     *             <td class='code'>ReadCallLog</td>
+     *             <td>Viewing user call logs</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Heavy</p>
+     */
+    CallLog.prototype.loadRecording = function (options) {
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/recording/{recordingId}', options, exports.loadRecordingOptions), getcallrecordingresponse.GetCallRecordingResponse);
     };
     return CallLog;
 })(client.Client);
 exports.CallLog = CallLog;
-(function (IListAccountActiveCallsDirection) {
-    IListAccountActiveCallsDirection[IListAccountActiveCallsDirection["Inbound"] = 'Inbound'] = "Inbound";
-    IListAccountActiveCallsDirection[IListAccountActiveCallsDirection["Outbound"] = 'Outbound'] = "Outbound";
-})(exports.IListAccountActiveCallsDirection || (exports.IListAccountActiveCallsDirection = {}));
-var IListAccountActiveCallsDirection = exports.IListAccountActiveCallsDirection;
-(function (IListAccountActiveCallsType) {
-    IListAccountActiveCallsType[IListAccountActiveCallsType["Voice"] = 'Voice'] = "Voice";
-    IListAccountActiveCallsType[IListAccountActiveCallsType["Fax"] = 'Fax'] = "Fax";
-})(exports.IListAccountActiveCallsType || (exports.IListAccountActiveCallsType = {}));
-var IListAccountActiveCallsType = exports.IListAccountActiveCallsType;
+/**
+ * Definition of options for listActiveCalls operation
+ */
+exports.listActiveCallsOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "direction",
+        "type": "IListActiveCallsDirection",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Inbound",
+            "Outbound"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "type",
+        "type": "IListActiveCallsType",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Voice",
+            "Fax"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "page",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "type": "number",
+        "in": "query",
+        "required": false
+    }
+];
+/**
+ * Definition of options for list operation
+ */
+exports.listOptions = [
+    {
+        "name": "accountId",
+        "type": "number",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "number",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionNumber",
+        "type": "string",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "phoneNumber",
+        "type": "string",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "direction",
+        "type": "IListDirection",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Inbound",
+            "Outbound"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "type",
+        "type": "IListType",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Voice",
+            "Fax"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "view",
+        "type": "IListView",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Simple",
+            "Detailed"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "withRecording",
+        "type": "boolean",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "dateTo",
+        "type": "Date",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "dateFrom",
+        "type": "Date",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "page",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "type": "number",
+        "in": "query",
+        "required": false
+    }
+];
+/**
+ * Definition of options for load operation
+ */
+exports.loadOptions = [
+    {
+        "name": "accountId",
+        "type": "number",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "number",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "callRecordId",
+        "type": "number",
+        "in": "path",
+        "required": true
+    }
+];
+/**
+ * Definition of options for loadRecording operation
+ */
+exports.loadRecordingOptions = [
+    {
+        "name": "accountId",
+        "type": "number",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "recordingId",
+        "type": "number",
+        "in": "path",
+        "required": true
+    }
+];
 (function (IListActiveCallsDirection) {
     IListActiveCallsDirection[IListActiveCallsDirection["Inbound"] = 'Inbound'] = "Inbound";
     IListActiveCallsDirection[IListActiveCallsDirection["Outbound"] = 'Outbound'] = "Outbound";
@@ -6553,441 +5440,12 @@ var IListType = exports.IListType;
     IListView[IListView["Detailed"] = 'Detailed'] = "Detailed";
 })(exports.IListView || (exports.IListView = {}));
 var IListView = exports.IListView;
-(function (IListWithRecording) {
-    IListWithRecording[IListWithRecording["True"] = 'True'] = "True";
-    IListWithRecording[IListWithRecording["False"] = 'False'] = "False";
-})(exports.IListWithRecording || (exports.IListWithRecording = {}));
-var IListWithRecording = exports.IListWithRecording;
 function $get(context) {
     return context.createSingleton('CallLog', function () {
         return new CallLog(context);
     });
 }
 exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "listAccountActiveCalls",
- *         "tags": [
- *             "Call Log"
- *         ],
- *         "summary": "Get Account Active Calls",
- *         "description": "<p style='font-style:italic;'>Since 1.0.13 (Release 6.5)</p><p>Returns records of all calls that are in progress, ordered by start time in descending order.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadCallLog</td><td>Viewing user call logs</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "direction",
- *                 "type": "IListAccountActiveCallsDirection",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Inbound",
- *                     "Outbound"
- *                 ],
- *                 "in": "query",
- *                 "description": "The direction for the result records. It is allowed to specify more than one direction. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "type",
- *                 "type": "IListAccountActiveCallsType",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Voice",
- *                     "Fax"
- *                 ],
- *                 "in": "query",
- *                 "description": "Call type of a record. It is allowed to specify more than one type. If not specified, all call types are returned. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "page",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
- *                 "required": false
- *             },
- *             {
- *                 "name": "perPage",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/AccountActiveCallsResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/active-calls",
- *         "method": "get",
- *         "responseSchema": "accountactivecallsresponse.AccountActiveCallsResponse",
- *         "imports": [
- *             "accountactivecallsresponse.AccountActiveCallsResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "listActiveCalls",
- *         "tags": [
- *             "Call Log"
- *         ],
- *         "summary": "Get Active Calls",
- *         "description": "<p style='font-style:italic;'>Since 1.0.13 (Release 6.5)</p><p>Returns records of all extension calls that are in progress, ordered by start time in descending order.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadCallLog</td><td>Viewing user call logs</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "direction",
- *                 "type": "IListActiveCallsDirection",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Inbound",
- *                     "Outbound"
- *                 ],
- *                 "in": "query",
- *                 "description": "The direction for the result records. It is allowed to specify more than one direction. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "type",
- *                 "type": "IListActiveCallsType",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Voice",
- *                     "Fax"
- *                 ],
- *                 "in": "query",
- *                 "description": "Call type of a record. It is allowed to specify more than one type. If not specified, all call types are returned. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "page",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
- *                 "required": false
- *             },
- *             {
- *                 "name": "perPage",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/ExtensionActiveCallsResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls",
- *         "method": "get",
- *         "responseSchema": "extensionactivecallsresponse.ExtensionActiveCallsResponse",
- *         "imports": [
- *             "extensionactivecallsresponse.ExtensionActiveCallsResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "list",
- *         "tags": [
- *             "Call Log"
- *         ],
- *         "summary": "Get Call Log Records by Filter",
- *         "description": "<p style='font-style:italic;'>Since 1.0.3 (Release 5.11)</p><p>Returns call log records filtered by the specified parameters.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadCallLog</td><td>Viewing user call logs</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionNumber",
- *                 "type": "string",
- *                 "in": "query",
- *                 "description": "Extension number of a user. If specified, returns call log for a particular extension only. Cannot be specified together with the phoneNumber filter",
- *                 "required": false
- *             },
- *             {
- *                 "name": "phoneNumber",
- *                 "type": "string",
- *                 "in": "query",
- *                 "description": "Phone number of a caller/call recipient. If specified, returns all calls (both incoming and outcoming) with the mentioned phone number. Cannot be specified together with the extensionNumber filter",
- *                 "required": false
- *             },
- *             {
- *                 "name": "direction",
- *                 "type": "IListDirection",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Inbound",
- *                     "Outbound"
- *                 ],
- *                 "in": "query",
- *                 "description": "The direction for the result records. It is allowed to specify more than one direction. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "type",
- *                 "type": "IListType",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Voice",
- *                     "Fax"
- *                 ],
- *                 "in": "query",
- *                 "description": "Call type of a record. It is allowed to specify more than one type. If not specified, all call types are returned. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "view",
- *                 "type": "IListView",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Simple",
- *                     "Detailed"
- *                 ],
- *                 "in": "query",
- *                 "description": "The default value is 'Simple' for both account and extension call log",
- *                 "required": false
- *             },
- *             {
- *                 "name": "withRecording",
- *                 "type": "IListWithRecording",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "True",
- *                     "False"
- *                 ],
- *                 "in": "query",
- *                 "description": "'True' if only recorded calls have to be returned",
- *                 "required": false
- *             },
- *             {
- *                 "name": "dateTo",
- *                 "type": "Date",
- *                 "in": "query",
- *                 "description": "Specifies the ending timestamp for result records. Default: current time",
- *                 "required": false
- *             },
- *             {
- *                 "name": "dateFrom",
- *                 "type": "Date",
- *                 "in": "query",
- *                 "description": "The start timestamp for result records. Default value is equal to dateTo minus 1 week",
- *                 "required": false
- *             },
- *             {
- *                 "name": "page",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
- *                 "required": false
- *             },
- *             {
- *                 "name": "perPage",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/ExtensionCallLogResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log",
- *         "method": "get",
- *         "responseSchema": "extensioncalllogresponse.ExtensionCallLogResponse",
- *         "imports": [
- *             "extensioncalllogresponse.ExtensionCallLogResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "load",
- *         "tags": [
- *             "Call Log"
- *         ],
- *         "summary": "Get Call Log Record",
- *         "description": "<p style='font-style:italic;'>Since 1.0.3 (Release 5.11)</p><p>Returns individual call log record by callRecordId(s).</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadCallLog</td><td>Viewing user call logs</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "callRecordId",
- *                 "type": "number",
- *                 "in": "path",
- *                 "description": "Internal identifier of a call log record",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetExtensionCallLogRecordResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}",
- *         "method": "get",
- *         "responseSchema": "getextensioncalllogrecordresponse.GetExtensionCallLogRecordResponse",
- *         "imports": [
- *             "getextensioncalllogrecordresponse.GetExtensionCallLogRecordResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "loadAccountRecording",
- *         "tags": [
- *             "Call Log"
- *         ],
- *         "summary": "Get Call Recording",
- *         "description": "<p style='font-style:italic;'>Since 1.0.18</p><p>Returns call recording metadata.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadCallRecording</td><td>Downloading call recording content</td></tr><tr><td class='code'>ReadCallLog</td><td>Viewing user call logs</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "recordingId",
- *                 "type": "number",
- *                 "in": "path",
- *                 "description": "Internal identifier of recording (returned in Call Log)",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetCallRecordingResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/recording/{recordingId}",
- *         "method": "get",
- *         "responseSchema": "getcallrecordingresponse.GetCallRecordingResponse",
- *         "imports": [
- *             "getcallrecordingresponse.GetCallRecordingResponse"
- *         ]
- *     }
- * ]
- */ 
 
 
 /***/ },
@@ -7002,62 +5460,26 @@ var __extends = this.__extends || function (d, b) {
 };
 var model = __webpack_require__(43);
 var calllogrecord = __webpack_require__(70);
-var paginginfo = __webpack_require__(74);
-var navigationinfo = __webpack_require__(75);
-var ExtensionCallLogResponse = (function (_super) {
-    __extends(ExtensionCallLogResponse, _super);
-    function ExtensionCallLogResponse() {
+var navigationinfo = __webpack_require__(74);
+var paginginfo = __webpack_require__(75);
+var ExtensionActiveCallsResponse = (function (_super) {
+    __extends(ExtensionActiveCallsResponse, _super);
+    function ExtensionActiveCallsResponse() {
         _super.apply(this, arguments);
     }
-    ExtensionCallLogResponse.prototype.getPropertyMappings = function () {
+    ExtensionActiveCallsResponse.prototype.getPropertyMappings = function () {
         return [
-            { property: 'records', Class: calllogrecord.CallLogRecord, isArray: true, isRequired: true },
-            { property: 'paging', Class: paginginfo.PagingInfo, isArray: false, isRequired: true },
-            { property: 'navigation', Class: navigationinfo.NavigationInfo, isArray: false, isRequired: true }
+            { property: 'records', Class: calllogrecord.CallLogRecord, isArray: true, isRequired: false },
+            { property: 'navigation', Class: navigationinfo.NavigationInfo, isArray: false, isRequired: false },
+            { property: 'paging', Class: paginginfo.PagingInfo, isArray: false, isRequired: false }
         ];
     };
-    ExtensionCallLogResponse.prototype.getClassName = function () {
-        return 'ExtensionCallLogResponse';
+    ExtensionActiveCallsResponse.prototype.getClassName = function () {
+        return 'ExtensionActiveCallsResponse';
     };
-    return ExtensionCallLogResponse;
+    return ExtensionActiveCallsResponse;
 })(model.Model);
-exports.ExtensionCallLogResponse = ExtensionCallLogResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ExtensionCallLogResponse",
- *     "imports": [
- *         "calllogrecord.CallLogRecord",
- *         "paginginfo.PagingInfo",
- *         "navigationinfo.NavigationInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "calllogrecord.CallLogRecord[]",
- *             "items": {
- *                 "$ref": "#/definitions/CallLogRecord"
- *             },
- *             "$name": "records",
- *             "isRequired": true
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": true,
- *             "type": "paginginfo.PagingInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": true,
- *             "type": "navigationinfo.NavigationInfo"
- *         }
- *     ]
- * }
- */ 
+exports.ExtensionActiveCallsResponse = ExtensionActiveCallsResponse;
 
 
 /***/ },
@@ -7090,7 +5512,7 @@ var CallLogRecord = (function (_super) {
             { property: 'direction', Class: CallLogRecordDirection, isArray: false, isRequired: false },
             { property: 'action', Class: CallLogRecordAction, isArray: false, isRequired: false },
             { property: 'result', Class: CallLogRecordResult, isArray: false, isRequired: false },
-            { property: 'startTime', Class: Date, isArray: false, isRequired: false },
+            { property: 'startTime', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'duration', Class: null /* number */, isArray: false, isRequired: false },
             { property: 'transport', Class: CallLogRecordTransport, isArray: false, isRequired: false },
             { property: 'message', Class: null /* any */, isArray: false, isRequired: false },
@@ -7189,199 +5611,6 @@ var CallLogRecordTransport = exports.CallLogRecordTransport;
     CallLogRecordBilling[CallLogRecordBilling["costPurchased"] = 'costPurchased'] = "costPurchased";
 })(exports.CallLogRecordBilling || (exports.CallLogRecordBilling = {}));
 var CallLogRecordBilling = exports.CallLogRecordBilling;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "CallLogRecord",
- *     "imports": [
- *         "calllogcallerinfo.CallLogCallerInfo",
- *         "recordinginfo.RecordingInfo",
- *         "calllogrecordleginfo.CallLogRecordLegInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a cal log record",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a call log record",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a call session",
- *             "$name": "sessionId",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Caller information",
- *             "$name": "from",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Callee information",
- *             "$name": "to",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "type": "CallLogRecordType",
- *             "enum": [
- *                 "Voice",
- *                 "Fax"
- *             ],
- *             "description": "Call type",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordDirection",
- *             "enum": [
- *                 "Inbound",
- *                 "Outbound"
- *             ],
- *             "description": "Call direction",
- *             "$name": "direction",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordAction",
- *             "enum": [
- *                 "Unknown",
- *                 "Phone Call",
- *                 "Phone Login",
- *                 "Incoming Fax",
- *                 "Accept Call",
- *                 "FindMe",
- *                 "FollowMe",
- *                 "Outgoing Fax",
- *                 "Call Return",
- *                 "Calling Card",
- *                 "Ring Directly",
- *                 "RingOut Web",
- *                 "VoIP Call",
- *                 "RingOut PC",
- *                 "RingMe",
- *                 "Transfer",
- *                 "411 Info",
- *                 "Emergency",
- *                 "E911 Update",
- *                 "Support",
- *                 "RingOut Mobile"
- *             ],
- *             "description": "Action description of the call operation.",
- *             "$name": "action",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordResult",
- *             "enum": [
- *                 "Unknown",
- *                 "ResultInProgress",
- *                 "Missed",
- *                 "Call accepted",
- *                 "Voicemail",
- *                 "Rejected",
- *                 "Reply",
- *                 "Received",
- *                 "Receive Error",
- *                 "Fax on Demand",
- *                 "Partial Receive",
- *                 "Blocked",
- *                 "Call сonnected",
- *                 "No Answer",
- *                 "Busy",
- *                 "Send Error",
- *                 "Sent",
- *                 "No fax machine",
- *                 "ResultEmpty",
- *                 "Account",
- *                 "Suspended",
- *                 "Call Failed",
- *                 "Call Failure",
- *                 "Internal Error",
- *                 "IP Phone offline",
- *                 "Restricted Number",
- *                 "Wrong Number",
- *                 "Stopped",
- *                 "Hang up",
- *                 "Poor Line Quality",
- *                 "Partially Sent",
- *                 "International Disabled",
- *                 "International Restriction",
- *                 "Abandoned",
- *                 "Declined",
- *                 "Fax Receipt Error",
- *                 "Fax Send Error"
- *             ],
- *             "description": "Status description of the call operation.",
- *             "$name": "result",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Date",
- *             "description": "Call start time",
- *             "$name": "startTime",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Call duration in seconds",
- *             "$name": "duration",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordTransport",
- *             "enum": [
- *                 "PSTN",
- *                 "VoIP"
- *             ],
- *             "description": "Call transport",
- *             "$name": "transport",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "any",
- *             "description": "Message attachment",
- *             "$name": "message",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/RecordingInfo",
- *             "description": "Call recording data. Returned if the call is recorded",
- *             "$name": "recording",
- *             "isRequired": false,
- *             "type": "recordinginfo.RecordingInfo"
- *         },
- *         {
- *             "type": "CallLogRecordBilling",
- *             "enum": [
- *                 "costIncluded",
- *                 "costPurchased"
- *             ],
- *             "description": "Information on costs",
- *             "$name": "billing",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "calllogrecordleginfo.CallLogRecordLegInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/CallLogRecordLegInfo"
- *             },
- *             "$name": "legs",
- *             "isRequired": true
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -7414,40 +5643,6 @@ var CallLogCallerInfo = (function (_super) {
     return CallLogCallerInfo;
 })(model.Model);
 exports.CallLogCallerInfo = CallLogCallerInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "CallLogCallerInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS",
- *             "$name": "phoneNumber",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Extension short number (usually 3 or 4 digits). This property is filled when parties communicate by means of short internal numbers, for example when calling to other extension or sending/receiving Company Pager message",
- *             "$name": "extensionNumber",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)",
- *             "$name": "location",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Symbolic name associated with a party. If the phone does not belong to the known extension, only the location is returned, the name is not determined then",
- *             "$name": "name",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -7485,44 +5680,6 @@ exports.RecordingInfo = RecordingInfo;
     RecordingInfoType[RecordingInfoType["OnDemand"] = 'OnDemand'] = "OnDemand";
 })(exports.RecordingInfoType || (exports.RecordingInfoType = {}));
 var RecordingInfoType = exports.RecordingInfoType;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "RecordingInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "number",
- *             "description": "Internal identifier of the call recording",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to the call recording metadata resource",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "RecordingInfoType",
- *             "enum": [
- *                 "Automatic",
- *                 "OnDemand"
- *             ],
- *             "description": "Indicates recording mode used",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to the call recording binary content",
- *             "$name": "contentUri",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -7545,7 +5702,7 @@ var CallLogRecordLegInfo = (function (_super) {
     }
     CallLogRecordLegInfo.prototype.getPropertyMappings = function () {
         return [
-            { property: 'startTime', Class: Date, isArray: false, isRequired: false },
+            { property: 'startTime', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'duration', Class: null /* number */, isArray: false, isRequired: false },
             { property: 'type', Class: CallLogRecordLegInfoType, isArray: false, isRequired: false },
             { property: 'direction', Class: CallLogRecordLegInfoDirection, isArray: false, isRequired: false },
@@ -7650,182 +5807,42 @@ var CallLogRecordLegInfoTransport = exports.CallLogRecordLegInfoTransport;
     CallLogRecordLegInfoBilling[CallLogRecordLegInfoBilling["costPurchased"] = 'costPurchased'] = "costPurchased";
 })(exports.CallLogRecordLegInfoBilling || (exports.CallLogRecordLegInfoBilling = {}));
 var CallLogRecordLegInfoBilling = exports.CallLogRecordLegInfoBilling;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "CallLogRecordLegInfo",
- *     "imports": [
- *         "calllogcallerinfo.CallLogCallerInfo",
- *         "recordinginfo.RecordingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "Date",
- *             "description": "Call start time",
- *             "$name": "startTime",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Call duration in seconds",
- *             "$name": "duration",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoType",
- *             "enum": [
- *                 "Voice",
- *                 "Fax"
- *             ],
- *             "description": "Call type",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoDirection",
- *             "enum": [
- *                 "Inbound",
- *                 "Outbound"
- *             ],
- *             "description": "Call direction",
- *             "$name": "direction",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoAction",
- *             "enum": [
- *                 "Unknown",
- *                 "Phone Call",
- *                 "Phone Login",
- *                 "Incoming Fax",
- *                 "Accept Call",
- *                 "FindMe",
- *                 "FollowMe",
- *                 "Outgoing Fax",
- *                 "Call Return",
- *                 "Calling Card",
- *                 "Ring Directly",
- *                 "RingOut Web",
- *                 "VoIP Call",
- *                 "RingOut PC",
- *                 "RingMe",
- *                 "Transfer",
- *                 "411 Info",
- *                 "Emergency",
- *                 "E911 Update",
- *                 "Support",
- *                 "RingOut Mobile"
- *             ],
- *             "description": "Action description of the call operation.",
- *             "$name": "action",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoResult",
- *             "enum": [
- *                 "Unknown",
- *                 "ResultInProgress",
- *                 "Missed",
- *                 "Call accepted",
- *                 "Voicemail",
- *                 "Rejected",
- *                 "Reply",
- *                 "Received",
- *                 "Receive Error",
- *                 "Fax on Demand",
- *                 "Partial Receive",
- *                 "Blocked",
- *                 "Call сonnected",
- *                 "No Answer",
- *                 "Busy",
- *                 "Send Error",
- *                 "Sent",
- *                 "No fax machine",
- *                 "ResultEmpty",
- *                 "Account",
- *                 "Suspended",
- *                 "Call Failed",
- *                 "Call Failure",
- *                 "Internal Error",
- *                 "IP Phone offline",
- *                 "Restricted Number",
- *                 "Wrong Number",
- *                 "Stopped",
- *                 "Hang up",
- *                 "Poor Line Quality",
- *                 "Partially Sent",
- *                 "International Disabled",
- *                 "International Restriction",
- *                 "Abandoned",
- *                 "Declined",
- *                 "Fax Receipt Error",
- *                 "Fax Send Error"
- *             ],
- *             "description": "Status description of the call operation.",
- *             "$name": "result",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Caller information",
- *             "$name": "from",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Callee information",
- *             "$name": "to",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoTransport",
- *             "enum": [
- *                 "PSTN",
- *                 "VoIP"
- *             ],
- *             "description": "Call transport",
- *             "$name": "transport",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "any",
- *             "description": "Message attachment",
- *             "$name": "message",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/RecordingInfo",
- *             "description": "Call recording data. Returned if the call is recorded",
- *             "$name": "recording",
- *             "isRequired": false,
- *             "type": "recordinginfo.RecordingInfo"
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoBilling",
- *             "enum": [
- *                 "costIncluded",
- *                 "costPurchased"
- *             ],
- *             "description": "Information on costs",
- *             "$name": "billing",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Leg type",
- *             "$name": "legType",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
 /* 74 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var model = __webpack_require__(43);
+var NavigationInfo = (function (_super) {
+    __extends(NavigationInfo, _super);
+    function NavigationInfo() {
+        _super.apply(this, arguments);
+    }
+    NavigationInfo.prototype.getPropertyMappings = function () {
+        return [
+            { property: 'firstPage', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'nextPage', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'previousPage', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'lastPage', Class: null /* string */, isArray: false, isRequired: false }
+        ];
+    };
+    NavigationInfo.prototype.getClassName = function () {
+        return 'NavigationInfo';
+    };
+    return NavigationInfo;
+})(model.Model);
+exports.NavigationInfo = NavigationInfo;
+
+
+/***/ },
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -7856,121 +5873,6 @@ var PagingInfo = (function (_super) {
     return PagingInfo;
 })(model.Model);
 exports.PagingInfo = PagingInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "PagingInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "number",
- *             "description": "The current page number. 1-indexed, so the first page is 1 by default. May be omitted if result is empty (because non-existent page was specified or perPage=0 was requested)",
- *             "$name": "page",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Current page size, describes how many items are in each page. Default value is 100. Maximum value is 1000. If perPage value in the request is greater than 1000, the maximum value (1000) is applied",
- *             "$name": "perPage",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "The zero-based number of the first element on the current page. Omitted if the page is omitted or result is empty",
- *             "$name": "pageStart",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "The zero-based index of the last element on the current page. Omitted if the page is omitted or result is empty",
- *             "$name": "pageEnd",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "The total number of pages in a dataset. May be omitted for some resources due to performance reasons",
- *             "$name": "totalPages",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "The total number of elements in a dataset. May be omitted for some resource due to performance reasons",
- *             "$name": "totalElements",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 75 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var navigationinfopage = __webpack_require__(76);
-var NavigationInfo = (function (_super) {
-    __extends(NavigationInfo, _super);
-    function NavigationInfo() {
-        _super.apply(this, arguments);
-    }
-    NavigationInfo.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'firstPage', Class: navigationinfopage.NavigationInfoPage, isArray: false, isRequired: false },
-            { property: 'nextPage', Class: navigationinfopage.NavigationInfoPage, isArray: false, isRequired: false },
-            { property: 'previousPage', Class: navigationinfopage.NavigationInfoPage, isArray: false, isRequired: false },
-            { property: 'lastPage', Class: navigationinfopage.NavigationInfoPage, isArray: false, isRequired: false }
-        ];
-    };
-    NavigationInfo.prototype.getClassName = function () {
-        return 'NavigationInfo';
-    };
-    return NavigationInfo;
-})(model.Model);
-exports.NavigationInfo = NavigationInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "NavigationInfo",
- *     "imports": [
- *         "navigationinfopage.NavigationInfoPage"
- *     ],
- *     "properties": [
- *         {
- *             "type": "navigationinfopage.NavigationInfoPage",
- *             "description": "Canonical URI for the first page of the list",
- *             "$name": "firstPage",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "navigationinfopage.NavigationInfoPage",
- *             "description": "Canonical URI for the next page of the list",
- *             "$name": "nextPage",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "navigationinfopage.NavigationInfoPage",
- *             "description": "Canonical URI for the previous page of the list",
- *             "$name": "previousPage",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "navigationinfopage.NavigationInfoPage",
- *             "description": "Canonical URI for the last page of the list",
- *             "$name": "lastPage",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
@@ -7984,161 +5886,31 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var model = __webpack_require__(43);
-var NavigationInfoPage = (function (_super) {
-    __extends(NavigationInfoPage, _super);
-    function NavigationInfoPage() {
-        _super.apply(this, arguments);
-    }
-    NavigationInfoPage.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'uri', Class: null /* string */, isArray: false, isRequired: false }
-        ];
-    };
-    NavigationInfoPage.prototype.getClassName = function () {
-        return 'NavigationInfoPage';
-    };
-    return NavigationInfoPage;
-})(model.Model);
-exports.NavigationInfoPage = NavigationInfoPage;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "NavigationInfoPage",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Canonical URI",
- *             "$name": "uri",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 77 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
 var calllogrecord = __webpack_require__(70);
-var paginginfo = __webpack_require__(74);
-var navigationinfo = __webpack_require__(75);
-var AccountActiveCallsResponse = (function (_super) {
-    __extends(AccountActiveCallsResponse, _super);
-    function AccountActiveCallsResponse() {
+var paginginfo = __webpack_require__(75);
+var navigationinfo = __webpack_require__(74);
+var ExtensionCallLogResponse = (function (_super) {
+    __extends(ExtensionCallLogResponse, _super);
+    function ExtensionCallLogResponse() {
         _super.apply(this, arguments);
     }
-    AccountActiveCallsResponse.prototype.getPropertyMappings = function () {
+    ExtensionCallLogResponse.prototype.getPropertyMappings = function () {
         return [
             { property: 'records', Class: calllogrecord.CallLogRecord, isArray: true, isRequired: true },
             { property: 'paging', Class: paginginfo.PagingInfo, isArray: false, isRequired: true },
             { property: 'navigation', Class: navigationinfo.NavigationInfo, isArray: false, isRequired: true }
         ];
     };
-    AccountActiveCallsResponse.prototype.getClassName = function () {
-        return 'AccountActiveCallsResponse';
+    ExtensionCallLogResponse.prototype.getClassName = function () {
+        return 'ExtensionCallLogResponse';
     };
-    return AccountActiveCallsResponse;
+    return ExtensionCallLogResponse;
 })(model.Model);
-exports.AccountActiveCallsResponse = AccountActiveCallsResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "AccountActiveCallsResponse",
- *     "imports": [
- *         "calllogrecord.CallLogRecord",
- *         "paginginfo.PagingInfo",
- *         "navigationinfo.NavigationInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "calllogrecord.CallLogRecord[]",
- *             "items": {
- *                 "$ref": "#/definitions/CallLogRecord"
- *             },
- *             "$name": "records",
- *             "isRequired": true
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": true,
- *             "type": "paginginfo.PagingInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": true,
- *             "type": "navigationinfo.NavigationInfo"
- *         }
- *     ]
- * }
- */ 
+exports.ExtensionCallLogResponse = ExtensionCallLogResponse;
 
 
 /***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var navigationinfo = __webpack_require__(75);
-var ExtensionActiveCallsResponse = (function (_super) {
-    __extends(ExtensionActiveCallsResponse, _super);
-    function ExtensionActiveCallsResponse() {
-        _super.apply(this, arguments);
-    }
-    ExtensionActiveCallsResponse.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'perPage', Class: navigationinfo.NavigationInfo, isArray: false, isRequired: false }
-        ];
-    };
-    ExtensionActiveCallsResponse.prototype.getClassName = function () {
-        return 'ExtensionActiveCallsResponse';
-    };
-    return ExtensionActiveCallsResponse;
-})(model.Model);
-exports.ExtensionActiveCallsResponse = ExtensionActiveCallsResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ExtensionActiveCallsResponse",
- *     "imports": [
- *         "navigationinfo.NavigationInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Standard collection metadata",
- *             "$name": "perPage",
- *             "isRequired": false,
- *             "type": "navigationinfo.NavigationInfo"
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 79 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -8166,7 +5938,7 @@ var GetExtensionCallLogRecordResponse = (function (_super) {
             { property: 'direction', Class: GetExtensionCallLogRecordResponseDirection, isArray: false, isRequired: false },
             { property: 'action', Class: GetExtensionCallLogRecordResponseAction, isArray: false, isRequired: false },
             { property: 'result', Class: GetExtensionCallLogRecordResponseResult, isArray: false, isRequired: false },
-            { property: 'startTime', Class: Date, isArray: false, isRequired: false },
+            { property: 'startTime', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'duration', Class: null /* number */, isArray: false, isRequired: false },
             { property: 'recording', Class: recordinginfo.RecordingInfo, isArray: false, isRequired: false }
         ];
@@ -8251,168 +6023,10 @@ var GetExtensionCallLogRecordResponseAction = exports.GetExtensionCallLogRecordR
     GetExtensionCallLogRecordResponseResult[GetExtensionCallLogRecordResponseResult["FaxSendError"] = 'Fax Send Error'] = "FaxSendError";
 })(exports.GetExtensionCallLogRecordResponseResult || (exports.GetExtensionCallLogRecordResponseResult = {}));
 var GetExtensionCallLogRecordResponseResult = exports.GetExtensionCallLogRecordResponseResult;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetExtensionCallLogRecordResponse",
- *     "imports": [
- *         "calllogcallerinfo.CallLogCallerInfo",
- *         "recordinginfo.RecordingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a cal log record",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a call log record",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a call session",
- *             "$name": "sessionId",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Caller information",
- *             "$name": "from",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Callee information",
- *             "$name": "to",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "type": "GetExtensionCallLogRecordResponseType",
- *             "enum": [
- *                 "Voice",
- *                 "Fax"
- *             ],
- *             "description": "Call type",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionCallLogRecordResponseDirection",
- *             "enum": [
- *                 "Inbound",
- *                 "Outbound"
- *             ],
- *             "description": "Call direction",
- *             "$name": "direction",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionCallLogRecordResponseAction",
- *             "enum": [
- *                 "Unknown",
- *                 "Phone Call",
- *                 "Phone Login",
- *                 "Incoming Fax",
- *                 "Accept Call",
- *                 "FindMe",
- *                 "FollowMe",
- *                 "Outgoing Fax",
- *                 "Call Return",
- *                 "Calling Card",
- *                 "Ring Directly",
- *                 "RingOut Web",
- *                 "VoIP Call",
- *                 "RingOut PC",
- *                 "RingMe",
- *                 "Transfer",
- *                 "411 Info",
- *                 "Emergency",
- *                 "E911 Update",
- *                 "Support",
- *                 "RingOut Mobile"
- *             ],
- *             "description": "Action description of the call operation.",
- *             "$name": "action",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionCallLogRecordResponseResult",
- *             "enum": [
- *                 "Unknown",
- *                 "ResultInProgress",
- *                 "Missed",
- *                 "Call accepted",
- *                 "Voicemail",
- *                 "Rejected",
- *                 "Reply",
- *                 "Received",
- *                 "Receive Error",
- *                 "Fax on Demand",
- *                 "Partial Receive",
- *                 "Blocked",
- *                 "Call сonnected",
- *                 "No Answer",
- *                 "Busy",
- *                 "Send Error",
- *                 "Sent",
- *                 "No fax machine",
- *                 "ResultEmpty",
- *                 "Account",
- *                 "Suspended",
- *                 "Call Failed",
- *                 "Call Failure",
- *                 "Internal Error",
- *                 "IP Phone offline",
- *                 "Restricted Number",
- *                 "Wrong Number",
- *                 "Stopped",
- *                 "Hang up",
- *                 "Poor Line Quality",
- *                 "Partially Sent",
- *                 "International Disabled",
- *                 "International Restriction",
- *                 "Abandoned",
- *                 "Declined",
- *                 "Fax Receipt Error",
- *                 "Fax Send Error"
- *             ],
- *             "description": "Status description of the call operation.",
- *             "$name": "result",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Date",
- *             "description": "Call start time",
- *             "$name": "startTime",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Call duration in seconds",
- *             "$name": "duration",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/RecordingInfo",
- *             "description": "Call recording data. Returned if the call is recorded",
- *             "$name": "recording",
- *             "isRequired": false,
- *             "type": "recordinginfo.RecordingInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 80 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -8441,44 +6055,10 @@ var GetCallRecordingResponse = (function (_super) {
     return GetCallRecordingResponse;
 })(model.Model);
 exports.GetCallRecordingResponse = GetCallRecordingResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetCallRecordingResponse",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "number",
- *             "description": "Internal identifier of the call recording",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to the call recording binary content",
- *             "$name": "contentUri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Call recording file format. Supported format is audio/x-wav",
- *             "$name": "contentType",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Recorded call duration",
- *             "$name": "duration",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 81 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../../typings/externals.d.ts" />
@@ -8489,910 +6069,275 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var client = __webpack_require__(41);
-var clientapiresponse = __webpack_require__(82);
-var customdataapiresponse = __webpack_require__(88);
-var ClientApplicationInfo = (function (_super) {
-    __extends(ClientApplicationInfo, _super);
-    function ClientApplicationInfo() {
-        _super.apply(this, arguments);
-    }
-    ClientApplicationInfo.prototype.list = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/client-info',
-            'method': 'get'
-        }, ResponseClass = clientapiresponse.ClientApiResponse;
-        apiOptions = this.parseOptions(apiOptions, options, []);
-        return this.apiCall(apiOptions, ResponseClass);
-    };
-    ClientApplicationInfo.prototype.load = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/client-info/custom-data/{my-custom-key}',
-            'method': 'put'
-        }, ResponseClass = customdataapiresponse.CustomDataApiResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "my-custom-key",
-                "type": "string",
-                "in": "path",
-                "description": "Custom data access key. The number of unique custom data keys is limited to 100 keys per extension, summarized for all the applications. For example, if you have created 50 custom data keys under the Android mobile client application for the particular extension, then logged in the iOS application and created another 50 keys, the web client application won't be allowed to create any custom data key for that extension.",
-                "required": true
-            },
-            {
-                "name": "body",
-                "type": "customdatarequest.CustomDataRequest",
-                "in": "body",
-                "description": "JSON body",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
-    };
-    return ClientApplicationInfo;
-})(client.Client);
-exports.ClientApplicationInfo = ClientApplicationInfo;
-function $get(context) {
-    return context.createSingleton('ClientApplicationInfo', function () {
-        return new ClientApplicationInfo(context);
-    });
-}
-exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "list",
- *         "tags": [
- *             "Client Application Info"
- *         ],
- *         "summary": "Get Client Info",
- *         "description": "<p style='font-style:italic;'>Since 1.0.11 (Release 6.3)</p><p>Returns client application data: general info, specific provisioning parameters, hints, etc.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadClientInfo</td><td>Viewing of client application registered attributes and additional helper information (external URLs, hints, etc.)</td></tr></tbody></table>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/ClientApiResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/client-info",
- *         "method": "get",
- *         "responseSchema": "clientapiresponse.ClientApiResponse",
- *         "imports": [
- *             "clientapiresponse.ClientApiResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "load",
- *         "tags": [
- *             "Client Application Info"
- *         ],
- *         "summary": "Create/Update Custom Data",
- *         "description": "<p style='font-style:italic;'>Since 1.0.14 (Release 6.6)</p><p>Creates or updates custom data for the extension that is currently logged in.</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "my-custom-key",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Custom data access key. The number of unique custom data keys is limited to 100 keys per extension, summarized for all the applications. For example, if you have created 50 custom data keys under the Android mobile client application for the particular extension, then logged in the iOS application and created another 50 keys, the web client application won't be allowed to create any custom data key for that extension.",
- *                 "required": true
- *             },
- *             {
- *                 "name": "body",
- *                 "type": "customdatarequest.CustomDataRequest",
- *                 "in": "body",
- *                 "description": "JSON body",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/CustomDataApiResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/client-info/custom-data/{my-custom-key}",
- *         "method": "put",
- *         "responseSchema": "customdataapiresponse.CustomDataApiResponse",
- *         "imports": [
- *             "customdataapiresponse.CustomDataApiResponse",
- *             "customdatarequest.CustomDataRequest"
- *         ]
- *     }
- * ]
- */ 
-
-
-/***/ },
-/* 82 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var clientapplicationinfo = __webpack_require__(83);
-var clientprovisioninginfo = __webpack_require__(84);
-var ClientApiResponse = (function (_super) {
-    __extends(ClientApiResponse, _super);
-    function ClientApiResponse() {
-        _super.apply(this, arguments);
-    }
-    ClientApiResponse.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'client', Class: clientapplicationinfo.ClientApplicationInfo, isArray: false, isRequired: true },
-            { property: 'provisioning', Class: clientprovisioninginfo.ClientProvisioningInfo, isArray: false, isRequired: true }
-        ];
-    };
-    ClientApiResponse.prototype.getClassName = function () {
-        return 'ClientApiResponse';
-    };
-    return ClientApiResponse;
-})(model.Model);
-exports.ClientApiResponse = ClientApiResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ClientApiResponse",
- *     "imports": [
- *         "clientapplicationinfo.ClientApplicationInfo",
- *         "clientprovisioninginfo.ClientProvisioningInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/ClientApplicationInfo",
- *             "description": "Client application information",
- *             "$name": "client",
- *             "isRequired": true,
- *             "type": "clientapplicationinfo.ClientApplicationInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/ClientProvisioningInfo",
- *             "description": "Provisioning parameters. Available for the  detected  applications only",
- *             "$name": "provisioning",
- *             "isRequired": true,
- *             "type": "clientprovisioninginfo.ClientProvisioningInfo"
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 83 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var ClientApplicationInfo = (function (_super) {
-    __extends(ClientApplicationInfo, _super);
-    function ClientApplicationInfo() {
-        _super.apply(this, arguments);
-    }
-    ClientApplicationInfo.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'detected', Class: null /* boolean */, isArray: false, isRequired: true },
-            { property: 'userAgent', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'appId', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'appName', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'appVersion', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'appPlatform', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'appPlatformVersion', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'locale', Class: null /* string */, isArray: false, isRequired: false }
-        ];
-    };
-    ClientApplicationInfo.prototype.getClassName = function () {
-        return 'ClientApplicationInfo';
-    };
-    return ClientApplicationInfo;
-})(model.Model);
-exports.ClientApplicationInfo = ClientApplicationInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ClientApplicationInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "boolean",
- *             "description": "'true', if the server succeeded detecting application info, sufficient to return provisioning info",
- *             "$name": "detected",
- *             "isRequired": true
- *         },
- *         {
- *             "type": "string",
- *             "description": "The value of 'User-Agent' header, as it was passed in request",
- *             "$name": "userAgent",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Application identifier (from authorisation session)",
- *             "$name": "appId",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Application name (from authorization session, but must match 'User-Agent')",
- *             "$name": "appName",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Application version (parsed from 'User-Agent')",
- *             "$name": "appVersion",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Application platform operation system (parsed from 'User-Agent': Windows, MacOS, Android, iOS",
- *             "$name": "appPlatform",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Application platform operation system version (parsed from 'User-Agent')",
- *             "$name": "appPlatformVersion",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Locale, parsed from 'Accept-Language'. Currently en-GB and en-US locales are supported. The default value is en-US",
- *             "$name": "locale",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 84 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var clientprovisioningweburiinfo = __webpack_require__(85);
-var clientprovisioninghintsinfo = __webpack_require__(86);
-var ClientProvisioningInfo = (function (_super) {
-    __extends(ClientProvisioningInfo, _super);
-    function ClientProvisioningInfo() {
-        _super.apply(this, arguments);
-    }
-    ClientProvisioningInfo.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'webUris', Class: clientprovisioningweburiinfo.ClientProvisioningWebUriInfo, isArray: false, isRequired: true },
-            { property: 'hints', Class: clientprovisioninghintsinfo.ClientProvisioningHintsInfo, isArray: false, isRequired: true }
-        ];
-    };
-    ClientProvisioningInfo.prototype.getClassName = function () {
-        return 'ClientProvisioningInfo';
-    };
-    return ClientProvisioningInfo;
-})(model.Model);
-exports.ClientProvisioningInfo = ClientProvisioningInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ClientProvisioningInfo",
- *     "imports": [
- *         "clientprovisioningweburiinfo.ClientProvisioningWebUriInfo",
- *         "clientprovisioninghintsinfo.ClientProvisioningHintsInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/ClientProvisioningWebUriInfo",
- *             "description": "Links to the mobile web and Service Web resources",
- *             "$name": "webUris",
- *             "isRequired": true,
- *             "type": "clientprovisioningweburiinfo.ClientProvisioningWebUriInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/ClientProvisioningHintsInfo",
- *             "description": "Informs client application on the required user action",
- *             "$name": "hints",
- *             "isRequired": true,
- *             "type": "clientprovisioninghintsinfo.ClientProvisioningHintsInfo"
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 85 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var ClientProvisioningWebUriInfo = (function (_super) {
-    __extends(ClientProvisioningWebUriInfo, _super);
-    function ClientProvisioningWebUriInfo() {
-        _super.apply(this, arguments);
-    }
-    ClientProvisioningWebUriInfo.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'appDownload', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'appDownloadFile', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'expressSetupMobile', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'meetingsAppDownload', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebBilling', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebCallHandling', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebInternationalCalling', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebNotifications', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebPhoneSystem', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebReporting', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebResetPassword', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebTellAFriend', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebTrialUpgrade', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'mobileWebUserSettings', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'serviceWebBilling', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'serviceWebHome', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'serviceWebPhoneSystem', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'serviceWebResetPassword', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'serviceWebTellAFriend', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'serviceWebUserSettings', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'signUp', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'support', Class: null /* string */, isArray: false, isRequired: false }
-        ];
-    };
-    ClientProvisioningWebUriInfo.prototype.getClassName = function () {
-        return 'ClientProvisioningWebUriInfo';
-    };
-    return ClientProvisioningWebUriInfo;
-})(model.Model);
-exports.ClientProvisioningWebUriInfo = ClientProvisioningWebUriInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ClientProvisioningWebUriInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Link to web page with the application description. Returned if the application needs to be updated, together with the appVersionUpgrade hint",
- *             "$name": "appDownload",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to the application distributive package. Returned if the application needs to be updated, together with the appVersionUpgrade hint",
- *             "$name": "appDownloadFile",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to express setup page (mobile application)",
- *             "$name": "expressSetupMobile",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to the RC Meetings application distributive package",
- *             "$name": "meetingsAppDownload",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to billing page (mobile application)",
- *             "$name": "mobileWebBilling",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to call handling page (mobile application)",
- *             "$name": "mobileWebCallHandling",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to international calling page (mobile application)",
- *             "$name": "mobileWebInternationalCalling",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to notifications page (mobile application)",
- *             "$name": "mobileWebNotifications",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to phone system settings page (mobile application)",
- *             "$name": "mobileWebPhoneSystem",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to reports page (mobile application)",
- *             "$name": "mobileWebReporting",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to reset password page (mobile application)",
- *             "$name": "mobileWebResetPassword",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to  Tell A Friend  page (mobile application)",
- *             "$name": "mobileWebTellAFriend",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to upgrade trial account (mobile application)",
- *             "$name": "mobileWebTrialUpgrade",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to user settings page (mobile application)",
- *             "$name": "mobileWebUserSettings",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to billing page (web application)",
- *             "$name": "serviceWebBilling",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to home page (web application)",
- *             "$name": "serviceWebHome",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to phone system settings page (web application)",
- *             "$name": "serviceWebPhoneSystem",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to reset password page (web application)",
- *             "$name": "serviceWebResetPassword",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to  Tell A Friend  page (web application)",
- *             "$name": "serviceWebTellAFriend",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to user settings page (web application)",
- *             "$name": "serviceWebUserSettings",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to sign up page (web application)",
- *             "$name": "signUp",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to support page (web application)",
- *             "$name": "support",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 86 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var clientprovisioninghintinfo = __webpack_require__(87);
-var ClientProvisioningHintsInfo = (function (_super) {
-    __extends(ClientProvisioningHintsInfo, _super);
-    function ClientProvisioningHintsInfo() {
-        _super.apply(this, arguments);
-    }
-    ClientProvisioningHintsInfo.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'trialState', Class: clientprovisioninghintinfo.ClientProvisioningHintInfo, isArray: false, isRequired: false },
-            { property: 'userCredentialState', Class: clientprovisioninghintinfo.ClientProvisioningHintInfo, isArray: false, isRequired: false },
-            { property: 'appVersionUpgrade', Class: clientprovisioninghintinfo.ClientProvisioningHintInfo, isArray: false, isRequired: false }
-        ];
-    };
-    ClientProvisioningHintsInfo.prototype.getClassName = function () {
-        return 'ClientProvisioningHintsInfo';
-    };
-    return ClientProvisioningHintsInfo;
-})(model.Model);
-exports.ClientProvisioningHintsInfo = ClientProvisioningHintsInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ClientProvisioningHintsInfo",
- *     "imports": [
- *         "clientprovisioninghintinfo.ClientProvisioningHintInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/ClientProvisioningHintInfo",
- *             "description": "Trial account expiration. Returned for trial accounts only",
- *             "$name": "trialState",
- *             "isRequired": false,
- *             "type": "clientprovisioninghintinfo.ClientProvisioningHintInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/ClientProvisioningHintInfo",
- *             "description": "User credentials expiration",
- *             "$name": "userCredentialState",
- *             "isRequired": false,
- *             "type": "clientprovisioninghintinfo.ClientProvisioningHintInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/ClientProvisioningHintInfo",
- *             "description": "Application version update. Returned only if the client current version is older than the latest version. 'actionRequired': 'true' means the application requires force updating to the latest version",
- *             "$name": "appVersionUpgrade",
- *             "isRequired": false,
- *             "type": "clientprovisioninghintinfo.ClientProvisioningHintInfo"
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 87 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var ClientProvisioningHintInfo = (function (_super) {
-    __extends(ClientProvisioningHintInfo, _super);
-    function ClientProvisioningHintInfo() {
-        _super.apply(this, arguments);
-    }
-    ClientProvisioningHintInfo.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'expiresIn', Class: null /* number */, isArray: false, isRequired: false },
-            { property: 'actionRequired', Class: null /* boolean */, isArray: false, isRequired: false }
-        ];
-    };
-    ClientProvisioningHintInfo.prototype.getClassName = function () {
-        return 'ClientProvisioningHintInfo';
-    };
-    return ClientProvisioningHintInfo;
-})(model.Model);
-exports.ClientProvisioningHintInfo = ClientProvisioningHintInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ClientProvisioningHintInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "number",
- *             "description": "Seconds until expiration date. Returned only if applicable",
- *             "$name": "expiresIn",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "boolean",
- *             "description": "'False', if the value of expiresIn is greater than 0 (zero), otherwise - 'True'",
- *             "$name": "actionRequired",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 88 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var customdataattachmentinfo = __webpack_require__(89);
-var CustomDataApiResponse = (function (_super) {
-    __extends(CustomDataApiResponse, _super);
-    function CustomDataApiResponse() {
-        _super.apply(this, arguments);
-    }
-    CustomDataApiResponse.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'id', Class: null /* string */, isArray: false, isRequired: true },
-            { property: 'uri', Class: null /* string */, isArray: false, isRequired: true },
-            { property: 'value', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'lastModifiedTime', Class: null /* string */, isArray: false, isRequired: true },
-            { property: 'attachment', Class: customdataattachmentinfo.CustomDataAttachmentInfo, isArray: false, isRequired: false }
-        ];
-    };
-    CustomDataApiResponse.prototype.getClassName = function () {
-        return 'CustomDataApiResponse';
-    };
-    return CustomDataApiResponse;
-})(model.Model);
-exports.CustomDataApiResponse = CustomDataApiResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "CustomDataApiResponse",
- *     "imports": [
- *         "customdataattachmentinfo.CustomDataAttachmentInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Custom data access key",
- *             "$name": "id",
- *             "isRequired": true
- *         },
- *         {
- *             "type": "string",
- *             "description": "Link to the custom data",
- *             "$name": "uri",
- *             "isRequired": true
- *         },
- *         {
- *             "type": "string",
- *             "description": "Description of custom data",
- *             "$name": "value",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Time of the last change in custom data",
- *             "$name": "lastModifiedTime",
- *             "isRequired": true
- *         },
- *         {
- *             "$ref": "#/definitions/CustomDataAttachmentInfo",
- *             "description": "Attachment data: link and type",
- *             "$name": "attachment",
- *             "isRequired": false,
- *             "type": "customdataattachmentinfo.CustomDataAttachmentInfo"
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 89 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var model = __webpack_require__(43);
-var CustomDataAttachmentInfo = (function (_super) {
-    __extends(CustomDataAttachmentInfo, _super);
-    function CustomDataAttachmentInfo() {
-        _super.apply(this, arguments);
-    }
-    CustomDataAttachmentInfo.prototype.getPropertyMappings = function () {
-        return [
-            { property: 'uri', Class: null /* string */, isArray: false, isRequired: true },
-            { property: 'contentType', Class: null /* string */, isArray: false, isRequired: true }
-        ];
-    };
-    CustomDataAttachmentInfo.prototype.getClassName = function () {
-        return 'CustomDataAttachmentInfo';
-    };
-    return CustomDataAttachmentInfo;
-})(model.Model);
-exports.CustomDataAttachmentInfo = CustomDataAttachmentInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "CustomDataAttachmentInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Link to custom data attachment",
- *             "$name": "uri",
- *             "isRequired": true
- *         },
- *         {
- *             "type": "string",
- *             "description": "Type of custom data attachment, see also MIME Types",
- *             "$name": "contentType",
- *             "isRequired": true
- *         }
- *     ]
- * }
- */ 
-
-
-/***/ },
-/* 90 */
-/***/ function(module, exports, __webpack_require__) {
-
-/// <reference path="../../../typings/externals.d.ts" />
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-var client = __webpack_require__(41);
-var getcountrylistresponse = __webpack_require__(91);
+var getcountrylistresponse = __webpack_require__(80);
 var countryinfo = __webpack_require__(52);
 var languageinfo = __webpack_require__(51);
-var getlocationlistresponse = __webpack_require__(92);
+var getlocationlistresponse = __webpack_require__(81);
+var getstatelistresponse = __webpack_require__(83);
+var getstateinforesponse = __webpack_require__(84);
+var gettimezonelistresponse = __webpack_require__(85);
+var gettimezoneinforesponse = __webpack_require__(86);
 var Dictionary = (function (_super) {
     __extends(Dictionary, _super);
     function Dictionary() {
         _super.apply(this, arguments);
     }
+    /**
+     * Get Country List
+     *
+     * <p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p>
+     * <p>Returns all the countries available for calling.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Dictionary.prototype.listCountries = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/dictionary/country',
-            'method': 'get'
-        }, ResponseClass = getcountrylistresponse.GetCountryListResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "page",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
-                "required": false
-            },
-            {
-                "name": "perPage",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/dictionary/country', options, exports.listCountriesOptions), getcountrylistresponse.GetCountryListResponse);
     };
+    /**
+     * Get Country
+     *
+     * <p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p>
+     * <p>Returns the information on the required country.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Dictionary.prototype.loadCountry = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/dictionary/country/{countryId}',
-            'method': 'get'
-        }, ResponseClass = countryinfo.CountryInfo;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "countryId",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a country",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/dictionary/country/{countryId}', options, exports.loadCountryOptions), countryinfo.CountryInfo);
     };
+    /**
+     * Get Language List
+     *
+     * <p style='font-style:italic;'>Since 1.0.14 (Release 6.6)</p>
+     * <p>Returns the information about supported languages.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Dictionary.prototype.listLanguages = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/dictionary/language',
-            'method': 'get'
-        }, ResponseClass = null;
-        apiOptions = this.parseOptions(apiOptions, options, []);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/dictionary/language', options, exports.listLanguagesOptions), null);
     };
+    /**
+     * Get Language
+     *
+     * <p style='font-style:italic;'>Since 1.0.14 (Release 6.6)</p>
+     * <p>Returns language by its respective ID.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Dictionary.prototype.loadLanguage = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/dictionary/language/{languageId}',
-            'method': 'get'
-        }, ResponseClass = languageinfo.LanguageInfo;
-        apiOptions = this.parseOptions(apiOptions, options, []);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/dictionary/language/{languageId}', options, exports.loadLanguageOptions), languageinfo.LanguageInfo);
     };
+    /**
+     * Get Location List
+     *
+     * <p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p>
+     * <p>Returns all the available locations for the certain state.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Dictionary.prototype.listLocations = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/dictionary/location',
-            'method': 'get'
-        }, ResponseClass = getlocationlistresponse.GetLocationListResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "orderBy",
-                "type": "IListLocationsOrderBy",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Npa",
-                    "City"
-                ],
-                "in": "query",
-                "description": "Sorts results by the specified property. The default value is 'City'",
-                "required": false
-            },
-            {
-                "name": "page",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
-                "required": false
-            },
-            {
-                "name": "perPage",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
-                "required": false
-            },
-            {
-                "name": "stateId",
-                "type": "string",
-                "in": "query",
-                "description": "Internal identifier of a state",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/dictionary/location', options, exports.listLocationsOptions), getlocationlistresponse.GetLocationListResponse);
+    };
+    /**
+     * Get State List
+     *
+     * <p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p>
+     * <p>Returns all the states for the certain country.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
+    Dictionary.prototype.listStates = function (options) {
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/dictionary/state', options, exports.listStatesOptions), getstatelistresponse.GetStateListResponse);
+    };
+    /**
+     * Get State
+     *
+     * <p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p>
+     * <p>Returns the information on the required state.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
+    Dictionary.prototype.loadState = function (options) {
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/dictionary/state/{stateId}', options, exports.loadStateOptions), getstateinforesponse.GetStateInfoResponse);
+    };
+    /**
+     * Get Timezone List
+     *
+     * <p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p>
+     * <p>Returns all available timezones.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
+    Dictionary.prototype.listTimezones = function (options) {
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/dictionary/timezone', options, exports.listTimezonesOptions), gettimezonelistresponse.GetTimezoneListResponse);
+    };
+    /**
+     * Get Timezone
+     *
+     * <p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p>
+     * <p>Returns the information on the certain timezone.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
+    Dictionary.prototype.loadTimezone = function (options) {
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/dictionary/timezone/{timezoneId}', options, exports.loadTimezoneOptions), gettimezoneinforesponse.GetTimezoneInfoResponse);
     };
     return Dictionary;
 })(client.Client);
 exports.Dictionary = Dictionary;
+/**
+ * Definition of options for listCountries operation
+ */
+exports.listCountriesOptions = [
+    {
+        "name": "page",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "type": "number",
+        "in": "query",
+        "required": false
+    }
+];
+/**
+ * Definition of options for loadCountry operation
+ */
+exports.loadCountryOptions = [
+    {
+        "name": "countryId",
+        "type": "string",
+        "in": "path",
+        "required": true
+    }
+];
+/**
+ * Definition of options for listLanguages operation
+ */
+exports.listLanguagesOptions = [];
+/**
+ * Definition of options for loadLanguage operation
+ */
+exports.loadLanguageOptions = [];
+/**
+ * Definition of options for listLocations operation
+ */
+exports.listLocationsOptions = [
+    {
+        "name": "orderBy",
+        "type": "IListLocationsOrderBy",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Npa",
+            "City"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "page",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "stateId",
+        "type": "string",
+        "in": "query",
+        "required": false
+    }
+];
+/**
+ * Definition of options for listStates operation
+ */
+exports.listStatesOptions = [
+    {
+        "name": "countryId",
+        "type": "string",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "page",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "withPhoneNumbers",
+        "type": "boolean",
+        "in": "query",
+        "required": false
+    }
+];
+/**
+ * Definition of options for loadState operation
+ */
+exports.loadStateOptions = [
+    {
+        "name": "stateId",
+        "type": "string",
+        "in": "path",
+        "required": true
+    }
+];
+/**
+ * Definition of options for listTimezones operation
+ */
+exports.listTimezonesOptions = [
+    {
+        "name": "page",
+        "type": "string",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "type": "string",
+        "in": "query",
+        "required": false
+    }
+];
+/**
+ * Definition of options for loadTimezone operation
+ */
+exports.loadTimezoneOptions = [
+    {
+        "name": "timezoneId",
+        "type": "string",
+        "in": "path",
+        "required": true
+    },
+    {
+        "name": "page",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "type": "number",
+        "in": "query",
+        "required": false
+    }
+];
 (function (IListLocationsOrderBy) {
     IListLocationsOrderBy[IListLocationsOrderBy["Npa"] = 'Npa'] = "Npa";
     IListLocationsOrderBy[IListLocationsOrderBy["City"] = 'City'] = "City";
@@ -9404,220 +6349,10 @@ function $get(context) {
     });
 }
 exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "listCountries",
- *         "tags": [
- *             "Dictionary"
- *         ],
- *         "summary": "Get Country List",
- *         "description": "<p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p><p>Returns all the countries available for calling.</p><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "page",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
- *                 "required": false
- *             },
- *             {
- *                 "name": "perPage",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetCountryListResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/dictionary/country",
- *         "method": "get",
- *         "responseSchema": "getcountrylistresponse.GetCountryListResponse",
- *         "imports": [
- *             "getcountrylistresponse.GetCountryListResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "loadCountry",
- *         "tags": [
- *             "Dictionary"
- *         ],
- *         "summary": "Get Country",
- *         "description": "<p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p><p>Returns the information on the required country.</p><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "countryId",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a country",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/CountryInfo"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/dictionary/country/{countryId}",
- *         "method": "get",
- *         "responseSchema": "countryinfo.CountryInfo",
- *         "imports": [
- *             "countryinfo.CountryInfo"
- *         ]
- *     },
- *     {
- *         "operationId": "listLanguages",
- *         "tags": [
- *             "Dictionary"
- *         ],
- *         "summary": "Get Language List",
- *         "description": "<p style='font-style:italic;'>Since 1.0.14 (Release 6.6)</p><p>Returns the information about supported languages.</p><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/dictionary/language",
- *         "method": "get",
- *         "responseSchema": ".",
- *         "imports": []
- *     },
- *     {
- *         "operationId": "loadLanguage",
- *         "tags": [
- *             "Dictionary"
- *         ],
- *         "summary": "Get Language",
- *         "description": "<p style='font-style:italic;'>Since 1.0.14 (Release 6.6)</p><p>Returns language by its respective ID.</p><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/LanguageInfo"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/dictionary/language/{languageId}",
- *         "method": "get",
- *         "responseSchema": "languageinfo.LanguageInfo",
- *         "imports": [
- *             "languageinfo.LanguageInfo"
- *         ]
- *     },
- *     {
- *         "operationId": "listLocations",
- *         "tags": [
- *             "Dictionary"
- *         ],
- *         "summary": "Get Location List",
- *         "description": "<p style='font-style:italic;'>Since 1.0.10 (Release 6.2)</p><p>Returns all the available locations for the certain state.</p><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "orderBy",
- *                 "type": "IListLocationsOrderBy",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Npa",
- *                     "City"
- *                 ],
- *                 "in": "query",
- *                 "description": "Sorts results by the specified property. The default value is 'City'",
- *                 "required": false
- *             },
- *             {
- *                 "name": "page",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
- *                 "required": false
- *             },
- *             {
- *                 "name": "perPage",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
- *                 "required": false
- *             },
- *             {
- *                 "name": "stateId",
- *                 "type": "string",
- *                 "in": "query",
- *                 "description": "Internal identifier of a state",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetLocationListResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/dictionary/location",
- *         "method": "get",
- *         "responseSchema": "getlocationlistresponse.GetLocationListResponse",
- *         "imports": [
- *             "getlocationlistresponse.GetLocationListResponse"
- *         ]
- *     }
- * ]
- */ 
 
 
 /***/ },
-/* 91 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -9628,8 +6363,8 @@ var __extends = this.__extends || function (d, b) {
 };
 var model = __webpack_require__(43);
 var countryinfo = __webpack_require__(52);
-var navigationinfo = __webpack_require__(75);
-var paginginfo = __webpack_require__(74);
+var navigationinfo = __webpack_require__(74);
+var paginginfo = __webpack_require__(75);
 var GetCountryListResponse = (function (_super) {
     __extends(GetCountryListResponse, _super);
     function GetCountryListResponse() {
@@ -9648,46 +6383,10 @@ var GetCountryListResponse = (function (_super) {
     return GetCountryListResponse;
 })(model.Model);
 exports.GetCountryListResponse = GetCountryListResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetCountryListResponse",
- *     "imports": [
- *         "countryinfo.CountryInfo",
- *         "navigationinfo.NavigationInfo",
- *         "paginginfo.PagingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "countryinfo.CountryInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/CountryInfo"
- *             },
- *             "$name": "records",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": true,
- *             "type": "navigationinfo.NavigationInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": true,
- *             "type": "paginginfo.PagingInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 92 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -9697,9 +6396,9 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var model = __webpack_require__(43);
-var locationinfo = __webpack_require__(93);
-var navigationinfo = __webpack_require__(75);
-var paginginfo = __webpack_require__(74);
+var locationinfo = __webpack_require__(82);
+var navigationinfo = __webpack_require__(74);
+var paginginfo = __webpack_require__(75);
 var GetLocationListResponse = (function (_super) {
     __extends(GetLocationListResponse, _super);
     function GetLocationListResponse() {
@@ -9718,46 +6417,10 @@ var GetLocationListResponse = (function (_super) {
     return GetLocationListResponse;
 })(model.Model);
 exports.GetLocationListResponse = GetLocationListResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetLocationListResponse",
- *     "imports": [
- *         "locationinfo.LocationInfo",
- *         "navigationinfo.NavigationInfo",
- *         "paginginfo.PagingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "locationinfo.LocationInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/LocationInfo"
- *             },
- *             "$name": "records",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": false,
- *             "type": "navigationinfo.NavigationInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": false,
- *             "type": "paginginfo.PagingInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 93 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -9772,25 +6435,158 @@ var LocationInfo = (function (_super) {
     function LocationInfo() {
         _super.apply(this, arguments);
     }
+    LocationInfo.prototype.getPropertyMappings = function () {
+        return [
+            { property: 'uri', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'city', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'npa', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'nxx', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'state', Class: null /* string */, isArray: false, isRequired: false }
+        ];
+    };
     LocationInfo.prototype.getClassName = function () {
         return 'LocationInfo';
     };
     return LocationInfo;
 })(model.Model);
 exports.LocationInfo = LocationInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "LocationInfo",
- *     "imports": [],
- *     "properties": []
- * }
- */ 
 
 
 /***/ },
-/* 94 */
+/* 83 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var model = __webpack_require__(43);
+var getstateinforesponse = __webpack_require__(84);
+var navigationinfo = __webpack_require__(74);
+var paginginfo = __webpack_require__(75);
+var GetStateListResponse = (function (_super) {
+    __extends(GetStateListResponse, _super);
+    function GetStateListResponse() {
+        _super.apply(this, arguments);
+    }
+    GetStateListResponse.prototype.getPropertyMappings = function () {
+        return [
+            { property: 'records', Class: getstateinforesponse.GetStateInfoResponse, isArray: true, isRequired: false },
+            { property: 'navigation', Class: navigationinfo.NavigationInfo, isArray: false, isRequired: false },
+            { property: 'paging', Class: paginginfo.PagingInfo, isArray: false, isRequired: false }
+        ];
+    };
+    GetStateListResponse.prototype.getClassName = function () {
+        return 'GetStateListResponse';
+    };
+    return GetStateListResponse;
+})(model.Model);
+exports.GetStateListResponse = GetStateListResponse;
+
+
+/***/ },
+/* 84 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var model = __webpack_require__(43);
+var GetStateInfoResponse = (function (_super) {
+    __extends(GetStateInfoResponse, _super);
+    function GetStateInfoResponse() {
+        _super.apply(this, arguments);
+    }
+    GetStateInfoResponse.prototype.getPropertyMappings = function () {
+        return [
+            { property: 'id', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'uri', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'country', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'isoCode', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'name', Class: null /* string */, isArray: false, isRequired: false }
+        ];
+    };
+    GetStateInfoResponse.prototype.getClassName = function () {
+        return 'GetStateInfoResponse';
+    };
+    return GetStateInfoResponse;
+})(model.Model);
+exports.GetStateInfoResponse = GetStateInfoResponse;
+
+
+/***/ },
+/* 85 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var model = __webpack_require__(43);
+var gettimezoneinforesponse = __webpack_require__(86);
+var navigationinfo = __webpack_require__(74);
+var paginginfo = __webpack_require__(75);
+var GetTimezoneListResponse = (function (_super) {
+    __extends(GetTimezoneListResponse, _super);
+    function GetTimezoneListResponse() {
+        _super.apply(this, arguments);
+    }
+    GetTimezoneListResponse.prototype.getPropertyMappings = function () {
+        return [
+            { property: 'records', Class: gettimezoneinforesponse.GetTimezoneInfoResponse, isArray: true, isRequired: false },
+            { property: 'navigation', Class: navigationinfo.NavigationInfo, isArray: false, isRequired: false },
+            { property: 'paging', Class: paginginfo.PagingInfo, isArray: false, isRequired: false }
+        ];
+    };
+    GetTimezoneListResponse.prototype.getClassName = function () {
+        return 'GetTimezoneListResponse';
+    };
+    return GetTimezoneListResponse;
+})(model.Model);
+exports.GetTimezoneListResponse = GetTimezoneListResponse;
+
+
+/***/ },
+/* 86 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var model = __webpack_require__(43);
+var GetTimezoneInfoResponse = (function (_super) {
+    __extends(GetTimezoneInfoResponse, _super);
+    function GetTimezoneInfoResponse() {
+        _super.apply(this, arguments);
+    }
+    GetTimezoneInfoResponse.prototype.getPropertyMappings = function () {
+        return [
+            { property: 'id', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'uri', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'name', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'description', Class: null /* string */, isArray: false, isRequired: false }
+        ];
+    };
+    GetTimezoneInfoResponse.prototype.getClassName = function () {
+        return 'GetTimezoneInfoResponse';
+    };
+    return GetTimezoneInfoResponse;
+})(model.Model);
+exports.GetTimezoneInfoResponse = GetTimezoneInfoResponse;
+
+
+/***/ },
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../../typings/externals.d.ts" />
@@ -9801,90 +6597,128 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var client = __webpack_require__(41);
-var getextensionlistresponse = __webpack_require__(95);
+var getextensionlistresponse = __webpack_require__(88);
 var getextensioninforesponse = __webpack_require__(44);
 var Extension = (function (_super) {
     __extends(Extension, _super);
     function Extension() {
         _super.apply(this, arguments);
     }
+    /**
+     * Get Extension List
+     *
+     * <p style='font-style:italic;'>Since 1.0.0</p>
+     * <p>Returns the list of extensions created for a particular account. All types of extensions are included in this list.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadAccounts</td>
+     *             <td>Viewing user account info (including name, business name, address and phone number/account number)</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Medium</p>
+     */
     Extension.prototype.list = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension',
-            'method': 'get'
-        }, ResponseClass = getextensionlistresponse.GetExtensionListResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "page",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
-                "required": false
-            },
-            {
-                "name": "perPage",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
-                "required": false
-            },
-            {
-                "name": "status",
-                "type": "IListStatus",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Enabled",
-                    "Disabled",
-                    "NotActivated",
-                    "Unassigned"
-                ],
-                "in": "query",
-                "description": "Extension current state. If 'Unassigned' is specified, then extensions without extensionNumber are returned. If not specified, then all extensions are returned",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension', options, exports.listOptions), getextensionlistresponse.GetExtensionListResponse);
     };
+    /**
+     * Get Extension Info
+     *
+     * <p style='font-style:italic;'>Since 1.0.0</p>
+     * <p>Returns basic information about a particular extension of an account.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadAccounts</td>
+     *             <td>Viewing user account info (including name, business name, address and phone number/account number)</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Extension.prototype.load = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}',
-            'method': 'get'
-        }, ResponseClass = getextensioninforesponse.GetExtensionInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension/{extensionId}', options, exports.loadOptions), getextensioninforesponse.GetExtensionInfoResponse);
     };
     return Extension;
 })(client.Client);
 exports.Extension = Extension;
+/**
+ * Definition of options for list operation
+ */
+exports.listOptions = [
+    {
+        "name": "accountId",
+        "type": "number",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "page",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "status",
+        "type": "IListStatus",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Enabled",
+            "Disabled",
+            "NotActivated",
+            "Unassigned"
+        ],
+        "in": "query",
+        "required": false
+    }
+];
+/**
+ * Definition of options for load operation
+ */
+exports.loadOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    }
+];
 (function (IListStatus) {
     IListStatus[IListStatus["Enabled"] = 'Enabled'] = "Enabled";
     IListStatus[IListStatus["Disabled"] = 'Disabled'] = "Disabled";
@@ -9898,132 +6732,10 @@ function $get(context) {
     });
 }
 exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "list",
- *         "tags": [
- *             "Extension"
- *         ],
- *         "summary": "Get Extension List",
- *         "description": "<p style='font-style:italic;'>Since 1.0.0</p><p>Returns the list of extensions created for a particular account. All types of extensions are included in this list.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "page",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'.",
- *                 "required": false
- *             },
- *             {
- *                 "name": "perPage",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page size (number of items). If not specified, the value is '100' by default.",
- *                 "required": false
- *             },
- *             {
- *                 "name": "status",
- *                 "type": "IListStatus",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Enabled",
- *                     "Disabled",
- *                     "NotActivated",
- *                     "Unassigned"
- *                 ],
- *                 "in": "query",
- *                 "description": "Extension current state. If 'Unassigned' is specified, then extensions without extensionNumber are returned. If not specified, then all extensions are returned",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetExtensionListResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension",
- *         "method": "get",
- *         "responseSchema": "getextensionlistresponse.GetExtensionListResponse",
- *         "imports": [
- *             "getextensionlistresponse.GetExtensionListResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "load",
- *         "tags": [
- *             "Extension"
- *         ],
- *         "summary": "Get Extension Info",
- *         "description": "<p style='font-style:italic;'>Since 1.0.0</p><p>Returns basic information about a particular extension of an account.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetExtensionInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}",
- *         "method": "get",
- *         "responseSchema": "getextensioninforesponse.GetExtensionInfoResponse",
- *         "imports": [
- *             "getextensioninforesponse.GetExtensionInfoResponse"
- *         ]
- *     }
- * ]
- */ 
 
 
 /***/ },
-/* 95 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -10034,8 +6746,8 @@ var __extends = this.__extends || function (d, b) {
 };
 var model = __webpack_require__(43);
 var getextensioninforesponse = __webpack_require__(44);
-var navigationinfo = __webpack_require__(75);
-var paginginfo = __webpack_require__(74);
+var navigationinfo = __webpack_require__(74);
+var paginginfo = __webpack_require__(75);
 var GetExtensionListResponse = (function (_super) {
     __extends(GetExtensionListResponse, _super);
     function GetExtensionListResponse() {
@@ -10054,46 +6766,10 @@ var GetExtensionListResponse = (function (_super) {
     return GetExtensionListResponse;
 })(model.Model);
 exports.GetExtensionListResponse = GetExtensionListResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetExtensionListResponse",
- *     "imports": [
- *         "getextensioninforesponse.GetExtensionInfoResponse",
- *         "navigationinfo.NavigationInfo",
- *         "paginginfo.PagingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "getextensioninforesponse.GetExtensionInfoResponse[]",
- *             "items": {
- *                 "$ref": "#/definitions/GetExtensionInfoResponse"
- *             },
- *             "$name": "records",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": false,
- *             "type": "navigationinfo.NavigationInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": false,
- *             "type": "paginginfo.PagingInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 96 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../../typings/externals.d.ts" />
@@ -10104,389 +6780,571 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var client = __webpack_require__(41);
-var getmessageinforesponse = __webpack_require__(97);
-var getmessagelist = __webpack_require__(100);
+var getmessageinforesponse = __webpack_require__(90);
+var getmessagelist = __webpack_require__(93);
 var Messages = (function (_super) {
     __extends(Messages, _super);
     function Messages() {
         _super.apply(this, arguments);
     }
+    /**
+     * Create Pager Message
+     *
+     * <p style='font-style:italic;'>Since 1.0.2</p>
+     * <p>Creates and sends a pager message.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>InternalMessages</td>
+     *             <td>Sending and receiving intra-company text messages</td>
+     *         </tr>
+     *         <tr>
+     *             <td class='code'>ReadMessages</td>
+     *             <td>Viewing user messages</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Medium</p>
+     */
     Messages.prototype.createPager = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager',
-            'method': 'post'
-        }, ResponseClass = getmessageinforesponse.GetMessageInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "body",
-                "type": "createpagermessagerequest.CreatePagerMessageRequest",
-                "in": "body",
-                "description": "JSON body",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('post', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager', options, exports.createPagerOptions), getmessageinforesponse.GetMessageInfoResponse);
     };
+    /**
+     * Create Fax Message
+     *
+     * <p style='font-style:italic;'>Since 1.0.2</p>
+     * <p>Creates and sends/resends new fax message. Resend can be done if sending failed.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>Faxes</td>
+     *             <td>Sending and receiving faxes</td>
+     *         </tr>
+     *         <tr>
+     *             <td class='code'>ReadMessages</td>
+     *             <td>Viewing user messages</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Heavy</p>
+     */
     Messages.prototype.createFax = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax',
-            'method': 'post'
-        }, ResponseClass = getmessageinforesponse.GetMessageInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "body",
-                "type": "createfaxmessagerequest.CreateFaxMessageRequest",
-                "in": "body",
-                "description": "JSON body",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('post', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax', options, exports.createFaxOptions), getmessageinforesponse.GetMessageInfoResponse);
     };
+    /**
+     * Create SMS Message
+     *
+     * <p style='font-style:italic;'>Since 1.0.2</p>
+     * <p>Creates and sends new SMS message.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>SMS</td>
+     *             <td>Sending and receiving SMS (text) messages</td>
+     *         </tr>
+     *         <tr>
+     *             <td class='code'>ReadMessages</td>
+     *             <td>Viewing user messages</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Medium</p>
+     */
     Messages.prototype.createSms = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms',
-            'method': 'post'
-        }, ResponseClass = getmessageinforesponse.GetMessageInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "body",
-                "type": "createsmsmessage.CreateSMSMessage",
-                "in": "body",
-                "description": "JSON body",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('post', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms', options, exports.createSmsOptions), getmessageinforesponse.GetMessageInfoResponse);
     };
+    /**
+     * Get Message List
+     *
+     * <p style='font-style:italic;'>Since 1.0.2</p>
+     * <p>Returns the list of messages from an extension mailbox.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadMessages</td>
+     *             <td>Viewing user messages</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Messages.prototype.list = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store',
-            'method': 'get'
-        }, ResponseClass = getmessagelist.GetMessageList;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "availability",
-                "type": "IListAvailability",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Alive",
-                    "Deleted",
-                    "Purged"
-                ],
-                "in": "query",
-                "description": "Specifies the availability status for the resulting messages. Default value is 'Alive'. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "conversationId",
-                "type": "number",
-                "in": "query",
-                "description": "Specifies the conversation identifier for the resulting messages",
-                "required": false
-            },
-            {
-                "name": "dateFrom",
-                "type": "Date",
-                "in": "query",
-                "description": "The start timestamp for the resulting messages. Default value is equal to dateTo minus 1 week",
-                "required": false
-            },
-            {
-                "name": "dateTo",
-                "type": "Date",
-                "in": "query",
-                "description": "Specifies the ending timestamp for the resulting messages. Default: current time",
-                "required": false
-            },
-            {
-                "name": "direction",
-                "type": "IListDirection",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Inbound",
-                    "Outbound"
-                ],
-                "in": "query",
-                "description": "The direction for the resulting messages. If not specified, both inbound and outbound messages are returned. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "messageType",
-                "type": "IListMessageType",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Fax",
-                    "SMS",
-                    "VoiceMail",
-                    "Pager",
-                    "Text"
-                ],
-                "in": "query",
-                "description": "The type of the resulting messages. If not specified, all messages without message type filtering are returned. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "readStatus",
-                "type": "IListReadStatus",
-                "items": {
-                    "type": "string"
-                },
-                "collectionFormat": "multi",
-                "allowEmptyValue": true,
-                "enum": [
-                    "Read",
-                    "Unread"
-                ],
-                "in": "query",
-                "description": "The read status for the resulting messages. Multiple values are accepted",
-                "required": false
-            },
-            {
-                "name": "page",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'",
-                "required": false
-            },
-            {
-                "name": "perPage",
-                "type": "number",
-                "in": "query",
-                "description": "Indicates the page size (number of items). If not specified, the value is '100' by default",
-                "required": false
-            },
-            {
-                "name": "phoneNumber",
-                "type": "string",
-                "in": "query",
-                "description": "The phone number. If specified, messages are returned for this particular phone number only",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store', options, exports.listOptions), getmessagelist.GetMessageList);
     };
+    /**
+     * Get Message Info
+     *
+     * <p style='font-style:italic;'></p>
+     * <p></p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadMessages</td>
+     *             <td>Viewing user messages</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Messages.prototype.load = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}',
-            'method': 'get'
-        }, ResponseClass = getmessageinforesponse.GetMessageInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "messageId",
-                "type": "number",
-                "in": "path",
-                "description": "Internal identifier of a message",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}', options, exports.loadOptions), getmessageinforesponse.GetMessageInfoResponse);
     };
+    /**
+     * Update Message
+     *
+     * <p style='font-style:italic;'>Since 1.0.2</p>
+     * <p>Updates an individual message or several messages. Batch request is supported. Currently, only the message read status updating is supported.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>EditMessages</td>
+     *             <td>Viewing and updating user messages</td>
+     *         </tr>
+     *         <tr>
+     *             <td class='code'>ReadMessages</td>
+     *             <td>Viewing user messages</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Medium</p>
+     */
     Messages.prototype.update = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}',
-            'method': 'put'
-        }, ResponseClass = getmessageinforesponse.GetMessageInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "messageId",
-                "type": "number",
-                "in": "path",
-                "description": "Internal identifier of a message",
-                "required": true
-            },
-            {
-                "name": "body",
-                "type": "updatemessagerequest.UpdateMessageRequest",
-                "in": "body",
-                "description": "JSON body",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('put', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}', options, exports.updateOptions), getmessageinforesponse.GetMessageInfoResponse);
     };
+    /**
+     * Delete Message
+     *
+     * <p style='font-style:italic;'></p>
+     * <p>Deletes an individual message or several messages by the given message ID(s). Batch request is supported.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>EditMessages</td>
+     *             <td>Viewing and updating user messages</td>
+     *         </tr>
+     *         <tr>
+     *             <td class='code'>ReadMessages</td>
+     *             <td>Viewing user messages</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Medium</p>
+     */
     Messages.prototype.remove = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}',
-            'method': 'delete'
-        }, ResponseClass = getmessageinforesponse.GetMessageInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "messageId",
-                "type": "number",
-                "in": "path",
-                "description": "Internal identifier of a message",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('delete', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}', options, exports.removeOptions), null);
     };
+    /**
+     * Get Message Attachment
+     *
+     * <p style='font-style:italic;'>Since 1.0.4 (Release 5.13)</p>
+     * <p>Returns particular message attachment data as a media stream.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadMessages</td>
+     *             <td>Viewing user messages</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Medium</p>
+     */
     Messages.prototype.loadContent = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}',
-            'method': 'get'
-        }, ResponseClass = getmessageinforesponse.GetMessageInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "attachmentId",
-                "type": "number",
-                "in": "path",
-                "description": "Internal identifier of a message attachment",
-                "required": true
-            },
-            {
-                "name": "messageId",
-                "type": "number",
-                "in": "path",
-                "description": "Internal identifier of a message",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}', options, exports.loadContentOptions), null);
     };
     return Messages;
 })(client.Client);
 exports.Messages = Messages;
+/**
+ * Definition of options for createPager operation
+ */
+exports.createPagerOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "body",
+        "type": "createpagermessagerequest.CreatePagerMessageRequest",
+        "in": "body",
+        "required": true
+    }
+];
+/**
+ * Definition of options for createFax operation
+ */
+exports.createFaxOptions = [
+    {
+        "name": "accountId",
+        "in": "path",
+        "notes": "",
+        "paramType": "path",
+        "defaultValue": "~",
+        "required": true,
+        "allowMultiple": false,
+        "type": "string"
+    },
+    {
+        "name": "extensionId",
+        "in": "path",
+        "notes": "",
+        "paramType": "path",
+        "defaultValue": "~",
+        "required": true,
+        "allowMultiple": false,
+        "type": "string"
+    },
+    {
+        "name": "Content-Type",
+        "in": "header",
+        "default": "multipart/mixed; boundary=Boundary_1_14413901_1361871080888",
+        "type": "string"
+    },
+    {
+        "name": "Content-Length",
+        "in": "header",
+        "default": "",
+        "type": "string"
+    },
+    {
+        "name": "body",
+        "in": "body",
+        "consumes": [
+            "multipart/mixed; boundary=Boundary_1_14413901_1361871080888"
+        ],
+        "default": "--Boundary_1_14413901_1361871080888\nContent-Type: application/json\n\n{\n  \"to\":[{\"phoneNumber\":\"18005630003\"}],\n  \"faxResolution\":\"High\",\n  \"sendTime\":\"2013-02-26T09:31:20.882Z\"\n}\n\n--Boundary_1_14413901_1361871080888\nContent-Type: text/plain\n\nHello, World!\n\n--Boundary_1_14413901_1361871080888--",
+        "type": "string"
+    }
+];
+/**
+ * Definition of options for createSms operation
+ */
+exports.createSmsOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "body",
+        "type": "createsmsmessage.CreateSMSMessage",
+        "in": "body",
+        "required": true
+    }
+];
+/**
+ * Definition of options for list operation
+ */
+exports.listOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "availability",
+        "type": "IListAvailability",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Alive",
+            "Deleted",
+            "Purged"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "conversationId",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "dateFrom",
+        "type": "Date",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "dateTo",
+        "type": "Date",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "direction",
+        "type": "IListDirection",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Inbound",
+            "Outbound"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "messageType",
+        "type": "IListMessageType",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Fax",
+            "SMS",
+            "VoiceMail",
+            "Pager",
+            "Text"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "readStatus",
+        "type": "IListReadStatus",
+        "items": {
+            "type": "string"
+        },
+        "collectionFormat": "multi",
+        "allowEmptyValue": true,
+        "enum": [
+            "Read",
+            "Unread"
+        ],
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "page",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "perPage",
+        "type": "number",
+        "in": "query",
+        "required": false
+    },
+    {
+        "name": "phoneNumber",
+        "type": "string",
+        "in": "query",
+        "required": false
+    }
+];
+/**
+ * Definition of options for load operation
+ */
+exports.loadOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "messageId",
+        "type": "number",
+        "in": "path",
+        "required": true
+    }
+];
+/**
+ * Definition of options for update operation
+ */
+exports.updateOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "messageId",
+        "type": "number",
+        "in": "path",
+        "required": true
+    },
+    {
+        "name": "body",
+        "type": "updatemessagerequest.UpdateMessageRequest",
+        "in": "body",
+        "required": true
+    }
+];
+/**
+ * Definition of options for remove operation
+ */
+exports.removeOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "messageId",
+        "type": "number",
+        "in": "path",
+        "required": true
+    }
+];
+/**
+ * Definition of options for loadContent operation
+ */
+exports.loadContentOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "attachmentId",
+        "type": "number",
+        "in": "path",
+        "required": true
+    },
+    {
+        "name": "messageId",
+        "type": "number",
+        "in": "path",
+        "required": true
+    }
+];
 (function (IListAvailability) {
     IListAvailability[IListAvailability["Alive"] = 'Alive'] = "Alive";
     IListAvailability[IListAvailability["Deleted"] = 'Deleted'] = "Deleted";
@@ -10517,561 +7375,10 @@ function $get(context) {
     });
 }
 exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "createPager",
- *         "tags": [
- *             "Messages"
- *         ],
- *         "summary": "Create Pager Message",
- *         "description": "<p style='font-style:italic;'>Since 1.0.2</p><p>Creates and sends a pager message.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>InternalMessages</td><td>Sending and receiving intra-company text messages</td></tr><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "body",
- *                 "type": "createpagermessagerequest.CreatePagerMessageRequest",
- *                 "in": "body",
- *                 "description": "JSON body",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetMessageInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager",
- *         "method": "post",
- *         "responseSchema": "getmessageinforesponse.GetMessageInfoResponse",
- *         "imports": [
- *             "getmessageinforesponse.GetMessageInfoResponse",
- *             "createpagermessagerequest.CreatePagerMessageRequest"
- *         ]
- *     },
- *     {
- *         "operationId": "createFax",
- *         "tags": [
- *             "Messages"
- *         ],
- *         "summary": "Create Fax Message",
- *         "description": "<p style='font-style:italic;'>Since 1.0.2</p><p>Creates and sends/resends new fax message. Resend can be done if sending failed.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>Faxes</td><td>Sending and receiving faxes</td></tr><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "body",
- *                 "type": "createfaxmessagerequest.CreateFaxMessageRequest",
- *                 "in": "body",
- *                 "description": "JSON body",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetMessageInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax",
- *         "method": "post",
- *         "responseSchema": "getmessageinforesponse.GetMessageInfoResponse",
- *         "imports": [
- *             "getmessageinforesponse.GetMessageInfoResponse",
- *             "createfaxmessagerequest.CreateFaxMessageRequest"
- *         ]
- *     },
- *     {
- *         "operationId": "createSms",
- *         "tags": [
- *             "Messages"
- *         ],
- *         "summary": "Create SMS Message",
- *         "description": "<p style='font-style:italic;'>Since 1.0.2</p><p>Creates and sends new SMS message.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>SMS</td><td>Sending and receiving SMS (text) messages</td></tr><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "body",
- *                 "type": "createsmsmessage.CreateSMSMessage",
- *                 "in": "body",
- *                 "description": "JSON body",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetMessageInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms",
- *         "method": "post",
- *         "responseSchema": "getmessageinforesponse.GetMessageInfoResponse",
- *         "imports": [
- *             "getmessageinforesponse.GetMessageInfoResponse",
- *             "createsmsmessage.CreateSMSMessage"
- *         ]
- *     },
- *     {
- *         "operationId": "list",
- *         "tags": [
- *             "Messages"
- *         ],
- *         "summary": "Get Message List",
- *         "description": "<p style='font-style:italic;'>Since 1.0.2</p><p>Returns the list of messages from an extension mailbox.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "availability",
- *                 "type": "IListAvailability",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Alive",
- *                     "Deleted",
- *                     "Purged"
- *                 ],
- *                 "in": "query",
- *                 "description": "Specifies the availability status for the resulting messages. Default value is 'Alive'. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "conversationId",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Specifies the conversation identifier for the resulting messages",
- *                 "required": false
- *             },
- *             {
- *                 "name": "dateFrom",
- *                 "type": "Date",
- *                 "in": "query",
- *                 "description": "The start timestamp for the resulting messages. Default value is equal to dateTo minus 1 week",
- *                 "required": false
- *             },
- *             {
- *                 "name": "dateTo",
- *                 "type": "Date",
- *                 "in": "query",
- *                 "description": "Specifies the ending timestamp for the resulting messages. Default: current time",
- *                 "required": false
- *             },
- *             {
- *                 "name": "direction",
- *                 "type": "IListDirection",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Inbound",
- *                     "Outbound"
- *                 ],
- *                 "in": "query",
- *                 "description": "The direction for the resulting messages. If not specified, both inbound and outbound messages are returned. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "messageType",
- *                 "type": "IListMessageType",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Fax",
- *                     "SMS",
- *                     "VoiceMail",
- *                     "Pager",
- *                     "Text"
- *                 ],
- *                 "in": "query",
- *                 "description": "The type of the resulting messages. If not specified, all messages without message type filtering are returned. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "readStatus",
- *                 "type": "IListReadStatus",
- *                 "items": {
- *                     "type": "string"
- *                 },
- *                 "collectionFormat": "multi",
- *                 "allowEmptyValue": true,
- *                 "enum": [
- *                     "Read",
- *                     "Unread"
- *                 ],
- *                 "in": "query",
- *                 "description": "The read status for the resulting messages. Multiple values are accepted",
- *                 "required": false
- *             },
- *             {
- *                 "name": "page",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'",
- *                 "required": false
- *             },
- *             {
- *                 "name": "perPage",
- *                 "type": "number",
- *                 "in": "query",
- *                 "description": "Indicates the page size (number of items). If not specified, the value is '100' by default",
- *                 "required": false
- *             },
- *             {
- *                 "name": "phoneNumber",
- *                 "type": "string",
- *                 "in": "query",
- *                 "description": "The phone number. If specified, messages are returned for this particular phone number only",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetMessageList"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store",
- *         "method": "get",
- *         "responseSchema": "getmessagelist.GetMessageList",
- *         "imports": [
- *             "getmessagelist.GetMessageList"
- *         ]
- *     },
- *     {
- *         "operationId": "load",
- *         "tags": [
- *             "Messages"
- *         ],
- *         "summary": "Get Message Info",
- *         "description": "<p style='font-style:italic;'></p><p></p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "messageId",
- *                 "type": "number",
- *                 "in": "path",
- *                 "description": "Internal identifier of a message",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetMessageInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}",
- *         "method": "get",
- *         "responseSchema": "getmessageinforesponse.GetMessageInfoResponse",
- *         "imports": [
- *             "getmessageinforesponse.GetMessageInfoResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "update",
- *         "tags": [
- *             "Messages"
- *         ],
- *         "summary": "Update Message",
- *         "description": "<p style='font-style:italic;'>Since 1.0.2</p><p>Updates an individual message or several messages. Batch request is supported. Currently, only the message read status updating is supported.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>EditMessages</td><td>Viewing and updating user messages</td></tr><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "messageId",
- *                 "type": "number",
- *                 "in": "path",
- *                 "description": "Internal identifier of a message",
- *                 "required": true
- *             },
- *             {
- *                 "name": "body",
- *                 "type": "updatemessagerequest.UpdateMessageRequest",
- *                 "in": "body",
- *                 "description": "JSON body",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetMessageInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}",
- *         "method": "put",
- *         "responseSchema": "getmessageinforesponse.GetMessageInfoResponse",
- *         "imports": [
- *             "getmessageinforesponse.GetMessageInfoResponse",
- *             "updatemessagerequest.UpdateMessageRequest"
- *         ]
- *     },
- *     {
- *         "operationId": "remove",
- *         "tags": [
- *             "Messages"
- *         ],
- *         "summary": "Delete Message",
- *         "description": "<p style='font-style:italic;'></p><p>Deletes an individual message or several messages by the given message ID(s). Batch request is supported.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>EditMessages</td><td>Viewing and updating user messages</td></tr><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "messageId",
- *                 "type": "number",
- *                 "in": "path",
- *                 "description": "Internal identifier of a message",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetMessageInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}",
- *         "method": "delete",
- *         "responseSchema": "getmessageinforesponse.GetMessageInfoResponse",
- *         "imports": [
- *             "getmessageinforesponse.GetMessageInfoResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "loadContent",
- *         "tags": [
- *             "Messages"
- *         ],
- *         "summary": "Get Message Attachment",
- *         "description": "<p style='font-style:italic;'>Since 1.0.4 (Release 5.13)</p><p>Returns particular message attachment data as a media stream.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "attachmentId",
- *                 "type": "number",
- *                 "in": "path",
- *                 "description": "Internal identifier of a message attachment",
- *                 "required": true
- *             },
- *             {
- *                 "name": "messageId",
- *                 "type": "number",
- *                 "in": "path",
- *                 "description": "Internal identifier of a message",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetMessageInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}",
- *         "method": "get",
- *         "responseSchema": "getmessageinforesponse.GetMessageInfoResponse",
- *         "imports": [
- *             "getmessageinforesponse.GetMessageInfoResponse"
- *         ]
- *     }
- * ]
- */ 
 
 
 /***/ },
-/* 97 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -11081,8 +7388,8 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var model = __webpack_require__(43);
-var messageattachmentinfo = __webpack_require__(98);
-var messagestorecallerinfo = __webpack_require__(99);
+var messageattachmentinfo = __webpack_require__(91);
+var messagestorecallerinfo = __webpack_require__(92);
 var GetMessageInfoResponse = (function (_super) {
     __extends(GetMessageInfoResponse, _super);
     function GetMessageInfoResponse() {
@@ -11095,18 +7402,18 @@ var GetMessageInfoResponse = (function (_super) {
             { property: 'attachments', Class: messageattachmentinfo.MessageAttachmentInfo, isArray: true, isRequired: false },
             { property: 'availability', Class: GetMessageInfoResponseAvailability, isArray: false, isRequired: false },
             { property: 'conversationId', Class: null /* number */, isArray: false, isRequired: false },
-            { property: 'creationTime', Class: Date, isArray: false, isRequired: false },
+            { property: 'creationTime', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'deliveryErrorCode', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'direction', Class: GetMessageInfoResponseDirection, isArray: false, isRequired: false },
             { property: 'faxPageCount', Class: null /* number */, isArray: false, isRequired: false },
             { property: 'faxResolution', Class: GetMessageInfoResponseFaxResolution, isArray: false, isRequired: false },
             { property: 'from', Class: messagestorecallerinfo.MessageStoreCallerInfo, isArray: false, isRequired: false },
-            { property: 'lastModifiedTime', Class: Date, isArray: false, isRequired: false },
+            { property: 'lastModifiedTime', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'messageStatus', Class: GetMessageInfoResponseMessageStatus, isArray: false, isRequired: false },
             { property: 'pgToDepartment', Class: null /* boolean */, isArray: false, isRequired: false },
             { property: 'priority', Class: GetMessageInfoResponsePriority, isArray: false, isRequired: false },
             { property: 'readStatus', Class: GetMessageInfoResponseReadStatus, isArray: false, isRequired: false },
-            { property: 'smsDeliveryTime', Class: Date, isArray: false, isRequired: false },
+            { property: 'smsDeliveryTime', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'smsSendingAttemptsCount', Class: null /* number */, isArray: false, isRequired: false },
             { property: 'subject', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'to', Class: messagestorecallerinfo.MessageStoreCallerInfo, isArray: false, isRequired: false },
@@ -11172,203 +7479,10 @@ var GetMessageInfoResponseType = exports.GetMessageInfoResponseType;
     GetMessageInfoResponseVmTranscriptionStatus[GetMessageInfoResponseVmTranscriptionStatus["Failed"] = 'Failed'] = "Failed";
 })(exports.GetMessageInfoResponseVmTranscriptionStatus || (exports.GetMessageInfoResponseVmTranscriptionStatus = {}));
 var GetMessageInfoResponseVmTranscriptionStatus = exports.GetMessageInfoResponseVmTranscriptionStatus;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetMessageInfoResponse",
- *     "imports": [
- *         "messageattachmentinfo.MessageAttachmentInfo",
- *         "messagestorecallerinfo.MessageStoreCallerInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a message",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a message",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "messageattachmentinfo.MessageAttachmentInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/MessageAttachmentInfo"
- *             },
- *             "$name": "attachments",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetMessageInfoResponseAvailability",
- *             "enum": [
- *                 "Alive",
- *                 "Deleted",
- *                 "Purged"
- *             ],
- *             "description": "Message availability status. Message in 'Deleted' state is still preserved with all its attachments and can be restored. 'Purged' means that all attachments are already deleted and the message itself is about to be physically deleted shortly",
- *             "$name": "availability",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "SMS and Pager only. Identifier of the conversation the message belongs to",
- *             "$name": "conversationId",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Date",
- *             "description": "Message creation timestamp",
- *             "$name": "creationTime",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "SMS only. Delivery error code returned by gateway",
- *             "$name": "deliveryErrorCode",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetMessageInfoResponseDirection",
- *             "enum": [
- *                 "Inbound",
- *                 "Outbound"
- *             ],
- *             "description": "Message direction. Note that for some message types not all directions are allowed. For example voicemail messages can be only inbound",
- *             "$name": "direction",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Fax only. Page count in fax message",
- *             "$name": "faxPageCount",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetMessageInfoResponseFaxResolution",
- *             "enum": [
- *                 "High",
- *                 "Low"
- *             ],
- *             "description": "Fax only. Resolution of fax message. ('High' for black and white image scanned at 200 dpi, 'Low' for black and white image scanned at 100 dpi)",
- *             "$name": "faxResolution",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/MessageStoreCallerInfo",
- *             "description": "Sender information",
- *             "$name": "from",
- *             "isRequired": false,
- *             "type": "messagestorecallerinfo.MessageStoreCallerInfo"
- *         },
- *         {
- *             "type": "Date",
- *             "description": "The timestamp when the message was modified on server",
- *             "$name": "lastModifiedTime",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetMessageInfoResponseMessageStatus",
- *             "enum": [
- *                 "Queued",
- *                 "Sent",
- *                 "Delivered",
- *                 "DeliveryFailed",
- *                 "SendingFailed",
- *                 "Received"
- *             ],
- *             "description": "Message status. Different message types may have different allowed status values.For outbound faxes the aggregated message status is returned: If status for at least one recipient is 'Queued', then 'Queued' value is returned If status for at least one recipient is 'SendingFailed', then 'SendingFailed' value is returned In other cases Sent status is returned",
- *             "$name": "messageStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "boolean",
- *             "description": "Pager only. True if at least one of the message recipients is Department extension",
- *             "$name": "pgToDepartment",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetMessageInfoResponsePriority",
- *             "enum": [
- *                 "Normal",
- *                 "High"
- *             ],
- *             "description": "Message priority",
- *             "$name": "priority",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetMessageInfoResponseReadStatus",
- *             "enum": [
- *                 "Read",
- *                 "Unread"
- *             ],
- *             "description": "Message read status",
- *             "$name": "readStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Date",
- *             "description": "SMS only. The timestamp when outbound SMS was delivered to recipient's handset. It is filled only if the carrier sends a delivery receipt to RingCentral",
- *             "$name": "smsDeliveryTime",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "SMS only. Number of attempts made to send an outbound SMS to the gateway (if gateway is temporary unavailable)",
- *             "$name": "smsSendingAttemptsCount",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Message subject. For SMS and Pager messages it replicates message text which is also returned as an attachment",
- *             "$name": "subject",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/MessageStoreCallerInfo",
- *             "description": "Recipient information",
- *             "$name": "to",
- *             "isRequired": false,
- *             "type": "messagestorecallerinfo.MessageStoreCallerInfo"
- *         },
- *         {
- *             "type": "GetMessageInfoResponseType",
- *             "enum": [
- *                 "Fax",
- *                 "SMS",
- *                 "VoiceMail",
- *                 "Pager",
- *                 "Text"
- *             ],
- *             "description": "Message type",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetMessageInfoResponseVmTranscriptionStatus",
- *             "enum": [
- *                 "NotAvailable",
- *                 "InProgress",
- *                 "TimedOut",
- *                 "Completed",
- *                 "CompletedPartially",
- *                 "Failed"
- *             ],
- *             "description": "Voicemail only. Status of voicemail to text transcription. If VoicemailToText feature is not activated for account, the 'NotAvailable' value is returned",
- *             "$name": "vmTranscriptionStatus",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 98 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -11406,57 +7520,10 @@ exports.MessageAttachmentInfo = MessageAttachmentInfo;
     MessageAttachmentInfoType[MessageAttachmentInfoType["RenderedDocument"] = 'RenderedDocument'] = "RenderedDocument";
 })(exports.MessageAttachmentInfoType || (exports.MessageAttachmentInfoType = {}));
 var MessageAttachmentInfoType = exports.MessageAttachmentInfoType;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "MessageAttachmentInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a message attachment",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a message attachment",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "MessageAttachmentInfoType",
- *             "enum": [
- *                 "AutoRecording",
- *                 "AutoTranscription",
- *                 "Text",
- *                 "SourceDocument",
- *                 "RenderedDocument"
- *             ],
- *             "description": "Type of message attachment",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "MIME type for a given attachment, for instance 'audio/wav'",
- *             "$name": "contentType",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Voicemail only Duration of the voicemail in seconds",
- *             "$name": "vmDuration",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 99 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -11473,7 +7540,7 @@ var MessageStoreCallerInfo = (function (_super) {
     }
     MessageStoreCallerInfo.prototype.getPropertyMappings = function () {
         return [
-            { property: 'extensionNumber', Class: null /* string */, isArray: false, isRequired: false },
+            { property: 'extensionNumber', Class: null /* string */, isArray: false, isRequired: true },
             { property: 'location', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'messageStatus', Class: MessageStoreCallerInfoMessageStatus, isArray: false, isRequired: false },
             { property: 'name', Class: null /* string */, isArray: false, isRequired: false },
@@ -11495,58 +7562,10 @@ exports.MessageStoreCallerInfo = MessageStoreCallerInfo;
     MessageStoreCallerInfoMessageStatus[MessageStoreCallerInfoMessageStatus["Received"] = 'Received'] = "Received";
 })(exports.MessageStoreCallerInfoMessageStatus || (exports.MessageStoreCallerInfoMessageStatus = {}));
 var MessageStoreCallerInfoMessageStatus = exports.MessageStoreCallerInfoMessageStatus;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "MessageStoreCallerInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Extension short number (usually 3 or 4 digits). This property is filled when parties communicate by means of short internal numbers, for example when calling to other extension or sending/receiving Company Pager message",
- *             "$name": "extensionNumber",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)",
- *             "$name": "location",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "MessageStoreCallerInfoMessageStatus",
- *             "enum": [
- *                 "Queued",
- *                 "Sent",
- *                 "Delivered",
- *                 "DeliveryFailed",
- *                 "SendingFailed",
- *                 "Received"
- *             ],
- *             "description": "Status of a message. Returned for outbound fax messages only",
- *             "$name": "messageStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Symbolic name associated with a party. If the phone does not belong to the known extension, only the location is returned, the name is not determined then",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS",
- *             "$name": "phoneNumber",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 100 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -11556,9 +7575,9 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var model = __webpack_require__(43);
-var getmessageinforesponse = __webpack_require__(97);
-var navigationinfo = __webpack_require__(75);
-var paginginfo = __webpack_require__(74);
+var getmessageinforesponse = __webpack_require__(90);
+var navigationinfo = __webpack_require__(74);
+var paginginfo = __webpack_require__(75);
 var GetMessageList = (function (_super) {
     __extends(GetMessageList, _super);
     function GetMessageList() {
@@ -11577,46 +7596,10 @@ var GetMessageList = (function (_super) {
     return GetMessageList;
 })(model.Model);
 exports.GetMessageList = GetMessageList;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetMessageList",
- *     "imports": [
- *         "getmessageinforesponse.GetMessageInfoResponse",
- *         "navigationinfo.NavigationInfo",
- *         "paginginfo.PagingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "getmessageinforesponse.GetMessageInfoResponse[]",
- *             "items": {
- *                 "$ref": "#/definitions/GetMessageInfoResponse"
- *             },
- *             "$name": "records",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": false,
- *             "type": "navigationinfo.NavigationInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": false,
- *             "type": "paginginfo.PagingInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 101 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../../typings/externals.d.ts" />
@@ -11627,257 +7610,120 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var client = __webpack_require__(41);
-var getsubscriptioninforesponse = __webpack_require__(102);
+var getsubscriptioninforesponse = __webpack_require__(95);
 var NotificationsSubscriptionAPI = (function (_super) {
     __extends(NotificationsSubscriptionAPI, _super);
     function NotificationsSubscriptionAPI() {
         _super.apply(this, arguments);
     }
+    /**
+     * Create Subscription
+     *
+     * <p style='font-style:italic;'>Since 1.0.6 (Release 5.15)</p>
+     * <p>Creates a new subscription. To call this method with APNS transport type you have to specify endpoint_id attribute in get token request at authorization.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Medium</p>
+     */
     NotificationsSubscriptionAPI.prototype.create = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/subscription',
-            'method': 'post'
-        }, ResponseClass = getsubscriptioninforesponse.GetSubscriptionInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "body",
-                "type": "createsubscriptionrequest.CreateSubscriptionRequest",
-                "in": "body",
-                "description": "JSON body",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('post', '/restapi/v1.0/subscription', options, exports.createOptions), getsubscriptioninforesponse.GetSubscriptionInfoResponse);
     };
+    /**
+     * Get Subscription
+     *
+     * <p style='font-style:italic;'>Since 1.0.6 (Release 5.15)</p>
+     * <p>Returns the requested subscription.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     NotificationsSubscriptionAPI.prototype.load = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/subscription/{subscriptionId}',
-            'method': 'get'
-        }, ResponseClass = getsubscriptioninforesponse.GetSubscriptionInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "subscriptionId",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a subscription",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/subscription/{subscriptionId}', options, exports.loadOptions), getsubscriptioninforesponse.GetSubscriptionInfoResponse);
     };
+    /**
+     * Renew Subscription / Modify Event Filters
+     *
+     * <p style='font-style:italic;'>Since 1.0.6 (Release 5.15)</p>
+     * <p>With empty request body - renews the existent subscription. If event filters specified - modifies the event filters for the existing subscription. The client application can extend or narrow the events for which it receives notifications in the frame
+     *     of one subscription.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Medium</p>
+     */
     NotificationsSubscriptionAPI.prototype.update = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/subscription/{subscriptionId}',
-            'method': 'put'
-        }, ResponseClass = getsubscriptioninforesponse.GetSubscriptionInfoResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "subscriptionId",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a subscription",
-                "required": true
-            },
-            {
-                "name": "body",
-                "type": "modifysubscriptionrequest.ModifySubscriptionRequest",
-                "in": "body",
-                "description": "JSON body",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('put', '/restapi/v1.0/subscription/{subscriptionId}', options, exports.updateOptions), getsubscriptioninforesponse.GetSubscriptionInfoResponse);
     };
+    /**
+     * Cancel Subscription
+     *
+     * <p style='font-style:italic;'></p>
+     * <p>Cancels the existent subscription.</p>
+     * <h4>Usage Plan Group</h4>
+     * <p>Medium</p>
+     */
     NotificationsSubscriptionAPI.prototype.remove = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/subscription/{subscriptionId}',
-            'method': 'delete'
-        }, ResponseClass = null;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "subscriptionId",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a subscription",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('delete', '/restapi/v1.0/subscription/{subscriptionId}', options, exports.removeOptions), null);
     };
     return NotificationsSubscriptionAPI;
 })(client.Client);
 exports.NotificationsSubscriptionAPI = NotificationsSubscriptionAPI;
+/**
+ * Definition of options for create operation
+ */
+exports.createOptions = [
+    {
+        "name": "body",
+        "type": "createsubscriptionrequest.CreateSubscriptionRequest",
+        "in": "body",
+        "required": true
+    }
+];
+/**
+ * Definition of options for load operation
+ */
+exports.loadOptions = [
+    {
+        "name": "subscriptionId",
+        "type": "string",
+        "in": "path",
+        "required": true
+    }
+];
+/**
+ * Definition of options for update operation
+ */
+exports.updateOptions = [
+    {
+        "name": "subscriptionId",
+        "type": "string",
+        "in": "path",
+        "required": true
+    },
+    {
+        "name": "body",
+        "type": "modifysubscriptionrequest.ModifySubscriptionRequest",
+        "in": "body",
+        "required": true
+    }
+];
+/**
+ * Definition of options for remove operation
+ */
+exports.removeOptions = [
+    {
+        "name": "subscriptionId",
+        "type": "string",
+        "in": "path",
+        "required": true
+    }
+];
 function $get(context) {
     return context.createSingleton('NotificationsSubscriptionAPI', function () {
         return new NotificationsSubscriptionAPI(context);
     });
 }
 exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "create",
- *         "tags": [
- *             "Notifications: Subscription API"
- *         ],
- *         "summary": "Create Subscription",
- *         "description": "<p style='font-style:italic;'>Since 1.0.6 (Release 5.15)</p><p>Creates a new subscription. To call this method with APNS transport type you have to specify endpoint_id attribute in get token request at authorization.</p><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "body",
- *                 "type": "createsubscriptionrequest.CreateSubscriptionRequest",
- *                 "in": "body",
- *                 "description": "JSON body",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetSubscriptionInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/subscription",
- *         "method": "post",
- *         "responseSchema": "getsubscriptioninforesponse.GetSubscriptionInfoResponse",
- *         "imports": [
- *             "getsubscriptioninforesponse.GetSubscriptionInfoResponse",
- *             "createsubscriptionrequest.CreateSubscriptionRequest"
- *         ]
- *     },
- *     {
- *         "operationId": "load",
- *         "tags": [
- *             "Notifications: Subscription API"
- *         ],
- *         "summary": "Get Subscription",
- *         "description": "<p style='font-style:italic;'>Since 1.0.6 (Release 5.15)</p><p>Returns the requested subscription.</p><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "subscriptionId",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a subscription",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetSubscriptionInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/subscription/{subscriptionId}",
- *         "method": "get",
- *         "responseSchema": "getsubscriptioninforesponse.GetSubscriptionInfoResponse",
- *         "imports": [
- *             "getsubscriptioninforesponse.GetSubscriptionInfoResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "update",
- *         "tags": [
- *             "Notifications: Subscription API"
- *         ],
- *         "summary": "Renew Subscription / Modify Event Filters",
- *         "description": "<p style='font-style:italic;'>Since 1.0.6 (Release 5.15)</p><p>With empty request body - renews the existent subscription. If event filters specified - modifies the event filters for the existing subscription. The client application can extend or narrow the events for which it receives notifications in the frame of one subscription.</p><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "subscriptionId",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a subscription",
- *                 "required": true
- *             },
- *             {
- *                 "name": "body",
- *                 "type": "modifysubscriptionrequest.ModifySubscriptionRequest",
- *                 "in": "body",
- *                 "description": "JSON body",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetSubscriptionInfoResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/subscription/{subscriptionId}",
- *         "method": "put",
- *         "responseSchema": "getsubscriptioninforesponse.GetSubscriptionInfoResponse",
- *         "imports": [
- *             "getsubscriptioninforesponse.GetSubscriptionInfoResponse",
- *             "modifysubscriptionrequest.ModifySubscriptionRequest"
- *         ]
- *     },
- *     {
- *         "operationId": "remove",
- *         "tags": [
- *             "Notifications: Subscription API"
- *         ],
- *         "summary": "Cancel Subscription",
- *         "description": "<p style='font-style:italic;'></p><p>Cancels the existent subscription.</p><h4>Usage Plan Group</h4><p>Medium</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "subscriptionId",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a subscription",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/subscription/{subscriptionId}",
- *         "method": "delete",
- *         "responseSchema": ".",
- *         "imports": []
- *     }
- * ]
- */ 
 
 
 /***/ },
-/* 102 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -11887,7 +7733,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var model = __webpack_require__(43);
-var notificationdeliverymode = __webpack_require__(103);
+var notificationdeliverymode = __webpack_require__(96);
 var GetSubscriptionInfoResponse = (function (_super) {
     __extends(GetSubscriptionInfoResponse, _super);
     function GetSubscriptionInfoResponse() {
@@ -11898,10 +7744,10 @@ var GetSubscriptionInfoResponse = (function (_super) {
             { property: 'id', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'uri', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'eventFilters', Class: null /* string[] */, isArray: true, isRequired: false },
-            { property: 'expirationTime', Class: Date, isArray: false, isRequired: false },
+            { property: 'expirationTime', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'expiresIn', Class: null /* number */, isArray: false, isRequired: false },
             { property: 'status', Class: GetSubscriptionInfoResponseStatus, isArray: false, isRequired: false },
-            { property: 'creationTime', Class: Date, isArray: false, isRequired: false },
+            { property: 'creationTime', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'deliveryMode', Class: notificationdeliverymode.NotificationDeliveryMode, isArray: false, isRequired: true }
         ];
     };
@@ -11916,78 +7762,10 @@ exports.GetSubscriptionInfoResponse = GetSubscriptionInfoResponse;
     GetSubscriptionInfoResponseStatus[GetSubscriptionInfoResponseStatus["Suspended"] = 'Suspended'] = "Suspended";
 })(exports.GetSubscriptionInfoResponseStatus || (exports.GetSubscriptionInfoResponseStatus = {}));
 var GetSubscriptionInfoResponseStatus = exports.GetSubscriptionInfoResponseStatus;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetSubscriptionInfoResponse",
- *     "imports": [
- *         "notificationdeliverymode.NotificationDeliveryMode"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a subscription",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a subscription",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string[]",
- *             "items": {
- *                 "type": "string",
- *                 "description": "Collection of string"
- *             },
- *             "$name": "eventFilters",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Date",
- *             "description": "Subscription expiration time",
- *             "$name": "expirationTime",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Subscription lifetime in seconds. The default value is 900",
- *             "$name": "expiresIn",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetSubscriptionInfoResponseStatus",
- *             "enum": [
- *                 "Active",
- *                 "Suspended"
- *             ],
- *             "description": "Subscription status",
- *             "$name": "status",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Date",
- *             "description": "Subscription creation time",
- *             "$name": "creationTime",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/NotificationDeliveryMode",
- *             "description": "Delivery mode data",
- *             "$name": "deliveryMode",
- *             "isRequired": true,
- *             "type": "notificationdeliverymode.NotificationDeliveryMode"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 103 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -12005,7 +7783,7 @@ var NotificationDeliveryMode = (function (_super) {
     NotificationDeliveryMode.prototype.getPropertyMappings = function () {
         return [
             { property: 'transportType', Class: NotificationDeliveryModeTransportType, isArray: false, isRequired: false },
-            { property: 'encryption', Class: NotificationDeliveryModeEncryption, isArray: false, isRequired: false },
+            { property: 'encryption', Class: null /* boolean */, isArray: false, isRequired: false },
             { property: 'address', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'subscriberKey', Class: null /* string */, isArray: false, isRequired: false },
             { property: 'secretKey', Class: null /* string */, isArray: false, isRequired: false },
@@ -12024,75 +7802,10 @@ exports.NotificationDeliveryMode = NotificationDeliveryMode;
     NotificationDeliveryModeTransportType[NotificationDeliveryModeTransportType["APNS"] = 'APNS'] = "APNS";
 })(exports.NotificationDeliveryModeTransportType || (exports.NotificationDeliveryModeTransportType = {}));
 var NotificationDeliveryModeTransportType = exports.NotificationDeliveryModeTransportType;
-(function (NotificationDeliveryModeEncryption) {
-    NotificationDeliveryModeEncryption[NotificationDeliveryModeEncryption["True"] = 'True'] = "True";
-    NotificationDeliveryModeEncryption[NotificationDeliveryModeEncryption["False"] = 'False'] = "False";
-})(exports.NotificationDeliveryModeEncryption || (exports.NotificationDeliveryModeEncryption = {}));
-var NotificationDeliveryModeEncryption = exports.NotificationDeliveryModeEncryption;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "NotificationDeliveryMode",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "NotificationDeliveryModeTransportType",
- *             "enum": [
- *                 "PubNub",
- *                 "APNS"
- *             ],
- *             "description": "Notifications transportation provider name. 'APNS' (Apple Push Notifications Service)",
- *             "$name": "transportType",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "NotificationDeliveryModeEncryption",
- *             "enum": [
- *                 "True",
- *                 "False"
- *             ],
- *             "description": "Optional parameter. Specifies if the message will be encrypted or not. For APNS transport type the value is always  false ",
- *             "$name": "encryption",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "PubNub channel name. For APNS transport type - internal identifier of a device  device_token ",
- *             "$name": "address",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "PubNub subscriber credentials required to subscribe to the channel",
- *             "$name": "subscriberKey",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "PubNub subscriber credentials required to subscribe to the channel. Optional (for PubNub transport type only)",
- *             "$name": "secretKey",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Encryption algorithm 'AES' (for PubNub transport type only)",
- *             "$name": "encryptionAlgorithm",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Key for notification message decryption (for PubNub transport type only)",
- *             "$name": "encryptionKey",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 104 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../../typings/externals.d.ts" />
@@ -12103,102 +7816,73 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var client = __webpack_require__(41);
-var getpresenceinfo = __webpack_require__(105);
+var getpresenceinfo = __webpack_require__(98);
 var Presence = (function (_super) {
     __extends(Presence, _super);
     function Presence() {
         _super.apply(this, arguments);
     }
+    /**
+     * Get Extension Presence Status
+     *
+     * <p style='font-style:italic;'>Since 1.0.2</p>
+     * <p>Returns presence status of an extension or several extensions. The presenceStatus is returned as Offline (the parameters telephonyStatus, message, userStatus and dndStatus are not returned at all) for the following extension types: Department/Announcement
+     *     Only/Take Messages Only (Voicemail)/Fax User/Paging Only Group/Shared Lines Group/IVR Menu/Application Extension. If the user requests his/her own presence status, the response contains actual presence status even if the status publication is turned
+     *     off. Batch request is supported. For batch requests the number of extensions in one request is limited to 30. If more extensions are included in the request, the error code 400 Bad Request is returned with the logical error code InvalidMultipartRequest
+     *     and the corresponding message 'Extension Presence Info multipart request is limited to 30 extensions'.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>ReadPresence</td>
+     *             <td>Getting user presence information</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     Presence.prototype.load = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence',
-            'method': 'get'
-        }, ResponseClass = getpresenceinfo.GetPresenceInfo;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence', options, exports.loadOptions), getpresenceinfo.GetPresenceInfo);
     };
     return Presence;
 })(client.Client);
 exports.Presence = Presence;
+/**
+ * Definition of options for load operation
+ */
+exports.loadOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    }
+];
 function $get(context) {
     return context.createSingleton('Presence', function () {
         return new Presence(context);
     });
 }
 exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "load",
- *         "tags": [
- *             "Presence"
- *         ],
- *         "summary": "Get Extension Presence Status",
- *         "description": "<p style='font-style:italic;'>Since 1.0.2</p><p>Returns presence status of an extension or several extensions. The presenceStatus is returned as Offline (the parameters telephonyStatus, message, userStatus and dndStatus are not returned at all) for the following extension types: Department/Announcement Only/Take Messages Only (Voicemail)/Fax User/Paging Only Group/Shared Lines Group/IVR Menu/Application Extension. If the user requests his/her own presence status, the response contains actual presence status even if the status publication is turned off. Batch request is supported. For batch requests the number of extensions in one request is limited to 30. If more extensions are included in the request, the error code 400 Bad Request is returned with the logical error code InvalidMultipartRequest and the corresponding message 'Extension Presence Info multipart request is limited to 30 extensions'.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadPresence</td><td>Getting user presence information</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetPresenceInfo"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence",
- *         "method": "get",
- *         "responseSchema": "getpresenceinfo.GetPresenceInfo",
- *         "imports": [
- *             "getpresenceinfo.GetPresenceInfo"
- *         ]
- *     }
- * ]
- */ 
 
 
 /***/ },
-/* 105 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -12208,7 +7892,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var model = __webpack_require__(43);
-var getpresenceextensioninfo = __webpack_require__(106);
+var getpresenceextensioninfo = __webpack_require__(99);
 var GetPresenceInfo = (function (_super) {
     __extends(GetPresenceInfo, _super);
     function GetPresenceInfo() {
@@ -12217,13 +7901,13 @@ var GetPresenceInfo = (function (_super) {
     GetPresenceInfo.prototype.getPropertyMappings = function () {
         return [
             { property: 'uri', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'allowSeeMyPresence', Class: GetPresenceInfoAllowSeeMyPresence, isArray: false, isRequired: false },
+            { property: 'allowSeeMyPresence', Class: null /* boolean */, isArray: false, isRequired: false },
             { property: 'dndStatus', Class: GetPresenceInfoDndStatus, isArray: false, isRequired: false },
             { property: 'extension', Class: getpresenceextensioninfo.GetPresenceExtensionInfo, isArray: false, isRequired: false },
             { property: 'message', Class: null /* string */, isArray: false, isRequired: false },
-            { property: 'pickUpCallsOnHold', Class: GetPresenceInfoPickUpCallsOnHold, isArray: false, isRequired: false },
+            { property: 'pickUpCallsOnHold', Class: null /* boolean */, isArray: false, isRequired: false },
             { property: 'presenceStatus', Class: GetPresenceInfoPresenceStatus, isArray: false, isRequired: false },
-            { property: 'ringOnMonitoredCall', Class: GetPresenceInfoRingOnMonitoredCall, isArray: false, isRequired: false },
+            { property: 'ringOnMonitoredCall', Class: null /* boolean */, isArray: false, isRequired: false },
             { property: 'telephonyStatus', Class: GetPresenceInfoTelephonyStatus, isArray: false, isRequired: false },
             { property: 'userStatus', Class: GetPresenceInfoUserStatus, isArray: false, isRequired: false }
         ];
@@ -12234,11 +7918,6 @@ var GetPresenceInfo = (function (_super) {
     return GetPresenceInfo;
 })(model.Model);
 exports.GetPresenceInfo = GetPresenceInfo;
-(function (GetPresenceInfoAllowSeeMyPresence) {
-    GetPresenceInfoAllowSeeMyPresence[GetPresenceInfoAllowSeeMyPresence["True"] = 'True'] = "True";
-    GetPresenceInfoAllowSeeMyPresence[GetPresenceInfoAllowSeeMyPresence["False"] = 'False'] = "False";
-})(exports.GetPresenceInfoAllowSeeMyPresence || (exports.GetPresenceInfoAllowSeeMyPresence = {}));
-var GetPresenceInfoAllowSeeMyPresence = exports.GetPresenceInfoAllowSeeMyPresence;
 (function (GetPresenceInfoDndStatus) {
     GetPresenceInfoDndStatus[GetPresenceInfoDndStatus["TakeAllCalls"] = 'TakeAllCalls'] = "TakeAllCalls";
     GetPresenceInfoDndStatus[GetPresenceInfoDndStatus["DoNotAcceptAnyCalls"] = 'DoNotAcceptAnyCalls'] = "DoNotAcceptAnyCalls";
@@ -12246,27 +7925,18 @@ var GetPresenceInfoAllowSeeMyPresence = exports.GetPresenceInfoAllowSeeMyPresenc
     GetPresenceInfoDndStatus[GetPresenceInfoDndStatus["TakeDepartmentCallsOnly"] = 'TakeDepartmentCallsOnly'] = "TakeDepartmentCallsOnly";
 })(exports.GetPresenceInfoDndStatus || (exports.GetPresenceInfoDndStatus = {}));
 var GetPresenceInfoDndStatus = exports.GetPresenceInfoDndStatus;
-(function (GetPresenceInfoPickUpCallsOnHold) {
-    GetPresenceInfoPickUpCallsOnHold[GetPresenceInfoPickUpCallsOnHold["True"] = 'True'] = "True";
-    GetPresenceInfoPickUpCallsOnHold[GetPresenceInfoPickUpCallsOnHold["False"] = 'False'] = "False";
-})(exports.GetPresenceInfoPickUpCallsOnHold || (exports.GetPresenceInfoPickUpCallsOnHold = {}));
-var GetPresenceInfoPickUpCallsOnHold = exports.GetPresenceInfoPickUpCallsOnHold;
 (function (GetPresenceInfoPresenceStatus) {
     GetPresenceInfoPresenceStatus[GetPresenceInfoPresenceStatus["Offline"] = 'Offline'] = "Offline";
     GetPresenceInfoPresenceStatus[GetPresenceInfoPresenceStatus["Busy"] = 'Busy'] = "Busy";
     GetPresenceInfoPresenceStatus[GetPresenceInfoPresenceStatus["Available"] = 'Available'] = "Available";
 })(exports.GetPresenceInfoPresenceStatus || (exports.GetPresenceInfoPresenceStatus = {}));
 var GetPresenceInfoPresenceStatus = exports.GetPresenceInfoPresenceStatus;
-(function (GetPresenceInfoRingOnMonitoredCall) {
-    GetPresenceInfoRingOnMonitoredCall[GetPresenceInfoRingOnMonitoredCall["True"] = 'True'] = "True";
-    GetPresenceInfoRingOnMonitoredCall[GetPresenceInfoRingOnMonitoredCall["False"] = 'False'] = "False";
-})(exports.GetPresenceInfoRingOnMonitoredCall || (exports.GetPresenceInfoRingOnMonitoredCall = {}));
-var GetPresenceInfoRingOnMonitoredCall = exports.GetPresenceInfoRingOnMonitoredCall;
 (function (GetPresenceInfoTelephonyStatus) {
     GetPresenceInfoTelephonyStatus[GetPresenceInfoTelephonyStatus["NoCall"] = 'NoCall'] = "NoCall";
     GetPresenceInfoTelephonyStatus[GetPresenceInfoTelephonyStatus["CallConnected"] = 'CallConnected'] = "CallConnected";
     GetPresenceInfoTelephonyStatus[GetPresenceInfoTelephonyStatus["Ringing"] = 'Ringing'] = "Ringing";
     GetPresenceInfoTelephonyStatus[GetPresenceInfoTelephonyStatus["OnHold"] = 'OnHold'] = "OnHold";
+    GetPresenceInfoTelephonyStatus[GetPresenceInfoTelephonyStatus["ParkedCall"] = 'ParkedCall'] = "ParkedCall";
 })(exports.GetPresenceInfoTelephonyStatus || (exports.GetPresenceInfoTelephonyStatus = {}));
 var GetPresenceInfoTelephonyStatus = exports.GetPresenceInfoTelephonyStatus;
 (function (GetPresenceInfoUserStatus) {
@@ -12275,117 +7945,10 @@ var GetPresenceInfoTelephonyStatus = exports.GetPresenceInfoTelephonyStatus;
     GetPresenceInfoUserStatus[GetPresenceInfoUserStatus["Available"] = 'Available'] = "Available";
 })(exports.GetPresenceInfoUserStatus || (exports.GetPresenceInfoUserStatus = {}));
 var GetPresenceInfoUserStatus = exports.GetPresenceInfoUserStatus;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetPresenceInfo",
- *     "imports": [
- *         "getpresenceextensioninfo.GetPresenceExtensionInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a presence info resource",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetPresenceInfoAllowSeeMyPresence",
- *             "enum": [
- *                 "True",
- *                 "False"
- *             ],
- *             "description": "If 'True' enables other extensions to see the extension presence status",
- *             "$name": "allowSeeMyPresence",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetPresenceInfoDndStatus",
- *             "enum": [
- *                 "TakeAllCalls",
- *                 "DoNotAcceptAnyCalls",
- *                 "DoNotAcceptDepartmentCalls",
- *                 "TakeDepartmentCallsOnly"
- *             ],
- *             "description": "Extended DnD (Do not Disturb) status. Cannot be set for Department/Announcement/Voicemail (Take Messages Only)/Fax User/Shared Lines Group/Paging Only Group/IVR Menu/Application Extension extensions. The 'DoNotAcceptDepartmentCalls' and 'TakeDepartmentCallsOnly' values are applicable only for extensions - members of a Department; if these values are set for department outsiders, the 400 Bad Request error code is returned. The 'TakeDepartmentCallsOnly' status can be set through the old RingCentral user interface and is available for some migrated accounts only.",
- *             "$name": "dndStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/GetPresenceExtensionInfo",
- *             "description": "Information on extension, for which this presence data is returned",
- *             "$name": "extension",
- *             "isRequired": false,
- *             "type": "getpresenceextensioninfo.GetPresenceExtensionInfo"
- *         },
- *         {
- *             "type": "string",
- *             "description": "Custom status message (as previously published by user)",
- *             "$name": "message",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetPresenceInfoPickUpCallsOnHold",
- *             "enum": [
- *                 "True",
- *                 "False"
- *             ],
- *             "description": "If 'True' enables the extension user to pick up a monitored line on hold",
- *             "$name": "pickUpCallsOnHold",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetPresenceInfoPresenceStatus",
- *             "enum": [
- *                 "Offline",
- *                 "Busy",
- *                 "Available"
- *             ],
- *             "description": "Aggregated presence status, calculated from a number of sources",
- *             "$name": "presenceStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetPresenceInfoRingOnMonitoredCall",
- *             "enum": [
- *                 "True",
- *                 "False"
- *             ],
- *             "description": "If 'True' enables to ring extension phone, if any user monitored by this extension is ringing",
- *             "$name": "ringOnMonitoredCall",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetPresenceInfoTelephonyStatus",
- *             "enum": [
- *                 "NoCall",
- *                 "CallConnected",
- *                 "Ringing",
- *                 "OnHold"
- *             ],
- *             "description": "Telephony presence status",
- *             "$name": "telephonyStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetPresenceInfoUserStatus",
- *             "enum": [
- *                 "Offline",
- *                 "Busy",
- *                 "Available"
- *             ],
- *             "description": "User-defined presence status (as previously published by the user)",
- *             "$name": "userStatus",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 106 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -12413,38 +7976,10 @@ var GetPresenceExtensionInfo = (function (_super) {
     return GetPresenceExtensionInfo;
 })(model.Model);
 exports.GetPresenceExtensionInfo = GetPresenceExtensionInfo;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetPresenceExtensionInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of an extension",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of an extension",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Extension number (usually 3 or 4 digits)",
- *             "$name": "extensionNumber",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 107 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 /// <reference path="../../../typings/externals.d.ts" />
@@ -12455,237 +7990,169 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var client = __webpack_require__(41);
-var getringoutstatusresponse = __webpack_require__(108);
+var getringoutstatusresponse = __webpack_require__(101);
 var RingOut = (function (_super) {
     __extends(RingOut, _super);
     function RingOut() {
         _super.apply(this, arguments);
     }
+    /**
+     * Make RingOut Call
+     *
+     * <p style='font-style:italic;'>Since 1.0.7 (Release 5.16)</p>
+     * <p></p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>RingOut</td>
+     *             <td>Performing two-legged ring-out phone calls</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Heavy</p>
+     */
     RingOut.prototype.create = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout',
-            'method': 'post'
-        }, ResponseClass = getringoutstatusresponse.GetRingOutStatusResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "body",
-                "type": "makeringoutrequest.MakeRingoutRequest",
-                "in": "body",
-                "description": "JSON body",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('post', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout', options, exports.createOptions), getringoutstatusresponse.GetRingOutStatusResponse);
     };
+    /**
+     * Get Status of RingOut Call
+     *
+     * <p style='font-style:italic;'>Since 1.0.7 (Release 5.16)</p>
+     * <p>Returns the status of a 2-leg RingOut call.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>RingOut</td>
+     *             <td>Performing two-legged ring-out phone calls</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Light</p>
+     */
     RingOut.prototype.load = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}',
-            'method': 'get'
-        }, ResponseClass = getringoutstatusresponse.GetRingOutStatusResponse;
-        apiOptions = this.parseOptions(apiOptions, options, [
-            {
-                "name": "accountId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "extensionId",
-                "default": "~",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
-                "required": false
-            },
-            {
-                "name": "ringoutId",
-                "type": "string",
-                "in": "path",
-                "description": "Internal identifier of a RingOut call",
-                "required": true
-            }
-        ]);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('get', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}', options, exports.loadOptions), getringoutstatusresponse.GetRingOutStatusResponse);
     };
+    /**
+     * Cancel RingOut Call
+     *
+     * <p style='font-style:italic;'></p>
+     * <p>Cancels the 2-leg RingOut call.</p>
+     * <h4>Required Permissions</h4>
+     * <table class='fullwidth'>
+     *     <thead>
+     *         <tr>
+     *             <th>Permission</th>
+     *             <th>Description</th>
+     *         </tr>
+     *     </thead>
+     *     <tbody>
+     *         <tr>
+     *             <td class='code'>RingOut</td>
+     *             <td>Performing two-legged ring-out phone calls</td>
+     *         </tr>
+     *         <tr>
+     *             <td class='code'>accountId</td>
+     *             <td>string</td>
+     *         </tr>
+     *         <tr>
+     *             <td class='code'>extensionId</td>
+     *             <td>string</td>
+     *         </tr>
+     *         <tr>
+     *             <td class='code'>ringoutId</td>
+     *             <td>string</td>
+     *         </tr>
+     *     </tbody>
+     * </table>
+     * <h4>Usage Plan Group</h4>
+     * <p>Heavy</p>
+     */
     RingOut.prototype.remove = function (options) {
-        var apiOptions = {
-            'url': '/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}',
-            'method': 'delete'
-        }, ResponseClass = null;
-        apiOptions = this.parseOptions(apiOptions, options, []);
-        return this.apiCall(apiOptions, ResponseClass);
+        return this.apiCall(this.parseOptions('delete', '/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}', options, exports.removeOptions), null);
     };
     return RingOut;
 })(client.Client);
 exports.RingOut = RingOut;
+/**
+ * Definition of options for create operation
+ */
+exports.createOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "body",
+        "type": "makeringoutrequest.MakeRingOutRequest",
+        "in": "body",
+        "required": true
+    }
+];
+/**
+ * Definition of options for load operation
+ */
+exports.loadOptions = [
+    {
+        "name": "accountId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "extensionId",
+        "type": "string",
+        "in": "path",
+        "required": true,
+        "default": "~"
+    },
+    {
+        "name": "ringoutId",
+        "type": "string",
+        "in": "path",
+        "required": true
+    }
+];
+/**
+ * Definition of options for remove operation
+ */
+exports.removeOptions = [];
 function $get(context) {
     return context.createSingleton('RingOut', function () {
         return new RingOut(context);
     });
 }
 exports.$get = $get;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * [
- *     {
- *         "operationId": "create",
- *         "tags": [
- *             "RingOut"
- *         ],
- *         "summary": "Make RingOut Call",
- *         "description": "<p style='font-style:italic;'>Since 1.0.7 (Release 5.16)</p><p></p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>RingOut</td><td>Performing two-legged ring-out phone calls</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "body",
- *                 "type": "makeringoutrequest.MakeRingoutRequest",
- *                 "in": "body",
- *                 "description": "JSON body",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetRingOutStatusResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout",
- *         "method": "post",
- *         "responseSchema": "getringoutstatusresponse.GetRingOutStatusResponse",
- *         "imports": [
- *             "getringoutstatusresponse.GetRingOutStatusResponse",
- *             "makeringoutrequest.MakeRingoutRequest"
- *         ]
- *     },
- *     {
- *         "operationId": "load",
- *         "tags": [
- *             "RingOut"
- *         ],
- *         "summary": "Get Status of RingOut Call",
- *         "description": "<p style='font-style:italic;'>Since 1.0.7 (Release 5.16)</p><p>Returns the status of a 2-leg RingOut call.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>RingOut</td><td>Performing two-legged ring-out phone calls</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [
- *             {
- *                 "name": "accountId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingCentral account or tilde (~) to indicate the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "extensionId",
- *                 "default": "~",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of an extension or tilde (~) to indicate the extension assigned to the account logged-in within the current session",
- *                 "required": false
- *             },
- *             {
- *                 "name": "ringoutId",
- *                 "type": "string",
- *                 "in": "path",
- *                 "description": "Internal identifier of a RingOut call",
- *                 "required": true
- *             }
- *         ],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/GetRingOutStatusResponse"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}",
- *         "method": "get",
- *         "responseSchema": "getringoutstatusresponse.GetRingOutStatusResponse",
- *         "imports": [
- *             "getringoutstatusresponse.GetRingOutStatusResponse"
- *         ]
- *     },
- *     {
- *         "operationId": "remove",
- *         "tags": [
- *             "RingOut"
- *         ],
- *         "summary": "Cancel RingOut Call",
- *         "description": "<p style='font-style:italic;'></p><p>Cancels the 2-leg RingOut call.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>RingOut</td><td>Performing two-legged ring-out phone calls</td></tr><tr><td class='code'>accountId</td><td>string</td></tr><tr><td class='code'>extensionId</td><td>string</td></tr><tr><td class='code'>ringoutId</td><td>string</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>",
- *         "consumes": [
- *             "application/json"
- *         ],
- *         "produces": [
- *             "application/json"
- *         ],
- *         "parameters": [],
- *         "responses": {
- *             "200": {
- *                 "description": "Success",
- *                 "schema": {
- *                     "$ref": "#/definitions/"
- *                 }
- *             }
- *         },
- *         "path": "/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}",
- *         "method": "delete",
- *         "responseSchema": ".",
- *         "imports": []
- *     }
- * ]
- */ 
 
 
 /***/ },
-/* 108 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -12695,7 +8162,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var model = __webpack_require__(43);
-var ringoutstatusinfo = __webpack_require__(109);
+var ringoutstatusinfo = __webpack_require__(102);
 var GetRingOutStatusResponse = (function (_super) {
     __extends(GetRingOutStatusResponse, _super);
     function GetRingOutStatusResponse() {
@@ -12713,35 +8180,10 @@ var GetRingOutStatusResponse = (function (_super) {
     return GetRingOutStatusResponse;
 })(model.Model);
 exports.GetRingOutStatusResponse = GetRingOutStatusResponse;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetRingOutStatusResponse",
- *     "imports": [
- *         "ringoutstatusinfo.RingOutStatusInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a RingOut call",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/RingOutStatusInfo",
- *             "description": "RingOut status information",
- *             "$name": "status",
- *             "isRequired": false,
- *             "type": "ringoutstatusinfo.RingOutStatusInfo"
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 109 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __extends = this.__extends || function (d, b) {
@@ -12814,80 +8256,10 @@ var RingOutStatusInfoCallerStatus = exports.RingOutStatusInfoCallerStatus;
     RingOutStatusInfoCalleeStatus[RingOutStatusInfoCalleeStatus["NoSuchUser"] = 'NoSuchUser'] = "NoSuchUser";
 })(exports.RingOutStatusInfoCalleeStatus || (exports.RingOutStatusInfoCalleeStatus = {}));
 var RingOutStatusInfoCalleeStatus = exports.RingOutStatusInfoCalleeStatus;
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "RingOutStatusInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "RingOutStatusInfoCallStatus",
- *             "enum": [
- *                 "Invalid",
- *                 "Success",
- *                 "InProgress",
- *                 "Busy",
- *                 "NoAnswer",
- *                 "Rejected",
- *                 "GenericError",
- *                 "Finished",
- *                 "InternationalDisabled",
- *                 "DestinationBlocked",
- *                 "NotEnoughFunds",
- *                 "NoSuchUser"
- *             ],
- *             "description": "Status of a call",
- *             "$name": "callStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "RingOutStatusInfoCallerStatus",
- *             "enum": [
- *                 "Invalid",
- *                 "Success",
- *                 "InProgress",
- *                 "Busy",
- *                 "NoAnswer",
- *                 "Rejected",
- *                 "GenericError",
- *                 "Finished",
- *                 "InternationalDisabled",
- *                 "DestinationBlocked",
- *                 "NotEnoughFunds",
- *                 "NoSuchUser"
- *             ],
- *             "description": "Status of a calling party",
- *             "$name": "callerStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "RingOutStatusInfoCalleeStatus",
- *             "enum": [
- *                 "Invalid",
- *                 "Success",
- *                 "InProgress",
- *                 "Busy",
- *                 "NoAnswer",
- *                 "Rejected",
- *                 "GenericError",
- *                 "Finished",
- *                 "InternationalDisabled",
- *                 "DestinationBlocked",
- *                 "NotEnoughFunds",
- *                 "NoSuchUser"
- *             ],
- *             "description": "Status of a called party",
- *             "$name": "calleeStatus",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */ 
 
 
 /***/ },
-/* 110 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate) {(function(global){
@@ -13217,13 +8589,13 @@ Promise.reject = function(reason){
 
 })(new Function('return this')());
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(111).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(104).setImmediate))
 
 /***/ },
-/* 111 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(112).nextTick;
+/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(105).nextTick;
 var apply = Function.prototype.apply;
 var slice = Array.prototype.slice;
 var immediateIds = {};
@@ -13299,10 +8671,10 @@ exports.setImmediate = typeof setImmediate === "function" ? setImmediate : funct
 exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
   delete immediateIds[id];
 };
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(111).setImmediate, __webpack_require__(111).clearImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(104).setImmediate, __webpack_require__(104).clearImmediate))
 
 /***/ },
-/* 112 */
+/* 105 */
 /***/ function(module, exports) {
 
 // shim for using process in browser
@@ -13398,7 +8770,7 @@ process.umask = function() { return 0; };
 
 
 /***/ },
-/* 113 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {// Version: 3.7.11
@@ -16349,10 +11721,10 @@ CryptoJS.mode.ECB = (function () {
 
     return ECB;
 }());// Moved to hmac-sha-256.js
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(114)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(107)(module)))
 
 /***/ },
-/* 114 */
+/* 107 */
 /***/ function(module, exports) {
 
 module.exports = function(module) {
@@ -16368,17 +11740,17 @@ module.exports = function(module) {
 
 
 /***/ },
-/* 115 */
+/* 108 */
 /***/ function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_115__;
+module.exports = __WEBPACK_EXTERNAL_MODULE_108__;
 
 /***/ },
-/* 116 */
+/* 109 */
 /***/ function(module, exports) {
 
-if(typeof __WEBPACK_EXTERNAL_MODULE_116__ === 'undefined') {var e = new Error("Cannot find module \"undefined\""); e.code = 'MODULE_NOT_FOUND'; throw e;}
-module.exports = __WEBPACK_EXTERNAL_MODULE_116__;
+if(typeof __WEBPACK_EXTERNAL_MODULE_109__ === 'undefined') {var e = new Error("Cannot find module \"undefined\""); e.code = 'MODULE_NOT_FOUND'; throw e;}
+module.exports = __WEBPACK_EXTERNAL_MODULE_109__;
 
 /***/ }
 /******/ ])

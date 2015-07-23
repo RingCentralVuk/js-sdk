@@ -7,7 +7,6 @@ export class PermissionInfo extends model.Model {
      */
     public enabled:boolean;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -21,20 +20,3 @@ export class PermissionInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "PermissionInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "boolean",
- *             "description": "Specifies if a permission is enabled or not",
- *             "$name": "enabled",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

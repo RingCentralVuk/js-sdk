@@ -37,7 +37,6 @@ export class LanguageInfo extends model.Model {
      */
     public ui:boolean;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -57,56 +56,3 @@ export class LanguageInfo extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "LanguageInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a language",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a language",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "boolean",
- *             "description": "Indicates whether a language is available as greeting language",
- *             "$name": "greeting",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "boolean",
- *             "description": "Indicates whether a language is available as formatting locale",
- *             "$name": "formattingLocale",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Localization code of a language",
- *             "$name": "localeCode",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Official name of a language",
- *             "$name": "name",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "boolean",
- *             "description": "Indicates whether a language is available as UI language",
- *             "$name": "ui",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

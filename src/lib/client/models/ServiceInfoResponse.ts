@@ -31,7 +31,6 @@ export class ServiceInfoResponse extends model.Model {
      */
     public targetServicePlan:targetserviceplaninfo.TargetServicePlanInfo;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -49,53 +48,3 @@ export class ServiceInfoResponse extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ServiceInfoResponse",
- *     "imports": [
- *         "billingplaninfo.BillingPlanInfo",
- *         "brandinfo.BrandInfo",
- *         "serviceplaninfo.ServicePlanInfo",
- *         "targetserviceplaninfo.TargetServicePlanInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a service info resource",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/BillingPlanInfo",
- *             "description": "Information on account billing plan",
- *             "$name": "billingPlan",
- *             "isRequired": false,
- *             "type": "billingplaninfo.BillingPlanInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/BrandInfo",
- *             "description": "Information on account brand",
- *             "$name": "brand",
- *             "isRequired": false,
- *             "type": "brandinfo.BrandInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/ServicePlanInfo",
- *             "description": "Information on account service plan",
- *             "$name": "servicePlan",
- *             "isRequired": false,
- *             "type": "serviceplaninfo.ServicePlanInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/TargetServicePlanInfo",
- *             "description": "Information on account target service plan",
- *             "$name": "targetServicePlan",
- *             "isRequired": false,
- *             "type": "targetserviceplaninfo.TargetServicePlanInfo"
- *         }
- *     ]
- * }
- */

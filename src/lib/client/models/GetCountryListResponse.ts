@@ -5,6 +5,9 @@ import paginginfo = require('./PagingInfo');
 
 export class GetCountryListResponse extends model.Model {
 
+    /**
+     * List of countries with the country data
+     */
     public records:countryinfo.CountryInfo[];
 
     /**
@@ -16,7 +19,6 @@ export class GetCountryListResponse extends model.Model {
      * Information on paging
      */
     public paging:paginginfo.PagingInfo;
-
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
@@ -33,40 +35,3 @@ export class GetCountryListResponse extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetCountryListResponse",
- *     "imports": [
- *         "countryinfo.CountryInfo",
- *         "navigationinfo.NavigationInfo",
- *         "paginginfo.PagingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "countryinfo.CountryInfo[]",
- *             "items": {
- *                 "$ref": "#/definitions/CountryInfo"
- *             },
- *             "$name": "records",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": true,
- *             "type": "navigationinfo.NavigationInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": true,
- *             "type": "paginginfo.PagingInfo"
- *         }
- *     ]
- * }
- */

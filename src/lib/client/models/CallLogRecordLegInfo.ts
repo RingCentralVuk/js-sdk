@@ -7,7 +7,7 @@ export class CallLogRecordLegInfo extends model.Model {
     /**
      * Call start time
      */
-    public startTime:Date;
+    public startTime:string;
 
     /**
      * Call duration in seconds
@@ -69,11 +69,10 @@ export class CallLogRecordLegInfo extends model.Model {
      */
     public legType:string;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
-            {property: 'startTime', Class: Date, isArray: false,isRequired: false},
+            {property: 'startTime', Class: null /* string */, isArray: false,isRequired: false},
             {property: 'duration', Class: null /* number */, isArray: false,isRequired: false},
             {property: 'type', Class: CallLogRecordLegInfoType, isArray: false,isRequired: false},
             {property: 'direction', Class: CallLogRecordLegInfoDirection, isArray: false,isRequired: false},
@@ -179,176 +178,3 @@ export enum CallLogRecordLegInfoBilling {
     costIncluded = <any>'costIncluded',
     costPurchased = <any>'costPurchased'
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "CallLogRecordLegInfo",
- *     "imports": [
- *         "calllogcallerinfo.CallLogCallerInfo",
- *         "recordinginfo.RecordingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "Date",
- *             "description": "Call start time",
- *             "$name": "startTime",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Call duration in seconds",
- *             "$name": "duration",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoType",
- *             "enum": [
- *                 "Voice",
- *                 "Fax"
- *             ],
- *             "description": "Call type",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoDirection",
- *             "enum": [
- *                 "Inbound",
- *                 "Outbound"
- *             ],
- *             "description": "Call direction",
- *             "$name": "direction",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoAction",
- *             "enum": [
- *                 "Unknown",
- *                 "Phone Call",
- *                 "Phone Login",
- *                 "Incoming Fax",
- *                 "Accept Call",
- *                 "FindMe",
- *                 "FollowMe",
- *                 "Outgoing Fax",
- *                 "Call Return",
- *                 "Calling Card",
- *                 "Ring Directly",
- *                 "RingOut Web",
- *                 "VoIP Call",
- *                 "RingOut PC",
- *                 "RingMe",
- *                 "Transfer",
- *                 "411 Info",
- *                 "Emergency",
- *                 "E911 Update",
- *                 "Support",
- *                 "RingOut Mobile"
- *             ],
- *             "description": "Action description of the call operation.",
- *             "$name": "action",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoResult",
- *             "enum": [
- *                 "Unknown",
- *                 "ResultInProgress",
- *                 "Missed",
- *                 "Call accepted",
- *                 "Voicemail",
- *                 "Rejected",
- *                 "Reply",
- *                 "Received",
- *                 "Receive Error",
- *                 "Fax on Demand",
- *                 "Partial Receive",
- *                 "Blocked",
- *                 "Call сonnected",
- *                 "No Answer",
- *                 "Busy",
- *                 "Send Error",
- *                 "Sent",
- *                 "No fax machine",
- *                 "ResultEmpty",
- *                 "Account",
- *                 "Suspended",
- *                 "Call Failed",
- *                 "Call Failure",
- *                 "Internal Error",
- *                 "IP Phone offline",
- *                 "Restricted Number",
- *                 "Wrong Number",
- *                 "Stopped",
- *                 "Hang up",
- *                 "Poor Line Quality",
- *                 "Partially Sent",
- *                 "International Disabled",
- *                 "International Restriction",
- *                 "Abandoned",
- *                 "Declined",
- *                 "Fax Receipt Error",
- *                 "Fax Send Error"
- *             ],
- *             "description": "Status description of the call operation.",
- *             "$name": "result",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Caller information",
- *             "$name": "from",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Callee information",
- *             "$name": "to",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoTransport",
- *             "enum": [
- *                 "PSTN",
- *                 "VoIP"
- *             ],
- *             "description": "Call transport",
- *             "$name": "transport",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "any",
- *             "description": "Message attachment",
- *             "$name": "message",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/RecordingInfo",
- *             "description": "Call recording data. Returned if the call is recorded",
- *             "$name": "recording",
- *             "isRequired": false,
- *             "type": "recordinginfo.RecordingInfo"
- *         },
- *         {
- *             "type": "CallLogRecordLegInfoBilling",
- *             "enum": [
- *                 "costIncluded",
- *                 "costPurchased"
- *             ],
- *             "description": "Information on costs",
- *             "$name": "billing",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Leg type",
- *             "$name": "legType",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

@@ -5,6 +5,9 @@ import navigationinfo = require('./NavigationInfo');
 
 export class ExtensionCallLogResponse extends model.Model {
 
+    /**
+     * List of call log records
+     */
     public records:calllogrecord.CallLogRecord[];
 
     /**
@@ -16,7 +19,6 @@ export class ExtensionCallLogResponse extends model.Model {
      * Information on navigation
      */
     public navigation:navigationinfo.NavigationInfo;
-
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
@@ -33,40 +35,3 @@ export class ExtensionCallLogResponse extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ExtensionCallLogResponse",
- *     "imports": [
- *         "calllogrecord.CallLogRecord",
- *         "paginginfo.PagingInfo",
- *         "navigationinfo.NavigationInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "calllogrecord.CallLogRecord[]",
- *             "items": {
- *                 "$ref": "#/definitions/CallLogRecord"
- *             },
- *             "$name": "records",
- *             "isRequired": true
- *         },
- *         {
- *             "$ref": "#/definitions/PagingInfo",
- *             "description": "Information on paging",
- *             "$name": "paging",
- *             "isRequired": true,
- *             "type": "paginginfo.PagingInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Information on navigation",
- *             "$name": "navigation",
- *             "isRequired": true,
- *             "type": "navigationinfo.NavigationInfo"
- *         }
- *     ]
- * }
- */

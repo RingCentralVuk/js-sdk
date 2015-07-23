@@ -44,9 +44,8 @@ import stateHelper = require('./helpers/State');
 import timezoneHelper = require('./helpers/Timezone');
 
 import accountClient = require('./client/clients/Account');
-import versioningClient = require('./client/clients/APIVersioning');
+import versioningClient = require('./client/clients/APIVersions');
 import callLogClient = require('./client/clients/CallLog');
-import clientAppClient = require('./client/clients/ClientApplicationInfo');
 import dictionaryClient = require('./client/clients/Dictionary');
 import extensionClient = require('./client/clients/Extension');
 import messagesClient = require('./client/clients/Messages');
@@ -187,7 +186,6 @@ class RCSDK {
     getAccount() { return accountClient.$get(this.getContext()); }
     getVersioning() { return versioningClient.$get(this.getContext()); }
     getCallLog() { return callLogClient.$get(this.getContext()); }
-    getClientApp() { return clientAppClient.$get(this.getContext()); }
     getDictionary() { return dictionaryClient.$get(this.getContext()); }
     getExtension() { return extensionClient.$get(this.getContext()); }
     getMessages() { return messagesClient.$get(this.getContext()); }

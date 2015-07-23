@@ -27,7 +27,6 @@ export class MessageAttachmentInfo extends model.Model {
      */
     public vmDuration:number;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -53,51 +52,3 @@ export enum MessageAttachmentInfoType {
     SourceDocument = <any>'SourceDocument',
     RenderedDocument = <any>'RenderedDocument'
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "MessageAttachmentInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a message attachment",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a message attachment",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "MessageAttachmentInfoType",
- *             "enum": [
- *                 "AutoRecording",
- *                 "AutoTranscription",
- *                 "Text",
- *                 "SourceDocument",
- *                 "RenderedDocument"
- *             ],
- *             "description": "Type of message attachment",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "MIME type for a given attachment, for instance 'audio/wav'",
- *             "$name": "contentType",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Voicemail only Duration of the voicemail in seconds",
- *             "$name": "vmDuration",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

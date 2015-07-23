@@ -52,7 +52,7 @@ export class GetExtensionCallLogRecordResponse extends model.Model {
     /**
      * Call start time
      */
-    public startTime:Date;
+    public startTime:string;
 
     /**
      * Call duration in seconds
@@ -63,7 +63,6 @@ export class GetExtensionCallLogRecordResponse extends model.Model {
      * Call recording data. Returned if the call is recorded
      */
     public recording:recordinginfo.RecordingInfo;
-
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
@@ -77,7 +76,7 @@ export class GetExtensionCallLogRecordResponse extends model.Model {
             {property: 'direction', Class: GetExtensionCallLogRecordResponseDirection, isArray: false,isRequired: false},
             {property: 'action', Class: GetExtensionCallLogRecordResponseAction, isArray: false,isRequired: false},
             {property: 'result', Class: GetExtensionCallLogRecordResponseResult, isArray: false,isRequired: false},
-            {property: 'startTime', Class: Date, isArray: false,isRequired: false},
+            {property: 'startTime', Class: null /* string */, isArray: false,isRequired: false},
             {property: 'duration', Class: null /* number */, isArray: false,isRequired: false},
             {property: 'recording', Class: recordinginfo.RecordingInfo, isArray: false,isRequired: false}
         ];
@@ -163,162 +162,3 @@ export enum GetExtensionCallLogRecordResponseResult {
     FaxReceiptError = <any>'Fax Receipt Error',
     FaxSendError = <any>'Fax Send Error'
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "GetExtensionCallLogRecordResponse",
- *     "imports": [
- *         "calllogcallerinfo.CallLogCallerInfo",
- *         "recordinginfo.RecordingInfo"
- *     ],
- *     "properties": [
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a cal log record",
- *             "$name": "id",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Canonical URI of a call log record",
- *             "$name": "uri",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "string",
- *             "description": "Internal identifier of a call session",
- *             "$name": "sessionId",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Caller information",
- *             "$name": "from",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "$ref": "#/definitions/CallLogCallerInfo",
- *             "description": "Callee information",
- *             "$name": "to",
- *             "isRequired": false,
- *             "type": "calllogcallerinfo.CallLogCallerInfo"
- *         },
- *         {
- *             "type": "GetExtensionCallLogRecordResponseType",
- *             "enum": [
- *                 "Voice",
- *                 "Fax"
- *             ],
- *             "description": "Call type",
- *             "$name": "type",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionCallLogRecordResponseDirection",
- *             "enum": [
- *                 "Inbound",
- *                 "Outbound"
- *             ],
- *             "description": "Call direction",
- *             "$name": "direction",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionCallLogRecordResponseAction",
- *             "enum": [
- *                 "Unknown",
- *                 "Phone Call",
- *                 "Phone Login",
- *                 "Incoming Fax",
- *                 "Accept Call",
- *                 "FindMe",
- *                 "FollowMe",
- *                 "Outgoing Fax",
- *                 "Call Return",
- *                 "Calling Card",
- *                 "Ring Directly",
- *                 "RingOut Web",
- *                 "VoIP Call",
- *                 "RingOut PC",
- *                 "RingMe",
- *                 "Transfer",
- *                 "411 Info",
- *                 "Emergency",
- *                 "E911 Update",
- *                 "Support",
- *                 "RingOut Mobile"
- *             ],
- *             "description": "Action description of the call operation.",
- *             "$name": "action",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "GetExtensionCallLogRecordResponseResult",
- *             "enum": [
- *                 "Unknown",
- *                 "ResultInProgress",
- *                 "Missed",
- *                 "Call accepted",
- *                 "Voicemail",
- *                 "Rejected",
- *                 "Reply",
- *                 "Received",
- *                 "Receive Error",
- *                 "Fax on Demand",
- *                 "Partial Receive",
- *                 "Blocked",
- *                 "Call сonnected",
- *                 "No Answer",
- *                 "Busy",
- *                 "Send Error",
- *                 "Sent",
- *                 "No fax machine",
- *                 "ResultEmpty",
- *                 "Account",
- *                 "Suspended",
- *                 "Call Failed",
- *                 "Call Failure",
- *                 "Internal Error",
- *                 "IP Phone offline",
- *                 "Restricted Number",
- *                 "Wrong Number",
- *                 "Stopped",
- *                 "Hang up",
- *                 "Poor Line Quality",
- *                 "Partially Sent",
- *                 "International Disabled",
- *                 "International Restriction",
- *                 "Abandoned",
- *                 "Declined",
- *                 "Fax Receipt Error",
- *                 "Fax Send Error"
- *             ],
- *             "description": "Status description of the call operation.",
- *             "$name": "result",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Date",
- *             "description": "Call start time",
- *             "$name": "startTime",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "number",
- *             "description": "Call duration in seconds",
- *             "$name": "duration",
- *             "isRequired": false
- *         },
- *         {
- *             "$ref": "#/definitions/RecordingInfo",
- *             "description": "Call recording data. Returned if the call is recorded",
- *             "$name": "recording",
- *             "isRequired": false,
- *             "type": "recordinginfo.RecordingInfo"
- *         }
- *     ]
- * }
- */

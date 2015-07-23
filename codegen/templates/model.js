@@ -28,11 +28,13 @@ module.exports = function(model) {
         }
 
         res.push('');
+
         if (prop.description) {
             res.push('    /**');
             res.push('     * ' + prop.description);
             res.push('     */');
         }
+
         res.push('    public ' + prop.$name + ':' + prop.type + ';');
 
         var isPrimitive = ['number', 'string', 'string[]', 'any', 'boolean'].indexOf(prop.type) != -1;
@@ -44,15 +46,8 @@ module.exports = function(model) {
 
     });
 
-    res.push('');
-
-    //res.push('    constructor(data?:any) {');
-    //res.push('');
-    //res.push('        super(data);');
-    //res.push('');
-    //res.push('    }');
-    res.push('');
     if (propertyMappings.length > 0) {
+        res.push('');
         res.push('    protected getPropertyMappings():model.ModelPropertyMapping[] {');
         res.push('');
         res.push('        return [');
@@ -61,6 +56,7 @@ module.exports = function(model) {
         res.push('');
         res.push('    }');
     }
+
     res.push('');
     res.push('    public getClassName() {');
     res.push('        return \'' + model.name + '\';');
@@ -85,12 +81,12 @@ module.exports = function(model) {
 
     });
 
-    res.push('');
-    res.push('/**');
-    res.push(' * Swagger definition JSON used for CodeGen:');
-    res.push(' *');
-    res.push(' * ' + JSON.stringify(model, null, 4).split('\n').join('\n * '));
-    res.push(' */');
+    //res.push('');
+    //res.push('/**');
+    //res.push(' * Swagger definition JSON used for CodeGen:');
+    //res.push(' *');
+    //res.push(' * ' + JSON.stringify(model, null, 4).split('\n').join('\n * '));
+    //res.push(' */');
 
     return res.join('\n');
 

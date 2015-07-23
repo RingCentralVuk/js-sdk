@@ -1,18 +1,31 @@
 import model = require('../Model');
+import calllogrecord = require('./CallLogRecord');
 import navigationinfo = require('./NavigationInfo');
+import paginginfo = require('./PagingInfo');
 
 export class ExtensionActiveCallsResponse extends model.Model {
 
     /**
-     * Standard collection metadata
+     * List of call log records
      */
-    public perPage:navigationinfo.NavigationInfo;
+    public records:calllogrecord.CallLogRecord[];
 
+    /**
+     * Information on navigation
+     */
+    public navigation:navigationinfo.NavigationInfo;
+
+    /**
+     * Information on paging
+     */
+    public paging:paginginfo.PagingInfo;
 
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
-            {property: 'perPage', Class: navigationinfo.NavigationInfo, isArray: false,isRequired: false}
+            {property: 'records', Class: calllogrecord.CallLogRecord, isArray: true,isRequired: false},
+            {property: 'navigation', Class: navigationinfo.NavigationInfo, isArray: false,isRequired: false},
+            {property: 'paging', Class: paginginfo.PagingInfo, isArray: false,isRequired: false}
         ];
 
     }
@@ -22,23 +35,3 @@ export class ExtensionActiveCallsResponse extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ExtensionActiveCallsResponse",
- *     "imports": [
- *         "navigationinfo.NavigationInfo"
- *     ],
- *     "properties": [
- *         {
- *             "$ref": "#/definitions/NavigationInfo",
- *             "description": "Standard collection metadata",
- *             "$name": "perPage",
- *             "isRequired": false,
- *             "type": "navigationinfo.NavigationInfo"
- *         }
- *     ]
- * }
- */

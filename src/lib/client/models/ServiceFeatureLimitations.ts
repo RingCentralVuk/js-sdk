@@ -27,7 +27,6 @@ export class ServiceFeatureLimitations extends model.Model {
      */
     public InsufficientPermissions:Extension limitation, resolution is not chargeable; can be changed by Account Administrator without extra charges;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -45,44 +44,3 @@ export class ServiceFeatureLimitations extends model.Model {
     }
 
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "ServiceFeatureLimitations",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "Principal account type limitation. Feature is not supported for account type",
- *             "description": "Free Digital Line service feature is turned off on UBP tier",
- *             "$name": "AccountTypeLimitation",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Principal extension type limitation. Feature is not supported for particular extension type (built-in Product restriction)",
- *             "description": "Announcement Only or Take Messages Only extension types that cannot send SMS, feature is disabled because of immutable extension type limitation and it is impossible to change the type of this extension",
- *             "$name": "ExtensionTypeLimitation",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Account limitation (service parameter setting at brand, tier or account level); can be changed only by RC Customer Support, or by upgrading to a different tier",
- *             "description": "SMS can be turned off for a particular account/tier",
- *             "$name": "AccountLimitation",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Extension limitation, requiring chargeable action; can be changed by Account Administrator, requires chargeable action (except tier upgrades)",
- *             "description": "For Free Digital Line (FreeDL) service feature, available only if there is at least one paid digital line on this extension",
- *             "$name": "ExtensionLimitation",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "Extension limitation, resolution is not chargeable; can be changed by Account Administrator without extra charges",
- *             "description": "International Calling is turned off using extension permissions",
- *             "$name": "InsufficientPermissions",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */

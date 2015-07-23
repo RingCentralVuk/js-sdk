@@ -17,7 +17,6 @@ export class RingOutStatusInfo extends model.Model {
      */
     public calleeStatus:RingOutStatusInfoCalleeStatus;
 
-
     protected getPropertyMappings():model.ModelPropertyMapping[] {
 
         return [
@@ -78,74 +77,3 @@ export enum RingOutStatusInfoCalleeStatus {
     NotEnoughFunds = <any>'NotEnoughFunds',
     NoSuchUser = <any>'NoSuchUser'
 }
-
-/**
- * Swagger definition JSON used for CodeGen:
- *
- * {
- *     "name": "RingOutStatusInfo",
- *     "imports": [],
- *     "properties": [
- *         {
- *             "type": "RingOutStatusInfoCallStatus",
- *             "enum": [
- *                 "Invalid",
- *                 "Success",
- *                 "InProgress",
- *                 "Busy",
- *                 "NoAnswer",
- *                 "Rejected",
- *                 "GenericError",
- *                 "Finished",
- *                 "InternationalDisabled",
- *                 "DestinationBlocked",
- *                 "NotEnoughFunds",
- *                 "NoSuchUser"
- *             ],
- *             "description": "Status of a call",
- *             "$name": "callStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "RingOutStatusInfoCallerStatus",
- *             "enum": [
- *                 "Invalid",
- *                 "Success",
- *                 "InProgress",
- *                 "Busy",
- *                 "NoAnswer",
- *                 "Rejected",
- *                 "GenericError",
- *                 "Finished",
- *                 "InternationalDisabled",
- *                 "DestinationBlocked",
- *                 "NotEnoughFunds",
- *                 "NoSuchUser"
- *             ],
- *             "description": "Status of a calling party",
- *             "$name": "callerStatus",
- *             "isRequired": false
- *         },
- *         {
- *             "type": "RingOutStatusInfoCalleeStatus",
- *             "enum": [
- *                 "Invalid",
- *                 "Success",
- *                 "InProgress",
- *                 "Busy",
- *                 "NoAnswer",
- *                 "Rejected",
- *                 "GenericError",
- *                 "Finished",
- *                 "InternationalDisabled",
- *                 "DestinationBlocked",
- *                 "NotEnoughFunds",
- *                 "NoSuchUser"
- *             ],
- *             "description": "Status of a called party",
- *             "$name": "calleeStatus",
- *             "isRequired": false
- *         }
- *     ]
- * }
- */
