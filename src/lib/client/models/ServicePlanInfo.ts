@@ -31,4 +31,7 @@ export class ServicePlanInfo extends model.Model {
         return 'ServicePlanInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

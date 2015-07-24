@@ -37,4 +37,7 @@ export class GetVersionResponse extends model.Model {
         return 'GetVersionResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

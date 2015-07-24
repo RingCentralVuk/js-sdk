@@ -62,6 +62,9 @@ export class GetSubscriptionInfoResponse extends model.Model {
         return 'GetSubscriptionInfoResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum GetSubscriptionInfoResponseStatus {

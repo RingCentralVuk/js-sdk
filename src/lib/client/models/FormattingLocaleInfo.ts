@@ -31,4 +31,7 @@ export class FormattingLocaleInfo extends model.Model {
         return 'FormattingLocaleInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

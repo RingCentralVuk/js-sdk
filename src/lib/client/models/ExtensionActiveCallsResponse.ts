@@ -34,4 +34,7 @@ export class ExtensionActiveCallsResponse extends model.Model {
         return 'ExtensionActiveCallsResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

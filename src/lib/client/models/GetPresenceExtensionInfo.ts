@@ -31,4 +31,7 @@ export class GetPresenceExtensionInfo extends model.Model {
         return 'GetPresenceExtensionInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

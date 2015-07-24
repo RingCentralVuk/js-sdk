@@ -43,4 +43,7 @@ export class ServiceFeatureLimitations extends model.Model {
         return 'ServiceFeatureLimitations';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

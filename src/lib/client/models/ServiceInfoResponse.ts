@@ -47,4 +47,7 @@ export class ServiceInfoResponse extends model.Model {
         return 'ServiceInfoResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

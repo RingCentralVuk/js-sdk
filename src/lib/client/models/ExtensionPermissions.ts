@@ -26,4 +26,7 @@ export class ExtensionPermissions extends model.Model {
         return 'ExtensionPermissions';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

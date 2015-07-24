@@ -31,4 +31,7 @@ export class DepartmentInfo extends model.Model {
         return 'DepartmentInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

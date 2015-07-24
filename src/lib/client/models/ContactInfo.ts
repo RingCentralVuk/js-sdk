@@ -50,4 +50,7 @@ export class ContactInfo extends model.Model {
         return 'ContactInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

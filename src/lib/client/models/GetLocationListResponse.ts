@@ -34,4 +34,7 @@ export class GetLocationListResponse extends model.Model {
         return 'GetLocationListResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

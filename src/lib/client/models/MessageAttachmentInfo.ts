@@ -43,6 +43,9 @@ export class MessageAttachmentInfo extends model.Model {
         return 'MessageAttachmentInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum MessageAttachmentInfoType {

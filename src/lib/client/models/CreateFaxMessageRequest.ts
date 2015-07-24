@@ -50,6 +50,9 @@ export class CreateFaxMessageRequest extends model.Model {
         return 'CreateFaxMessageRequest';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum CreateFaxMessageRequestResolution {

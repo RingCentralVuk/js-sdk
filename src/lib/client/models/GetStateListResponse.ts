@@ -34,4 +34,7 @@ export class GetStateListResponse extends model.Model {
         return 'GetStateListResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

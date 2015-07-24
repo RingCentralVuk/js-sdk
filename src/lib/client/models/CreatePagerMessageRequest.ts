@@ -38,4 +38,7 @@ export class CreatePagerMessageRequest extends model.Model {
         return 'CreatePagerMessageRequest';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

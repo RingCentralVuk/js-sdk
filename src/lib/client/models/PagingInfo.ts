@@ -49,4 +49,7 @@ export class PagingInfo extends model.Model {
         return 'PagingInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

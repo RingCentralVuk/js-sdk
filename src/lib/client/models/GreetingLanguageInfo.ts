@@ -31,4 +31,7 @@ export class GreetingLanguageInfo extends model.Model {
         return 'GreetingLanguageInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

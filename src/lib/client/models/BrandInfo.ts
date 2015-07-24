@@ -32,4 +32,7 @@ export class BrandInfo extends model.Model {
         return 'BrandInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

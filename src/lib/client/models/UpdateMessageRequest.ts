@@ -19,6 +19,9 @@ export class UpdateMessageRequest extends model.Model {
         return 'UpdateMessageRequest';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum UpdateMessageRequestReadStatus {

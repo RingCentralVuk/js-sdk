@@ -48,4 +48,7 @@ export class RegionalSettingsInfo extends model.Model {
         return 'RegionalSettingsInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

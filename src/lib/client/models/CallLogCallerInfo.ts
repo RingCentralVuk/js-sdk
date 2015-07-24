@@ -37,4 +37,7 @@ export class CallLogCallerInfo extends model.Model {
         return 'CallLogCallerInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

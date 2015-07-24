@@ -38,4 +38,7 @@ export class MakeRingOutRequest extends model.Model {
         return 'MakeRingOutRequest';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

@@ -31,4 +31,7 @@ export class AccountStatusInfo extends model.Model {
         return 'AccountStatusInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

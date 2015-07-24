@@ -19,4 +19,7 @@ export class ModifySubscriptionRequest extends model.Model {
         return 'ModifySubscriptionRequest';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

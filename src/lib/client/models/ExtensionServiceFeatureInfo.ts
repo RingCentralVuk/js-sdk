@@ -31,4 +31,7 @@ export class ExtensionServiceFeatureInfo extends model.Model {
         return 'ExtensionServiceFeatureInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

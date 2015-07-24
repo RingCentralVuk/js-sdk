@@ -43,4 +43,7 @@ export class ContactAddressInfo extends model.Model {
         return 'ContactAddressInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

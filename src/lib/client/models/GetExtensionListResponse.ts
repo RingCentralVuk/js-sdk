@@ -34,4 +34,7 @@ export class GetExtensionListResponse extends model.Model {
         return 'GetExtensionListResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

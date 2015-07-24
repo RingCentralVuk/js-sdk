@@ -112,6 +112,14 @@ export class CallLogRecord extends model.Model {
         return 'CallLogRecord';
     }
 
+    // CUSTOM METHODS
+
+    public getId() {
+        return this.id;
+    }
+
+    // CUSTOM METHODS
+
 }
 
 export enum CallLogRecordType {

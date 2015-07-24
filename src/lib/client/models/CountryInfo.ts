@@ -37,4 +37,7 @@ export class CountryInfo extends model.Model {
         return 'CountryInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

@@ -34,4 +34,7 @@ export class GetMessageList extends model.Model {
         return 'GetMessageList';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

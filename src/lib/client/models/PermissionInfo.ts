@@ -19,4 +19,7 @@ export class PermissionInfo extends model.Model {
         return 'PermissionInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

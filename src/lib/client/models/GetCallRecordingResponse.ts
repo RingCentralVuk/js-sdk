@@ -37,4 +37,7 @@ export class GetCallRecordingResponse extends model.Model {
         return 'GetCallRecordingResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

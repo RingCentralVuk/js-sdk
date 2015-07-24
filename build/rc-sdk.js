@@ -5531,6 +5531,10 @@ var CallLogRecord = (function (_super) {
     CallLogRecord.prototype.getClassName = function () {
         return 'CallLogRecord';
     };
+    // CUSTOM METHODS
+    CallLogRecord.prototype.getId = function () {
+        return this.id;
+    };
     return CallLogRecord;
 })(model.Model);
 exports.CallLogRecord = CallLogRecord;

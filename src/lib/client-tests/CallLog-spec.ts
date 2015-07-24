@@ -55,6 +55,7 @@ describe('RCSDK.clients.CallLog', function() {
 
                     expect(calls.records[0].id).to.equal(data[0].id);
                     expect(calls.records[1].id).to.equal(data[1].id);
+                    expect(calls.records[1].getId()).to.equal(data[1].id);
 
                     expect(calls.getClassName()).to.equal('ExtensionCallLogResponse');
                     expect(calls.records[0].getClassName()).to.equal('CallLogRecord');

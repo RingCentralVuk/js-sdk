@@ -115,7 +115,24 @@ var models = Object.keys(swagger.definitions)
     })
     .forEach(function(model) {
 
-        fs.writeFileSync(clientPath + '/models/' + model.name + '.ts', modelGenerator(model));
+        var file = clientPath + '/models/' + model.name + '.ts',
+            previousModel = fs.existsSync(file) ? fs.readFileSync(file, 'utf-8') : '',
+            re = /(\/\/ CUSTOM METHODS(.|[\r\n])*?\/\/ CUSTOM METHODS)/igm,
+            m = re.exec(previousModel),
+            modelSource = modelGenerator(model);
+
+        console.log('Saving model', gutil.colors.magenta(file));
+
+        if (m !== null) {
+
+            if (m[0]) {
+                //console.log('---------------------- Previous model definition', m[0]);
+                modelSource = modelSource.replace(re, m[0]);
+            }
+
+        }
+
+        fs.writeFileSync(file, modelSource);
 
     });
 

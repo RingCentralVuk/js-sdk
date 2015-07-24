@@ -37,4 +37,7 @@ export class VersionInfo extends model.Model {
         return 'VersionInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

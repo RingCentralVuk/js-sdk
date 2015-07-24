@@ -32,4 +32,7 @@ export class CreateSMSMessage extends model.Model {
         return 'CreateSMSMessage';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

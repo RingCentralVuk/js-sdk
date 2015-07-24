@@ -74,6 +74,9 @@ export class GetPresenceInfo extends model.Model {
         return 'GetPresenceInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum GetPresenceInfoDndStatus {

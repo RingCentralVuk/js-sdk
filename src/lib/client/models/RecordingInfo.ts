@@ -37,6 +37,9 @@ export class RecordingInfo extends model.Model {
         return 'RecordingInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum RecordingInfoType {

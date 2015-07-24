@@ -55,4 +55,7 @@ export class LanguageInfo extends model.Model {
         return 'LanguageInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

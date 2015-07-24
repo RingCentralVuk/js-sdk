@@ -37,4 +37,7 @@ export class NavigationInfo extends model.Model {
         return 'NavigationInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

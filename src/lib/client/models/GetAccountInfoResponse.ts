@@ -70,6 +70,9 @@ export class GetAccountInfoResponse extends model.Model {
         return 'GetAccountInfoResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum GetAccountInfoResponseSetupWizardState {

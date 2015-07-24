@@ -87,6 +87,9 @@ export class GetExtensionCallLogRecordResponse extends model.Model {
         return 'GetExtensionCallLogRecordResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum GetExtensionCallLogRecordResponseType {

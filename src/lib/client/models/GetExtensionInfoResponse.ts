@@ -103,6 +103,9 @@ export class GetExtensionInfoResponse extends model.Model {
         return 'GetExtensionInfoResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum GetExtensionInfoResponseSetupWizardState {

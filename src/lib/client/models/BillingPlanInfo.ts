@@ -43,6 +43,9 @@ export class BillingPlanInfo extends model.Model {
         return 'BillingPlanInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum BillingPlanInfoDurationUnit {

@@ -147,6 +147,9 @@ export class GetMessageInfoResponse extends model.Model {
         return 'GetMessageInfoResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum GetMessageInfoResponseAvailability {

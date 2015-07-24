@@ -55,6 +55,9 @@ export class NotificationDeliveryMode extends model.Model {
         return 'NotificationDeliveryMode';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum NotificationDeliveryModeTransportType {

@@ -31,6 +31,9 @@ export class RingOutStatusInfo extends model.Model {
         return 'RingOutStatusInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum RingOutStatusInfoCallStatus {

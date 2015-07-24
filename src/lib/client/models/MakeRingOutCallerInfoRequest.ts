@@ -19,4 +19,7 @@ export class MakeRingOutCallerInfoRequest extends model.Model {
         return 'MakeRingOutCallerInfoRequest';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

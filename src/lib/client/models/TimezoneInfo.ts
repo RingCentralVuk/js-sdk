@@ -37,4 +37,7 @@ export class TimezoneInfo extends model.Model {
         return 'TimezoneInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

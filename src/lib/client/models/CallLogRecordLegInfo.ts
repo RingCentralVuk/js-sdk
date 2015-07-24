@@ -93,6 +93,9 @@ export class CallLogRecordLegInfo extends model.Model {
         return 'CallLogRecordLegInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum CallLogRecordLegInfoType {

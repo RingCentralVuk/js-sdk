@@ -25,4 +25,7 @@ export class TargetServicePlanInfo extends model.Model {
         return 'TargetServicePlanInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

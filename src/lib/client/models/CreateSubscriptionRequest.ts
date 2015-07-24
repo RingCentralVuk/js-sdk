@@ -26,4 +26,7 @@ export class CreateSubscriptionRequest extends model.Model {
         return 'CreateSubscriptionRequest';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

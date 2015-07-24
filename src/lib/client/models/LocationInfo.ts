@@ -43,4 +43,7 @@ export class LocationInfo extends model.Model {
         return 'LocationInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

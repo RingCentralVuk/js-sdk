@@ -43,6 +43,9 @@ export class MessageStoreCallerInfo extends model.Model {
         return 'MessageStoreCallerInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum MessageStoreCallerInfoMessageStatus {

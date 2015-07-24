@@ -26,4 +26,7 @@ export class GetRingOutStatusResponse extends model.Model {
         return 'GetRingOutStatusResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

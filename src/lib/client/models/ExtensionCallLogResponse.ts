@@ -34,4 +34,7 @@ export class ExtensionCallLogResponse extends model.Model {
         return 'ExtensionCallLogResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }

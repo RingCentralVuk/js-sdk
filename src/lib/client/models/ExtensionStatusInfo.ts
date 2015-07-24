@@ -25,6 +25,9 @@ export class ExtensionStatusInfo extends model.Model {
         return 'ExtensionStatusInfo';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
 
 export enum ExtensionStatusInfoReason {

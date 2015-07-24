@@ -62,6 +62,9 @@ module.exports = function(model) {
     res.push('        return \'' + model.name + '\';');
     res.push('    }');
     res.push('');
+    res.push('    // CUSTOM METHODS');
+    res.push('    // CUSTOM METHODS');
+    res.push('');
     res.push('}');
 
     enums.forEach(function(en) {

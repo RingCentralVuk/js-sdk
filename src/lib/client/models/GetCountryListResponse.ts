@@ -34,4 +34,7 @@ export class GetCountryListResponse extends model.Model {
         return 'GetCountryListResponse';
     }
 
+    // CUSTOM METHODS
+    // CUSTOM METHODS
+
 }
